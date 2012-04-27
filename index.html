@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<title>Cook.js by masyl</title>
+
+	<link rel="stylesheet" href="stylesheets/styles.css">
+	<link rel="stylesheet" href="stylesheets/pygment_trac.css">
+	<link rel="stylesheet" href="fonts/permanent-marker/stylesheet.css" type="text/css" charset="utf-8">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1, user-scalable=no">
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="wrapper">
+	<header>
+		<img class="logo" src="./images/logo-big-cook.png" alt="Logo"/>
+
+		<ul class="buttons">
+			<li><a href="https://github.com/masyl/cook/zipball/master">Download
+				<strong>ZIP File</strong></a></li>
+			<li><a href="https://github.com/masyl/cook/tarball/master">Download
+				<strong>TAR Ball</strong></a></li>
+			<li><a href="https://github.com/masyl/cook">Fork On <strong>GitHub</strong></a>
+			</li>
+		</ul>
+		<h1>More modules</h1>
+		<ul class="otherModules">
+			<li><a href="#"><img src="./images/logo-small-plastic.png"/> Plastic.js</a></li>
+			<li><a href="#"><img src="./images/logo-small-funex.png"/> Funex.js</a></li>
+			<li><a href="#"><img src="./images/logo-small-enhance.png"/> Enhance.js</a></li>
+		</ul>
+	</header>
+
+	<section>
+<div id="markdownContent">
+
+
+# Cook
+
+Tasty Templating on the Client and the Server
+
+Example usage:
+
+	result = funex("members[id].name.fullname()", model);
+
+## Features
+
+-
+
+## Usefull for ...
+
+-
+
+## Installation
+
+...
+
+## Usage
+
+	// Very simple example in node.js
+	cook = require("cook")({});
+	data = {
+		cookies: 4
+	}
+	output = cook("There are {{print cookies /}} cookies!")(data);
+
+## Roadmap
+
+- To come...
+
+
+
+</div>
+		<hr />
+		<footer>
+			<p>This project is maintained by <a href="https://github.com/masyl">masyl</a>
+			</p>
+
+			<p>
+				<small>Hosted on GitHub Pages &mdash; Theme by <a
+						href="https://github.com/orderedlist">orderedlist</a>
+				</small>
+			</p>
+		</footer>
+	</section>
+</div>
+<script src="javascripts/showdown.js"></script>
+<script>
+	var showdown = new Showdown.converter();
+	var markdownContent = document.getElementById("markdownContent");
+	markdownContent.innerHTML = showdown.makeHtml(markdownContent.innerHTML);
+</script>
+<script src="javascripts/scale.fix.js"></script>
+
+</body>
+</html>
