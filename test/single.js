@@ -15,17 +15,18 @@ var fixtureData = {
  * @param name
  */
 function cookTestFile(name) {
-	var inFile = './fixtures/templates/' + name + '-in.html';
-	var outFile = './fixtures/templates/' + name + '-out.html';
-	fs.readFile(inFile, function (err, inData) {
-		fs.readFile(outFile, function (err, outData) {
-			var template = cook(inData.toString());
-			var result = template(fixtureData);
-			assert.equal(result, outData.toString());
-		});
+	var split,
+		input,
+		output,
+		file = './fixtures/templates/' + name + '.html';
+	fs.readFile(file, function (err, data) {
+		split = data.toString().split("\n========================================\n");
+		input = split[0];
+		output = split[1];
+		assert.equal(cook(input)(fixtureData), output);
 	});
 }
 
 cookTestFile("if");
-cookTestFile("ifElse");
-cookTestFile("ifMultipleElse");
+cookTestFile("if-else");
+cookTestFile("if-multiple-else");
