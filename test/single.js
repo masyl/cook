@@ -26,5 +26,6 @@ function cookTestFile(name) {
 	});
 }
 
-//cookTestFile("if");
+cookTestFile("if");
 cookTestFile("ifElse");
+cookTestFile("ifMultipleElse");
