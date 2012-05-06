@@ -4,6 +4,7 @@ var
 	fs = require('fs');
 
 var fixtureData = {
+	isFalse: false,
 	isTrue: true,
 	not: function(exp) {
 		return !exp;
@@ -30,3 +31,4 @@ function cookTestFile(name) {
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
+cookTestFile("if-else-if");
