@@ -4,12 +4,16 @@ var
 	fs = require('fs');
 
 var fixtureData = {
+	isTrue: true,
 	not: function(exp) {
 		return !exp;
-	},
-	isTrue: true
+	}
 };
 
+/**
+ * Render a template in the "/fixtures/templates" and compare to the expected output
+ * @param name
+ */
 function cookTestFile(name) {
 	var inFile = './fixtures/templates/' + name + '-in.html';
 	var outFile = './fixtures/templates/' + name + '-out.html';
