@@ -12,7 +12,14 @@ var fixtureData = {
 	not: function(exp) {return !exp;},
 	uppercase: function(a) {return a.toUpperCase()},
 	lowercase: function(a) {return a.toLowerCase()},
-	joinFullname: function(a, b) {return a + " " + b}
+	joinFullname: function(a, b) {return a + " " + b},
+	keywords: ["hoopla", "thingamabob", "whoopy", "dingus", "wooompff", "tagada!"],
+	dog: {
+		weight: 10,
+		legs: 4,
+		color: "blue",
+		name: "spot"
+	}
 };
 
 /**
@@ -31,6 +38,7 @@ function cookTestFile(name) {
 		assert.equal(cook(input)(fixtureData), output);
 	});
 }
+
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -38,13 +46,15 @@ cookTestFile("if-else-if");
 cookTestFile("if-filtered");
 cookTestFile("print");
 cookTestFile("print-filtered");
+cookTestFile("each-array");
+cookTestFile("each-object");
 
 /*
-
-each/loop
+Todo:
+loop object and alt tags
 render/template
 whitespace control
-standard filters
+set of standard filters
 functional utilities
 multi-scope resolution
 
