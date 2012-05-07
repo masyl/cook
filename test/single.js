@@ -6,9 +6,13 @@ var
 var fixtureData = {
 	isFalse: false,
 	isTrue: true,
-	not: function(exp) {
-		return !exp;
-	}
+	username: "johndoe@acme.com",
+	firstname: "John",
+	lastname: "Doe",
+	not: function(exp) {return !exp;},
+	uppercase: function(a) {return a.toUpperCase()},
+	lowercase: function(a) {return a.toLowerCase()},
+	joinFullname: function(a, b) {return a + " " + b}
 };
 
 /**
@@ -27,8 +31,21 @@ function cookTestFile(name) {
 		assert.equal(cook(input)(fixtureData), output);
 	});
 }
-
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
 cookTestFile("if-else-if");
+cookTestFile("if-filtered");
+cookTestFile("print");
+cookTestFile("print-filtered");
+
+/*
+
+each/loop
+render/template
+whitespace control
+standard filters
+functional utilities
+multi-scope resolution
+
+*/
