@@ -1,0 +1,17 @@
+{{partial 'emailLink', 'label', 'email' }}<li><a href="mailto:{{print email /}}">{{print label /}}</a></li>{{/partial}}
+<ul>
+	{{each friends}}
+		{{print partial('emailLink').render(value.name, value.email) /}}
+	{{/each}}
+</ul>
+========================================
+
+<ul>
+	
+		<li><a href="mailto:tom@gmail.com">Tom Thomson</a></li>
+	
+		<li><a href="mailto:jackjackson@gmail.com">Jack Jackson</a></li>
+	
+		<li><a href="mailto:bigwill69@gmail.com">Will Williamson</a></li>
+	
+</ul>

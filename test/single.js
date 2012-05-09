@@ -19,7 +19,21 @@ var fixtureData = {
 		legs: 4,
 		color: "blue",
 		name: "spot"
-	}
+	},
+	friends: [
+		{
+			name: "Tom Thomson",
+			email: "tom@gmail.com"
+		},
+		{
+			name: "Jack Jackson",
+			email: "jackjackson@gmail.com"
+		},
+		{
+			name: "Will Williamson",
+			email: "bigwill69@gmail.com"
+		}
+	]
 };
 
 /**
@@ -38,7 +52,7 @@ function cookTestFile(name) {
 		assert.equal(cook(input)(fixtureData), output);
 	});
 }
-
+	
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -48,14 +62,18 @@ cookTestFile("print");
 cookTestFile("print-filtered");
 cookTestFile("each-array");
 cookTestFile("each-object");
+cookTestFile("partials-basic");
 
 /*
 Todo:
-loop object and alt tags
 render/template
+loop object and alt tags
 whitespace control
+comments #
 set of standard filters
 functional utilities
 multi-scope resolution
-
+Error on unknown tag
+"this" or "global" values
+Each tag with an alias for the item
 */
