@@ -52,7 +52,8 @@ function cookTestFile(name) {
 		assert.equal(cook(input)(fixtureData), output);
 	});
 }
-	
+
+console.time("tests");
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -63,17 +64,29 @@ cookTestFile("print-filtered");
 cookTestFile("each-array");
 cookTestFile("each-object");
 cookTestFile("partials-basic");
+cookTestFile("comment-poundSign");
+cookTestFile("comment-poundSignBlock");
+cookTestFile("comment-poundSignOnOpenTag");
+console.timeEnd("tests");
 
 /*
 Todo:
-render/template
-loop object and alt tags
-whitespace control
-comments #
-set of standard filters
-functional utilities
-multi-scope resolution
+Loop object and alt tags
+Whitespace control
+Comments #
+Set of standard filters
+Functional utilities (helpers)
+Multi-scope resolution
 Error on unknown tag
 "this" or "global" values
 Each tag with an alias for the item
+Test descriptions in the fixture templates
+Escaping (html, url, js)
+Strict mode
+"Var" tag
+"With" tag
+Async
+Support handlers for catching the render tree
+Event listeners on lexing, building and rendering
+Provide a base context for a whole instance of cook
 */
