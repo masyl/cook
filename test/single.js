@@ -79,23 +79,22 @@ cookTestFile("filter-decodeURI");
 cookTestFile("filter-encodeURI");
 cookTestFile("filter-decodeURIComponent");
 cookTestFile("filter-encodeURIComponent");
+cookTestFile("filter-usingSingleFunction");
 cookTestFile("var");
 cookTestFile("with");
+cookTestFile("log");
 
 console.timeEnd("tests");
 
 /*
 Todo:
-"log" filter
-functions as filters
-Loop object and alt tags
+"loop" object in "each" tag
 Whitespace control
-Set of standard filters
-Functional utilities (helpers)
-Multi-scope resolution
+Multi-level scope resolution
+Api to register filters, and functions in the global scope
 Error on unknown tag
 "root", "parent", "this" or "global" values for targeting scope levels
-Each tag with an alias for the item
+"each" tag with a defined alias for the item
 Test descriptions in the fixture templates
 Support handlers for catching the render tree
 Event listeners on lexing, building and rendering
