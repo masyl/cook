@@ -1,0 +1,12 @@
+{{var 'blockVar' }}lorem ipsum block!{{/var}}
+{{var 'inlineVar', 'lorem ipsum inline!' /}}
+{{print blockVar /}}
+{{print inlineVar /}}
+{{var 'blockVar' }}Var defined too late!{{/var}}
+{{var 'inlineVar', 'Var defined too late!' /}}
+========================================
+
+
+lorem ipsum block!
+lorem ipsum inline!
+

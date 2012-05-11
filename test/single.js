@@ -55,7 +55,7 @@ function cookTestFile(name) {
 }
 
 console.time("tests");
-
+/*
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -73,6 +73,8 @@ cookTestFile("filter-decodeURI");
 cookTestFile("filter-encodeURI");
 cookTestFile("filter-decodeURIComponent");
 cookTestFile("filter-encodeURIComponent");
+*/
+cookTestFile("var");
 console.timeEnd("tests");
 
 /*
@@ -83,14 +85,14 @@ Set of standard filters
 Functional utilities (helpers)
 Multi-scope resolution
 Error on unknown tag
-"this" or "global" values
+"root", "parent", "this" or "global" values for targeting scope levels
 Each tag with an alias for the item
 Test descriptions in the fixture templates
-Strict mode
 "Var" tag
 "With" tag
-Async
 Support handlers for catching the render tree
 Event listeners on lexing, building and rendering
 Provide a base context for a whole instance of cook
+Clean all to-do's
+Async
 */
