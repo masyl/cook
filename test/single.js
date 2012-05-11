@@ -72,7 +72,6 @@ function cookTestFile(name) {
 }
 
 console.time("tests");
-
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -95,14 +94,13 @@ cookTestFile("log");
 cookTestFile("each-array");
 cookTestFile("each-object");
 cookTestFile("each-loop");
+cookTestFile("whitespace-remove");
 
 console.timeEnd("tests");
 
 /*
 ## Roadmap
 
-- "loop" object in "each" tag
-- Whitespace control
 - Multi-level scope resolution
 - Test for multi-level "each" loops
 - Api to register filters, and functions in the global scope
