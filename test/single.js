@@ -40,6 +40,16 @@ var fixtureData = {
 		red: "#FF0000",
 		white: "#000000",
 		blue: "#0000FF"
+	},
+	loopElements: {
+		a: "a1",
+		b: "b2",
+		c: "c3",
+		d: "d4",
+		e: "e5",
+		f: "f6",
+		g: "g7",
+		h: "h8"
 	}
 };
 
@@ -56,7 +66,8 @@ function cookTestFile(name) {
 		split = data.toString().split("\n========================================\n");
 		input = split[0];
 		output = split[1];
-		assert.equal(cook(input)(fixtureData), output);
+		var result = cook(input)(fixtureData);
+		assert.equal(result, output);
 	});
 }
 
@@ -69,8 +80,6 @@ cookTestFile("if-else-if");
 cookTestFile("if-filtered");
 cookTestFile("print");
 cookTestFile("print-filtered");
-cookTestFile("each-array");
-cookTestFile("each-object");
 cookTestFile("partials-basic");
 cookTestFile("comment-poundSign");
 cookTestFile("comment-poundSignBlock");
@@ -83,23 +92,34 @@ cookTestFile("filter-usingSingleFunction");
 cookTestFile("var");
 cookTestFile("with");
 cookTestFile("log");
+cookTestFile("each-array");
+cookTestFile("each-object");
+cookTestFile("each-loop");
 
 console.timeEnd("tests");
 
 /*
-Todo:
-"loop" object in "each" tag
-Whitespace control
-Multi-level scope resolution
-Api to register filters, and functions in the global scope
-Error on unknown tag
-"root", "parent", "this" or "global" values for targeting scope levels
-"each" tag with a defined alias for the item
-Test descriptions in the fixture templates
-Support handlers for catching the render tree
-Event listeners on lexing, building and rendering
-Provide a base context for a whole instance of cook
-Clean all to-do's
-Async
-reusing partials as functions
- */
+## Roadmap
+
+- "loop" object in "each" tag
+- Whitespace control
+- Multi-level scope resolution
+- Test for multi-level "each" loops
+- Api to register filters, and functions in the global scope
+- Error on unknown tag
+- "root", "parent", "this" or "global" values for targeting scope levels
+- "each" tag with a defined alias for the item
+- Test descriptions in the fixture templates
+- Support handlers for catching the render tree
+- Event listeners on lexing, building and rendering
+- Provide a base context for a whole instance of cook
+- Code comments and method signatures
+- Clean all to-do's
+
+## Advanced features:
+
+- Async
+- reusing partials as functions
+- "eval" and eval() for evaluating dynamic funex
+
+*/
