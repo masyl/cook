@@ -34,7 +34,13 @@ var fixtureData = {
 			email: "bigwill69@gmail.com"
 		}
 	],
-	html: "<div>This is <blink>html</blink>!</div>"
+	html: "<div>This is <blink>html</blink>!</div>",
+	colors: {
+		label: "Colors: ",
+		red: "#FF0000",
+		white: "#000000",
+		blue: "#0000FF"
+	}
 };
 
 /**
@@ -55,7 +61,7 @@ function cookTestFile(name) {
 }
 
 console.time("tests");
-/*
+
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -73,12 +79,15 @@ cookTestFile("filter-decodeURI");
 cookTestFile("filter-encodeURI");
 cookTestFile("filter-decodeURIComponent");
 cookTestFile("filter-encodeURIComponent");
-*/
 cookTestFile("var");
+cookTestFile("with");
+
 console.timeEnd("tests");
 
 /*
 Todo:
+"log" filter
+functions as filters
 Loop object and alt tags
 Whitespace control
 Set of standard filters
@@ -88,11 +97,10 @@ Error on unknown tag
 "root", "parent", "this" or "global" values for targeting scope levels
 Each tag with an alias for the item
 Test descriptions in the fixture templates
-"Var" tag
-"With" tag
 Support handlers for catching the render tree
 Event listeners on lexing, building and rendering
 Provide a base context for a whole instance of cook
 Clean all to-do's
 Async
-*/
+reusing partials as functions
+ */
