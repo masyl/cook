@@ -33,7 +33,8 @@ var fixtureData = {
 			name: "Will Williamson",
 			email: "bigwill69@gmail.com"
 		}
-	]
+	],
+	html: "<div>This is <blink>html</blink>!</div>"
 };
 
 /**
@@ -54,6 +55,7 @@ function cookTestFile(name) {
 }
 
 console.time("tests");
+
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -67,13 +69,16 @@ cookTestFile("partials-basic");
 cookTestFile("comment-poundSign");
 cookTestFile("comment-poundSignBlock");
 cookTestFile("comment-poundSignOnOpenTag");
+cookTestFile("filter-decodeURI");
+cookTestFile("filter-encodeURI");
+cookTestFile("filter-decodeURIComponent");
+cookTestFile("filter-encodeURIComponent");
 console.timeEnd("tests");
 
 /*
 Todo:
 Loop object and alt tags
 Whitespace control
-Comments #
 Set of standard filters
 Functional utilities (helpers)
 Multi-scope resolution
@@ -81,7 +86,6 @@ Error on unknown tag
 "this" or "global" values
 Each tag with an alias for the item
 Test descriptions in the fixture templates
-Escaping (html, url, js)
 Strict mode
 "Var" tag
 "With" tag
