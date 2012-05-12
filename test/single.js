@@ -96,14 +96,15 @@ cookTestFile("each-array");
 cookTestFile("each-object");
 cookTestFile("each-loop");
 cookTestFile("whitespace-remove");
+cookTestFile("defaultTag");
 
 console.timeEnd("tests");
-
+/*
+ {each dog}<li>{print each.key /}:{print each.value /}</li>{/each}
+ <li>weight:10</li><li>legs:4</li><li>color:blue</li><li>name:spot</li>
+ */
 /*
 ## Roadmap
-- Change syntax to single brakets
-- Allow escaping of brakets
-- Create html tags as fallbacks
 - "each" tag with a defined alias for the item
 - Multi-level scope resolution
 - Test for multi-level "each" loops
@@ -116,6 +117,9 @@ console.timeEnd("tests");
 - Provide a base context for a whole instance of cook through an attribute like "global"
 - Code comments and method signatures
 - Clean all to-do's
+- "json" renderer
+- "dom" renderer
+- "xml" renderer
 
 ## Advanced features:
 
