@@ -97,7 +97,7 @@ cookTestFile("each-object");
 cookTestFile("each-loop");
 cookTestFile("whitespace-remove");
 cookTestFile("defaultTag");
-//cookTestFile("defaultTag-withPartials");
+cookTestFile("defaultTag-withPartials");
 
 console.timeEnd("tests");
 /*
@@ -123,6 +123,7 @@ console.timeEnd("tests");
 - "json" renderer
 - "dom" renderer
 - "xml" renderer
+- Better error when miss-using double quotes in funex (will be common mistake)
 
 ## Advanced features:
 
