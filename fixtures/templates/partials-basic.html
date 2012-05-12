@@ -1,7 +1,7 @@
 {partial 'emailLink', 'label', 'email' }<li><a href="mailto:{print email /}">{print label /}</a></li>{/partial}
 <ul>
 	{each friends}
-		{print partial('emailLink').render($value.name, $value.email) /}
+		{print $partial('emailLink').render($value.name, $value.email) /}
 	{/each}
 </ul>
 ========================================

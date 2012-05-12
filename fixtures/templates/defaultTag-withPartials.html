@@ -3,7 +3,7 @@
 {/partial}
 {div}
 	<ul>
-		{each dog}{print partial('attribute').render($key, $value) /}{/each}
+		{each dog}{print $partial('attribute').render($key, $value) /}{/each}
 	</ul>
 {/div}
 ========================================
