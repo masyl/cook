@@ -97,6 +97,7 @@ cookTestFile("each-object");
 cookTestFile("each-loop");
 cookTestFile("whitespace-remove");
 cookTestFile("defaultTag");
+//cookTestFile("defaultTag-withPartials");
 
 console.timeEnd("tests");
 /*
@@ -105,10 +106,12 @@ console.timeEnd("tests");
  */
 /*
 ## Roadmap
+- @@ binding syntax
 - "each" tag with a defined alias for the item
 - Multi-level scope resolution
 - Test for multi-level "each" loops
 - Api to register filters, and functions in the global scope
+- Render tag: {render "attribute", $key, $value /}
 - Error on unknown tag
 - "root", "parent", "this" or "global" values for targeting scope levels
 - Test descriptions in the fixture templates

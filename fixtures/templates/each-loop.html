@@ -3,7 +3,7 @@
 		<tr><th>index</th><th>key</th><th>value</th><th>isFirst</th><th>isLast</th><th>isOdd</th><th>length</th></tr>
 	</thead>
 	<tbody>
-		{each loopElements}<tr><td>{print each.index /}</td><td>{print each.key /}</td><td>{print each.value /}</td><td>{print each.isFirst /}</td><td>{print each.isLast /}</td><td>{print each.isOdd /}</td><td>{print each.length /}</td></tr>
+		{each loopElements}<tr><td>{print $index /}</td><td>{print $key /}</td><td>{print $value /}</td><td>{print $isFirst /}</td><td>{print $isLast /}</td><td>{print $isOdd /}</td><td>{print $length /}</td></tr>
 		{/each}
 	</tbody>
 </table>

@@ -1,13 +1,13 @@
 {partial "attribute", "key", "value"}
 	{li @@ key}
-		{span each.key /} : {span each.value @@ "value" /}
+		{span key /} : {span value >> "value" /}
 	{/li}
 {/partial}
 
-{div @@ "dogInfo" /}
+{div >> "dogInfo" /}
 	<ul class="dogAttributes">
 		{each dog}
-			{render attribute, each.key, each.value /}
+			{render attribute, $key, $value /}
 		{/each}
 	</ul>
 {/div}
