@@ -1,0 +1,33 @@
+{partial "attribute", "key", "value"}
+	{li @@ key}
+		{span each.key /} : {span each.value @@ "value" /}
+	{/li}
+{/partial}
+
+{div @@ "dogInfo" /}
+	<ul class="dogAttributes">
+		{each dog}
+			{render attribute, each.key, each.value /}
+		{/each}
+	</ul>
+{/div}
+
+========================================
+Using a DOM renderer, this template will create multiple binding handlers:
+- dogInfo
+- dogInfo:weight:value
+- dogInfo:legs:value
+- dogInfo:color:value
+- dogInfo:name:value
+Using an event emiter syntax, an api could triger updates:
+	cook.refresh("dog:color:value", fadeIn);
+This update woud call back this handler:
+	function fadeIn(oldNode, newNode) {
+		$(oldNode).fadeOut().replaceWith(newNode)
+	}
+========================================
+<div>
+	<ul>
+		<li>weight:10</li><li>legs:4</li><li>color:blue</li><li>name:spot</li>
+	</ul>
+</div>

@@ -72,6 +72,7 @@ function cookTestFile(name) {
 }
 
 console.time("tests");
+
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -100,17 +101,19 @@ console.timeEnd("tests");
 
 /*
 ## Roadmap
-
+- Change syntax to single brakets
+- Allow escaping of brakets
+- Create html tags as fallbacks
+- "each" tag with a defined alias for the item
 - Multi-level scope resolution
 - Test for multi-level "each" loops
 - Api to register filters, and functions in the global scope
 - Error on unknown tag
 - "root", "parent", "this" or "global" values for targeting scope levels
-- "each" tag with a defined alias for the item
 - Test descriptions in the fixture templates
 - Support handlers for catching the render tree
 - Event listeners on lexing, building and rendering
-- Provide a base context for a whole instance of cook
+- Provide a base context for a whole instance of cook through an attribute like "global"
 - Code comments and method signatures
 - Clean all to-do's
 
@@ -119,5 +122,6 @@ console.timeEnd("tests");
 - Async
 - reusing partials as functions
 - "eval" and eval() for evaluating dynamic funex
+ - Allo running in "bouble braket" mode for outputting json
 
-*/
+ */
