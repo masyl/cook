@@ -1,6 +1,6 @@
 var
 		result,
-		cook = require("../lib/cook"),
+		cook = require("../lib"),
 		mocha = require("mocha"),
 		should = require("should"),
 		assert = require("assert");

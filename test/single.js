@@ -1,6 +1,6 @@
 var
 	assert = require('assert'),
-	cook = require('../lib/cook'),
+	cook = require('../lib'),
 	fs = require('fs');
 
 var fixtureData = {
