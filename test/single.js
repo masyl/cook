@@ -10,9 +10,15 @@ var fixtureData = {
 	firstname: "John",
 	lastname: "Doe",
 	not: function(exp) {return !exp;},
-	uppercase: function(a) {return a.toUpperCase()},
-	lowercase: function(a) {return a.toLowerCase()},
-	joinFullname: function(a, b) {return a + " " + b},
+	uppercase: function(a) {
+		return a.toUpperCase();
+	},
+	lowercase: function(a) {
+		return a.toLowerCase();
+	},
+	joinFullname: function(a, b) {
+		return a + " " + b;
+	},
 	keywords: ["hoopla", "thingamabob", "whoopy", "dingus", "wooompff", "tagada!"],
 	dog: {
 		weight: 10,
@@ -63,10 +69,14 @@ function cookTestFile(name) {
 		output,
 		file = './fixtures/templates/' + name + '.html';
 	fs.readFile(file, function (err, data) {
+		console.log("Test: " + name);
 		split = data.toString().split("\n========================================\n");
 		input = split[0];
 		output = split[1];
 		var result = cook(input)(fixtureData);
+//		console.log(result);
+//		console.log("=======================================================================");
+//		console.log(output);
 		assert.equal(result, output);
 	});
 }
@@ -98,38 +108,6 @@ cookTestFile("each-loop");
 cookTestFile("whitespace-remove");
 cookTestFile("defaultTag");
 cookTestFile("defaultTag-withPartials");
+cookTestFile("binding-each");
 
 console.timeEnd("tests");
-/*
- {each dog}<li>{print each.key /}:{print each.value /}</li>{/each}
- <li>weight:10</li><li>legs:4</li><li>color:blue</li><li>name:spot</li>
- */
-/*
-## Roadmap
-- @@ binding syntax
-- "each" tag with a defined alias for the item
-- Multi-level scope resolution
-- Test for multi-level "each" loops
-- Api to register filters, and functions in the global scope
-- Render tag: {render "attribute", $key, $value /}
-- Error on unknown tag
-- "root", "parent", "this" or "global" values for targeting scope levels
-- Test descriptions in the fixture templates
-- Support handlers for catching the render tree
-- Event listeners on lexing, building and rendering
-- Provide a base context for a whole instance of cook through an attribute like "global"
-- Code comments and method signatures
-- Clean all to-do's
-- "json" renderer
-- "dom" renderer
-- "xml" renderer
-- Better error when miss-using double quotes in funex (will be common mistake)
-
-## Advanced features:
-
-- Async
-- reusing partials as functions
-- "eval" and eval() for evaluating dynamic funex
- - Allo running in "bouble braket" mode for outputting json
-
- */

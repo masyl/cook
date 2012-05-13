@@ -1,5 +1,5 @@
 <div>
-	{print html => decodeURIComponent(encodeURIComponent(body)) /}
+	{print html >> decodeURIComponent(encodeURIComponent($body)) /}
 </div>
 ========================================
 <div>
