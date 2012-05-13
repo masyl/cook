@@ -83,7 +83,7 @@ function cookTestFile(name) {
 
 console.time("tests");
 
-cookTestFile("partials-renderTag");
+//cookTestFile("partials-renderTag");
 
 cookTestFile("if");
 cookTestFile("if-else");
