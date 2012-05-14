@@ -3,6 +3,8 @@
 
 ## Next up
 
+- Use (Tag Chaining + Filter Tag) instead of a specil filter syntax
+- Bring back the "=>" instead of ">>" ... or ">>>" or "==>" or " $then "
 - Render tag: {render "attribute", $key, $value /}
 - Multi-level scope resolution
 - Provide a base context for a whole instance of cook through an attribute like "global"
@@ -39,9 +41,11 @@
 
 ## Advanced features:
 
+- Streamed renderer
+- Streamed builder
+- Streamed lexer
 - Syntax for chaining tags
 - Syntax for pre-filters with the "<<" markers
-- Streamed template output
 - Async
 - "json" renderer
 - "dom" renderer
