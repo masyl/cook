@@ -10,9 +10,7 @@
 
 ## Backlog
 
-- reusing partials as functions
 - using function/helpers as tags ?
-
 - Render tag: {render "attribute", $key, $value /}
 - "each" tag with a defined alias for the item
 - Break up library in multiple packages
