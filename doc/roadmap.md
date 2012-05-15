@@ -6,13 +6,15 @@
 - Multi-scope attribute value resolution using funex
 - Provide a base context for a whole instance of cook through an attribute like "$global"
 - "$root", "$parent", "$this" or "$global" values for targeting scope levels
+
+## Each
+
 - Test for multi-level "each" loops
+- "each" tag with a defined alias for the item
 
 ## Backlog
 
-- using function/helpers as tags ?
 - Render tag: {render "attribute", $key, $value /}
-- "each" tag with a defined alias for the item
 - Break up library in multiple packages
 - Build for frontend-use (concat, minify)
 - Api to register filters, and functions in the global scope

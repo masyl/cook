@@ -85,6 +85,7 @@ console.time("tests");
 
 //cookTestFile("partials-renderTag");
 
+cookTestFile("print-withoutTag");
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -94,6 +95,7 @@ cookTestFile("print");
 cookTestFile("print-filtered");
 cookTestFile("partials-chainedWithEach");
 cookTestFile("partials-useAsFunction");
+cookTestFile("partials-useAsTag");
 cookTestFile("comment-poundSign");
 cookTestFile("comment-poundSignBlock");
 cookTestFile("comment-poundSignOnOpenTag");
@@ -103,6 +105,7 @@ cookTestFile("filter-usingSingleFunction");
 cookTestFile("filter-withoutChaining");
 cookTestFile("filter-encodeURI");
 cookTestFile("filter-decodeURI");
+cookTestFile("helper-asFilter-withoutTag");
 cookTestFile("var");
 cookTestFile("with");
 cookTestFile("log");
