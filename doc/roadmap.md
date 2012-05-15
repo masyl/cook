@@ -3,20 +3,21 @@
 
 ## Next up
 
-- Use (Tag Chaining + Filter Tag) instead of a specil filter syntax
-- Bring back the "=>" instead of ">>" ... or ">>>" or "==>" or " $then "
-- Render tag: {render "attribute", $key, $value /}
-- Multi-level scope resolution
-- Provide a base context for a whole instance of cook through an attribute like "global"
+- Multi-scope attribute value resolution using funex
+- Provide a base context for a whole instance of cook through an attribute like "$global"
+- "$root", "$parent", "$this" or "$global" values for targeting scope levels
 - Test for multi-level "each" loops
-- "each" tag with a defined alias for the item
 
 ## Backlog
 
+- reusing partials as functions
+- using function/helpers as tags ?
+
+- Render tag: {render "attribute", $key, $value /}
+- "each" tag with a defined alias for the item
 - Break up library in multiple packages
 - Build for frontend-use (concat, minify)
 - Api to register filters, and functions in the global scope
-- "root", "parent", "this" or "global" values for targeting scope levels
 - Test descriptions in the fixture templates
 - Support handlers for catching the render tree
 - Event listeners on lexing, building and rendering
@@ -24,9 +25,7 @@
 - Clean all to-do's
 - register helpers, tags, filters and etc through a "use" method
 - The lexer should return tokens as objects instead of arrays for better inspection
-- Refactoring: getPartial() should removed. partial should be a single call and not chained calls
 - Escaping for "{" and "}" 
-- reusing partials as functions
 - "eval" and eval() for evaluating funex expressions on the fly (inline or from vars)
 - Allow running in "bouble braket" mode for outputting json
 

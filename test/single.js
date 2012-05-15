@@ -93,6 +93,7 @@ cookTestFile("if-filtered");
 cookTestFile("print");
 cookTestFile("print-filtered");
 cookTestFile("partials-basic");
+cookTestFile("partials-chainedWithEach");
 cookTestFile("comment-poundSign");
 cookTestFile("comment-poundSignBlock");
 cookTestFile("comment-poundSignOnOpenTag");
