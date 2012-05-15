@@ -85,7 +85,6 @@ console.time("tests");
 
 //cookTestFile("partials-renderTag");
 
-/*
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -97,12 +96,13 @@ cookTestFile("partials-basic");
 cookTestFile("comment-poundSign");
 cookTestFile("comment-poundSignBlock");
 cookTestFile("comment-poundSignOnOpenTag");
-cookTestFile("filter-decodeURI");
-cookTestFile("filter-encodeURI");
 cookTestFile("filter-decodeURIComponent");
 cookTestFile("filter-encodeURIComponent");
- cookTestFile("filter-usingSingleFunction");
- cookTestFile("var");
+cookTestFile("filter-usingSingleFunction");
+cookTestFile("filter-withoutChaining");
+cookTestFile("filter-encodeURI");
+cookTestFile("filter-decodeURI");
+cookTestFile("var");
 cookTestFile("with");
 cookTestFile("log");
 cookTestFile("each-array");
@@ -112,8 +112,5 @@ cookTestFile("whitespace-remove");
 cookTestFile("defaultTag");
 cookTestFile("defaultTag-withPartials");
 cookTestFile("binding-each");
-*/
-
-cookTestFile("filter-usingSingleFunction2");
 
 console.timeEnd("tests");
