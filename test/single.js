@@ -85,7 +85,6 @@ console.time("tests");
 
 //cookTestFile("partials-renderTag");
 
-cookTestFile("print-withoutTag");
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -93,6 +92,7 @@ cookTestFile("if-else-if");
 cookTestFile("if-filtered");
 cookTestFile("print");
 cookTestFile("print-filtered");
+cookTestFile("print-withoutTag");
 cookTestFile("partials-chainedWithEach");
 cookTestFile("partials-useAsFunction");
 cookTestFile("partials-useAsTag");

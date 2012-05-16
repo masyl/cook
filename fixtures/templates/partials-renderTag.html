@@ -1,8 +1,8 @@
-{partial 'emailLink', 'label', 'email' }<li><a href="mailto:{print email /}">{print label /}</a></li>{/partial}
+{partial 'emailLink', 'label', 'email' }<li><a href="mailto:{print email /}">{print label /}</a></li>{/}
 <ul>
 	{each friends, 'friend'}
 		{render 'emailLink', friend.name, friend.email /}
-	{/each}
+	{/}
 </ul>
 ========================================
 
