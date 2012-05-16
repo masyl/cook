@@ -1,5 +1,5 @@
 <div>
-	{print html << filter $decodeURI($encodeURI($body)) /}
+	{filter $decodeURI($encodeURI($body)) >> print html /}
 </div>
 ========================================
 <div>

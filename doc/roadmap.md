@@ -2,14 +2,19 @@
 
 ## Next up
 
-- Multi-scope attribute value resolution using funex
-- Provide a base context for a whole instance of cook through an attribute like "$global"
-- "$root", "$parent", "$this" or "$global" values for targeting scope levels
+- Forward chaining:
+	{if bios >> $ul >> bios, 'bio' >> $li >> $span >> bio >> text /}
 
 ## Each
 
 - Test for multi-level "each" loops
 - "each" tag with a defined alias for the item
+
+## Scoping and context
+
+- Multi-scope attribute value resolution using funex
+- Provide a base context for a whole instance of cook through an attribute like "$global"
+- "$root", "$parent", "$this" or "$global" values for targeting scope levels
 
 ## Backlog
 
@@ -17,15 +22,6 @@
 	The "else" tag will read the $ifResult internal value for its condition
 	{if bio >> div >> bio /}
 	{else >> div >> $i18n 'No bio available' /}
-
-- Closing Tags without
-	{dog}{name /}:{weight /}{/}
-
-- Forward chaining:
-	{if bios >> $ul >> bios, 'bio' >> $li >> $span >> bio >> text /}
-
-- Backward chaining:
-	{text << bio << $span << $li << bios, 'bio' << $ul << if bios /}
 
 - "$" prefix for non-expressions:
 	$set, $partial $each, $with, $if, $print, $filter, $div, $tag, $ul, $uppercase, $decodeURI

@@ -1,5 +1,5 @@
 <div>
-	{print joinFullname(firstname, lastname) << filter lowercase($body) /}
+	{filter lowercase($body) >> print joinFullname(firstname, lastname) /}
 </div>
 ========================================
 <div>
