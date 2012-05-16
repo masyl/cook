@@ -1,6 +1,5 @@
 # Roadmap
 
-
 ## Next up
 
 - Multi-scope attribute value resolution using funex
@@ -14,6 +13,71 @@
 
 ## Backlog
 
+- Replace alternate tag syntax with continuous tags passing values
+	The "else" tag will read the $ifResult internal value for its condition
+	{if bio >> div >> bio /}
+	{else >> div >> $i18n 'No bio available' /}
+
+- Closing Tags without
+	{dog}{name /}:{weight /}{/}
+
+- Forward chaining:
+	{if bios >> $ul >> bios, 'bio' >> $li >> $span >> bio >> text /}
+
+- Backward chaining:
+	{text << bio << $span << $li << bios, 'bio' << $ul << if bios /}
+
+- "$" prefix for non-expressions:
+	$set, $partial $each, $with, $if, $print, $filter, $div, $tag, $ul, $uppercase, $decodeURI
+	Anything that doesnt start with a "$" is an expression, otherwise it is
+	resolved as a tag, helper, partial, or html tag
+
+- Default behavior on nameless tags:
+
+	"$each" on arrays:
+		{dogs, 'dog' >> $div >> dog.name /}
+
+	"$with" on objects:
+		{$ul >> dog}
+			name: {$li >> name /}
+			weight: {$li >> weight /}
+		{/}
+
+	"$if" on true, false, null, undefined:
+		{dog.isDead}
+			Dog is dead!
+		{/}
+	
+	"$print" on strings:
+		{dog /}
+	
+	"$filter" on functions: 
+		{$uppercase >> dog.name /}
+
+- HTML Tags with attributes:
+	{$ul $class('someClassName'), $id('25534') /}
+	{$ul $attr('class', 'name'), $attr('id', '253') /}
+- Passing variables to partials for template renderin:
+	{$partial 'i18n', 'label'} {label /} {i18n}
+	{$partial 'person'}
+		{if name >> li >> div}
+			{if email}
+				<a href="mailto:{print email /}"> {label /} </a>
+			{/}
+			{else >> span >> label /}
+			{if bio >> div >> bio /}
+			{else >> div >> $i18n 'No bio available' /}
+		{/}
+	{/}
+	{$ul >> friends, 'friend' >> $person}
+		{$set 'name', friend.name /}
+		{$set 'email', friend.email /}
+		{$set 'bio'}
+			{$p >> $print friend.bioIntro /}
+			{$p >> $print friend.bioDetails /}
+		{/}
+	{/}
+- Template inheritance ? Chained render ?
 - Render tag: {render "attribute", $key, $value /}
 - Break up library in multiple packages
 - Build for frontend-use (concat, minify)
@@ -43,12 +107,13 @@
 - Streamed renderer
 - Streamed builder
 - Streamed lexer
-- Syntax for chaining tags
-- Syntax for pre-filters with the "<<" markers
 - Async
 - "json" renderer
 - "dom" renderer
 - "xml" renderer
+- Make sure objects supplied as model are not used "as is", but instead each member is copied.
+- Figure out what to document about immutability vs mutability of model data
+- Refer to "model" instead of "data" everywhere
 - Return complex result & bindings through a callback:
 	ex.:
 	cook(template)(data, function (err, result) {
