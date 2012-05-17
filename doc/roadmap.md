@@ -15,13 +15,6 @@
 
 ## Backlog
 
-- Replace alternate tag syntax with continuous tags passing values
-	The "else" tag will read the $ifResult internal value for its condition
-	{if bio >> div >> bio /}
-	{else >> div >> $i18n 'No bio available' /}
-
-- Remove alternate tags syntax
-
 - Rename filter to something more generic like "call" or "function"
 
 - How could filter/call behave like a .map on collections ?

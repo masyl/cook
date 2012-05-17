@@ -1,8 +1,8 @@
 <div>
-	{filter uppercase($body) >> if not(isTrue) }
+	{if not(isTrue) >> apply uppercase($body)}
 		Dont show this...
 	{/}
-	{filter uppercase($body) >> if isTrue  }
+	{if isTrue >> apply uppercase($body)}
 		And show also this...
 	{/}
 </div>
