@@ -88,6 +88,7 @@ cookTestFile("if-else");
 cookTestFile("if-multiple-else");
 cookTestFile("if-else-if");
 cookTestFile("if-filtered");
+
 cookTestFile("apply-decodeURIComponent");
 cookTestFile("apply-encodeURIComponent");
 cookTestFile("apply-usingSingleFunction");

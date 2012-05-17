@@ -1,9 +1,9 @@
-{partial 'attribute', 'key', 'value'}
-	{li}{span key /}:{span value /}{/}
+{$partial 'attribute', 'key', 'value'}
+	{$li}{$span key /}:{$span value /}{/}
 {/}
-{div}
+{$div}
 	<ul>
-		{each dog}{$attribute $key, $value /}{/}
+		{$each dog}{$attribute $key, $value /}{/}
 	</ul>
 {/}
 ========================================

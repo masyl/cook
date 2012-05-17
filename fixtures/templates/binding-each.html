@@ -1,10 +1,10 @@
-{partial 'attribute', 'key', 'value'}
-		{bind key}{li}{print key /}:{bind 'value'}{span value /}{/}{/}{/}
+{$partial 'attribute', 'key', 'value'}
+		{$bind key}{$li}{$print key /}:{$bind 'value'}{$span value /}{/}{/}{/}
 {/}
-{bind 'dog'}
-{div}
+{$bind 'dog'}
+{$div}
 	<ul>
-		{each dog}{print $attribute($key, $value) /}{/}
+		{$each dog}{$print $attribute($key, $value) /}{/}
 	</ul>
 {/}{/}
 ========================================

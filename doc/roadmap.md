@@ -11,10 +11,7 @@
 
 ## Backlog
 
-- "$" prefix for non-expressions:
-	$set, $partial $each, $with, $if, $print, $filter, $div, $tag, $ul, $uppercase, $decodeURI
-	Anything that doesnt start with a "$" is an expression, otherwise it is
-	resolved as a tag, helper, partial, or html tag
+- Create "compact" version of each tests, using the most compact syntax possible
 
 - Default behavior on nameless tags:
 

@@ -1,8 +1,8 @@
 <div>
-	{!print}
+	{!$print}
 		<ul>
-			{each friends}
-				<li>{print $value.name /}</li>
+			{$each friends}
+				<li>{$print $value.name /}</li>
 			{/}
 		</ul>
 	{/}
