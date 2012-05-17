@@ -2,22 +2,14 @@
 
 ## Next up
 
-## Each
-
-- Test for multi-level "each" loops
-- "each" tag with a defined alias for the item
-
 ## Scoping and context
 
 - Multi-scope attribute value resolution using funex
 - Provide a base context for a whole instance of cook through an attribute like "$global"
 - "$root", "$parent", "$this" or "$global" values for targeting scope levels
+- Test for multi-level "each" loops
 
 ## Backlog
-
-- Rename filter to something more generic like "call" or "function"
-
-- How could filter/call behave like a .map on collections ?
 
 - "$" prefix for non-expressions:
 	$set, $partial $each, $with, $if, $print, $filter, $div, $tag, $ul, $uppercase, $decodeURI
@@ -49,6 +41,7 @@
 - HTML Tags with attributes:
 	{$ul $class('someClassName'), $id('25534') /}
 	{$ul $attr('class', 'name'), $attr('id', '253') /}
+
 - Passing variables to partials for template renderin:
 	{$partial 'i18n', 'label'} {label /} {i18n}
 	{$partial 'person'}
@@ -84,6 +77,8 @@
 - Escaping for "{" and "}" 
 - "eval" and eval() for evaluating funex expressions on the fly (inline or from vars)
 - Allow running in "bouble braket" mode for outputting json
+- How could filter/call behave like a .map on collections ?
+
 
 ## Error handling
 
