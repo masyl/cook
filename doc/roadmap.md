@@ -63,7 +63,6 @@
 		{/}
 	{/}
 - Template inheritance ? Chained render ?
-- Render tag: {render "attribute", $key, $value /}
 - Break up library in multiple packages
 - Build for frontend-use (concat, minify)
 - Api to register filters, and functions in the global scope

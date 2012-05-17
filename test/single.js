@@ -9,14 +9,14 @@ var fixtureData = {
 	username: "johndoe@acme.com",
 	firstname: "John",
 	lastname: "Doe",
-	not: function(exp) {return !exp;},
-	uppercase: function(a) {
+	not: function not(exp) {return !exp;},
+	uppercase: function uppercase(a) {
 		return a.toUpperCase();
 	},
-	lowercase: function(a) {
+	lowercase: function lowercase(a) {
 		return a.toLowerCase();
 	},
-	joinFullname: function(a, b) {
+	joinFullname: function joinFullname(a, b) {
 		return a + " " + b;
 	},
 	keywords: ["hoopla", "thingamabob", "whoopy", "dingus", "wooompff", "tagada!"],
@@ -83,8 +83,6 @@ function cookTestFile(name) {
 
 console.time("tests");
 
-//cookTestFile("partials-renderTag");
-
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -103,6 +101,7 @@ cookTestFile("print-filtered");
 cookTestFile("partials-useAsFunction");
 cookTestFile("partials-useAsTag");
 cookTestFile("partials-chainedWithEach");
+cookTestFile("partials-renderTag");
 cookTestFile("comment-poundSign");
 cookTestFile("comment-poundSignBlock");
 cookTestFile("comment-poundSignOnOpenTag");
