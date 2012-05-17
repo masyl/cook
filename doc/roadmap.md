@@ -11,6 +11,8 @@
 
 ## Backlog
 
+- Raise error if default tag doesnt start with "$"
+
 - Create "compact" version of each tests, using the most compact syntax possible
 
 - Default behavior on nameless tags:
