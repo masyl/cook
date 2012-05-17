@@ -74,9 +74,13 @@ function cookTestFile(name) {
 		input = split[0];
 		output = split[1];
 		var result = cook(input)(fixtureData);
-//		console.log(result);
-//		console.log("=======================================================================");
-//		console.log(output);
+		/*
+		console.log("=======================================================================");
+		console.log(result);
+		console.log("=======================================================================");
+		console.log(output);
+		console.log("=======================================================================");
+		*/
 		assert.equal(result, output);
 	});
 }
@@ -102,26 +106,34 @@ cookTestFile("apply-decodeURI");
 cookTestFile("apply-decodeURI-compact");
 cookTestFile("chaining-forward");
 cookTestFile("print");
+cookTestFile("print-compact");
 cookTestFile("print-withoutTag");
 cookTestFile("print-filtered");
 cookTestFile("partials-useAsFunction");
 cookTestFile("partials-useAsTag");
 cookTestFile("partials-chainedWithEach");
 cookTestFile("partials-renderTag");
+cookTestFile("partials-compact");
 cookTestFile("comment-poundSign");
 cookTestFile("comment-poundSignBlock");
 cookTestFile("comment-poundSignOnOpenTag");
 cookTestFile("each-array");
+cookTestFile("each-array-compact");
 cookTestFile("each-array-namedValue");
 cookTestFile("each-object");
+cookTestFile("each-object-compact");
 cookTestFile("each-object-namedValue");
 cookTestFile("tagless-apply");
+cookTestFile("tagless-apply-compact");
 cookTestFile("var");
 cookTestFile("with");
 cookTestFile("log");
+cookTestFile("log-compact");
 cookTestFile("whitespace-remove");
+cookTestFile("whitespace-remove-compact");
 cookTestFile("defaultTag");
 cookTestFile("defaultTag-withPartials");
 cookTestFile("binding-each");
+cookTestFile("binding-each-compact");
 
 console.timeEnd("tests");
