@@ -2,9 +2,6 @@
 
 ## Next up
 
-- Forward chaining:
-	{if bios >> $ul >> bios, 'bio' >> $li >> $span >> bio >> text /}
-
 ## Each
 
 - Test for multi-level "each" loops
@@ -22,6 +19,12 @@
 	The "else" tag will read the $ifResult internal value for its condition
 	{if bio >> div >> bio /}
 	{else >> div >> $i18n 'No bio available' /}
+
+- Remove alternate tags syntax
+
+- Rename filter to something more generic like "call" or "function"
+
+- How could filter/call behave like a .map on collections ?
 
 - "$" prefix for non-expressions:
 	$set, $partial $each, $with, $if, $print, $filter, $div, $tag, $ul, $uppercase, $decodeURI

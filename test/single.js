@@ -85,7 +85,12 @@ console.time("tests");
 
 //cookTestFile("partials-renderTag");
 
+cookTestFile("if");
+cookTestFile("if-else");
+cookTestFile("if-multiple-else");
+cookTestFile("if-else-if");
 cookTestFile("if-filtered");
+
 cookTestFile("print-filtered");
 cookTestFile("partials-chainedWithEach");
 cookTestFile("filter-decodeURIComponent");
@@ -95,10 +100,6 @@ cookTestFile("filter-withoutChaining");
 cookTestFile("filter-encodeURI");
 cookTestFile("filter-decodeURI");
 cookTestFile("chaining-forward");
-cookTestFile("if");
-cookTestFile("if-else");
-cookTestFile("if-multiple-else");
-cookTestFile("if-else-if");
 cookTestFile("print");
 cookTestFile("print-withoutTag");
 cookTestFile("partials-useAsFunction");
