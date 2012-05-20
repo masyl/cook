@@ -11,10 +11,6 @@
 
 ## Backlog
 
-- Raise error if default tag doesnt start with "$"
-
-- Create "compact" version of each tests, using the most compact syntax possible
-
 - Default behavior on nameless tags:
 
 	"$each" on arrays:
@@ -40,6 +36,8 @@
 - HTML Tags with attributes:
 	{$ul $class('someClassName'), $id('25534') /}
 	{$ul $attr('class', 'name'), $attr('id', '253') /}
+
+- Raise error if default tag doesnt start with "$"
 
 - Passing variables to partials for template renderin:
 	{$partial 'i18n', 'label'} {label /} {i18n}

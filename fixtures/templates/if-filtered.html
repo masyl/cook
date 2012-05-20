@@ -1,8 +1,8 @@
 <div>
-	{$if not(isTrue) >> $apply uppercase($body)}
+	{#if not(isTrue) >> #apply uppercase($body)}
 		Dont show this...
 	{/}
-	{$if isTrue >> $apply uppercase($body)}
+	{#if isTrue >> #apply uppercase($body)}
 		And show also this...
 	{/}
 </div>

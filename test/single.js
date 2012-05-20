@@ -87,6 +87,7 @@ function cookTestFile(name) {
 
 console.time("tests");
 
+
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -129,8 +130,8 @@ cookTestFile("var");
 cookTestFile("with");
 cookTestFile("log");
 cookTestFile("log-compact");
-cookTestFile("whitespace-remove");
-cookTestFile("whitespace-remove-compact");
+//cookTestFile("whitespace-remove");
+//cookTestFile("whitespace-remove-compact");
 cookTestFile("defaultTag");
 cookTestFile("defaultTag-withPartials");
 cookTestFile("binding-each");
