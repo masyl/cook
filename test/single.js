@@ -65,14 +65,16 @@ var fixtureData = {
  */
 function cookTestFile(name) {
 	var split,
+		description,
 		input,
 		output,
 		file = './fixtures/templates/' + name + '.html';
 	fs.readFile(file, function (err, data) {
 		console.log("Test: " + name);
 		split = data.toString().split("\n========================================\n");
-		input = split[0];
-		output = split[1];
+		if (split.length > 2) description = split.shift();
+		input = split.shift();
+		output = split.shift();
 		var result = cook(input)(fixtureData);
 		/*
 		console.log("=======================================================================");
@@ -87,7 +89,7 @@ function cookTestFile(name) {
 
 console.time("tests");
 
-
+/*
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -136,5 +138,16 @@ cookTestFile("defaultTag");
 cookTestFile("defaultTag-withPartials");
 cookTestFile("binding-each");
 cookTestFile("binding-each-compact");
+*/
+cookTestFile("auto-htmlTag");
+cookTestFile("auto-eachArray");
+cookTestFile("auto-eachArrayNamedValue");
+//cookTestFile("auto-withObject.html");
+//cookTestFile("auto-printObjectToString.html");
+//cookTestFile("auto-ifBoolean.html");
+//cookTestFile("auto-applyFunction.html");
+//cookTestFile("auto-printString.html");
+//cookTestFile("auto-printNumber.html");
+//cookTestFile("auto-printDate.html");
 
 console.timeEnd("tests");
