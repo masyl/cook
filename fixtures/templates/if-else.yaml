@@ -1,0 +1,18 @@
+  title:
+    "If tag followed by an else tag"
+
+  output: |-
+    <div>
+        
+            And show also this...
+        
+    </div>
+
+  input: |-
+    <div>
+        {#if not(isTrue) }
+            Dont show this...
+        {/}{#else}
+            And show also this...
+        {/}
+    </div>

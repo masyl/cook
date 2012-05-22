@@ -3,6 +3,7 @@ var
 	cook = require('../lib'),
 	fs = require('fs');
 
+// todo: load fixtures from an external standalone file
 var fixtureData = {
 	isFalse: false,
 	isTrue: true,
@@ -64,34 +65,31 @@ var fixtureData = {
  * @param name
  */
 function cookTestFile(name) {
-	var split,
-		description,
-		input,
-		output,
-		file = './fixtures/templates/' + name + '.html';
+	var test,
+		file = './fixtures/templates/' + name + '.yaml';
 	fs.readFile(file, function (err, data) {
-		console.log("Test: " + name);
-		split = data.toString().split("\n========================================\n");
-		if (split.length > 2) description = split.shift();
-		input = split.shift();
-		output = split.shift();
-		var result = cook(input)(fixtureData);
-		/*
-		console.log("=======================================================================");
-		console.log(result);
-		console.log("=======================================================================");
-		console.log(output);
-		console.log("=======================================================================");
-		*/
-		assert.equal(result, output);
+		test = require('js-yaml').load(data.toString());
+		var result = cook(test.input)(fixtureData);
+		console.log("Test: ", test.title);
+		try {
+			assert.equal(result, test.output);
+		} catch (err) {
+			console.log("RESULT:=======================================================================");
+			console.log(result);
+			console.log("EXPECTED:=======================================================================");
+			console.log(test.output);
+			console.log("ERROR:=======================================================================");
+			console.log(err);
+		}
 	});
 }
 
 console.time("tests");
 
-/*
+
 cookTestFile("if");
 cookTestFile("if-else");
+/*
 cookTestFile("if-multiple-else");
 cookTestFile("if-else-if");
 cookTestFile("if-filtered");
@@ -140,14 +138,14 @@ cookTestFile("binding-each");
 cookTestFile("binding-each-compact");
 */
 cookTestFile("auto-htmlTag");
-cookTestFile("auto-eachArray");
-cookTestFile("auto-eachArrayNamedValue");
-//cookTestFile("auto-withObject.html");
-//cookTestFile("auto-printObjectToString.html");
-//cookTestFile("auto-ifBoolean.html");
-//cookTestFile("auto-applyFunction.html");
-//cookTestFile("auto-printString.html");
-//cookTestFile("auto-printNumber.html");
-//cookTestFile("auto-printDate.html");
+//cookTestFile("auto-eachArray");
+//cookTestFile("auto-eachArrayNamedValue");
+//cookTestFile("auto-withObject");
+//cookTestFile("auto-printObjectToString");
+//cookTestFile("auto-ifBoolean");
+//cookTestFile("auto-applyFunction");
+//cookTestFile("auto-printString");
+//cookTestFile("auto-printNumber");
+//cookTestFile("auto-printDate");
 
 console.timeEnd("tests");

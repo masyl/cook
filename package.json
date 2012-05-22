@@ -1,30 +1,39 @@
 {
-	"name":"cook",
-	"description":"Tasty templating for server and browser",
-	"version":"0.1.0",
-	"homepage":"https://github.com/masyl/cook",
-	"keywords":["cook", "templating", "engine", "mustache", "template", "render"],
-	"repository":{
-		"type":"git",
-		"url":"git://github.com/masyl/Cook.git"
-	},
-	"author":"Mathieu Sylvain <mathieu@ti-coco.com> (https://github.com/masyl)",
-	"main":"lib/cook.js",
-	"directories":{
-		"lib":"lib",
-		"test":"test"
-	},
-	"scripts":{
-		"test":"mocha"
-	},
-	"engines":{
-		"node":">= v0.6.0"
-	},
-	"dependencies":{
-		"funex": "~0.1.0"
-	},
-	"devDependencies":{
-		"mocha": "1.x",
-		"should": "0.x"
-	}
+  "name": "cook",
+  "description": "Tasty templating for server and browser",
+  "version": "0.1.0",
+  "homepage": "https://github.com/masyl/cook",
+  "keywords": [
+    "cook",
+    "templating",
+    "engine",
+    "mustache",
+    "template",
+    "render"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/masyl/Cook.git"
+  },
+  "author": "Mathieu Sylvain <mathieu@ti-coco.com> (https://github.com/masyl)",
+  "main": "lib/cook.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "engines": {
+    "node": ">= v0.6.0"
+  },
+  "dependencies": {
+    "funex": "~0.1.0",
+    "yaml": "~0.2.3",
+    "js-yaml": "~0.3.7"
+  },
+  "devDependencies": {
+    "mocha": "1.x",
+    "should": "0.x"
+  }
 }

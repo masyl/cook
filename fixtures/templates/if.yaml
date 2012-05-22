@@ -1,0 +1,20 @@
+title:
+  "Simple 'if' tag example"
+
+output: |-
+  <div>
+      
+      
+          And show also this...
+      
+  </div>
+
+input: |-
+  <div>
+      {#if not(isTrue) }
+          Dont show this...
+      {/}
+      {#if isTrue }
+          And show also this...
+      {/}
+  </div>
