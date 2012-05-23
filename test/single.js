@@ -3,6 +3,10 @@ var
 	cook = require('../lib'),
 	fs = require('fs');
 
+function darkspaces(str) {
+	return str.replace(/\t/g, "\\t",0).replace(/\n/g, "\\n\n",0)
+}
+
 // todo: load fixtures from an external standalone file
 var fixtureData = {
 	isFalse: false,
@@ -81,9 +85,9 @@ function cookTestFile(name) {
 			assert.equal(result, output);
 		} catch (err) {
 			console.log("RESULT:===============================================");
-			console.log(result);
+			console.log(darkspaces(result));
 			console.log("EXPECTED:=============================================");
-			console.log(output);
+			console.log(darkspaces(output));
 			console.log("ERROR:================================================");
 			console.log(err);
 		}
@@ -108,8 +112,13 @@ cookTestFile("apply-encodeURI");
 cookTestFile("apply-encodeURI-compact");
 cookTestFile("apply-decodeURI");
 cookTestFile("apply-decodeURI-compact");
+cookTestFile("binding-each");
+cookTestFile("binding-each-compact");
+cookTestFile("chaining-forward");
+cookTestFile("comment-poundSign");
+cookTestFile("comment-poundSignBlock");
+cookTestFile("comment-poundSignOnOpenTag");
 /*
- cookTestFile("chaining-forward");
 cookTestFile("print");
 cookTestFile("print-compact");
 cookTestFile("print-withoutTag");
@@ -119,9 +128,6 @@ cookTestFile("partials-useAsTag");
 cookTestFile("partials-chainedWithEach");
 cookTestFile("partials-renderTag");
 cookTestFile("partials-compact");
-cookTestFile("comment-poundSign");
-cookTestFile("comment-poundSignBlock");
-cookTestFile("comment-poundSignOnOpenTag");
 cookTestFile("each-array");
 cookTestFile("each-array-compact");
 cookTestFile("each-array-namedValue");
@@ -138,8 +144,6 @@ cookTestFile("whitespace-remove");
 cookTestFile("whitespace-remove-compact");
 cookTestFile("defaultTag");
 cookTestFile("defaultTag-withPartials");
-cookTestFile("binding-each");
-cookTestFile("binding-each-compact");
 */
 cookTestFile("auto-htmlTag");
 //cookTestFile("auto-eachArray");

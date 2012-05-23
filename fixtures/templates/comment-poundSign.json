@@ -1,15 +1,13 @@
-<div>
-\t{! #print joinFullname(firstname, lastname) /}
-</div>
-========================================
-<div>
-\t
-</div>
-
 {
-"title":"",
-"output":[
-],
-"input":[
-]
+	"title":"",
+	"output":[
+		"<div>",
+		"\t",
+		"</div>"
+	],
+	"input":[
+		"<div>",
+		"\t{! #print joinFullname(firstname, lastname) /}",
+		"</div>"
+	]
 }
