@@ -1,0 +1,9 @@
+{
+	"title":"Apply the decodeURIComponent and encodeURIComponent functions consecutivelly (compact syntax)",
+	"output":[
+		"<div><div>This is <blink>html</blink>!</div></div>"
+	],
+	"input":[
+		"{#div >> $decodeURIComponent >> $encodeURIComponent >> html /}"
+	]
+}

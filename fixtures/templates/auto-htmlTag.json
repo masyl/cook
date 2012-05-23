@@ -1,0 +1,9 @@
+{
+	"title":"Automatic html tag",
+	"output":[
+		"<div><ul><li><span>woot!</span></li></ul></div>"
+	],
+	"input":[
+		"{#div >> #ul >> #li >> #span }woot!{/}"
+	]
+}

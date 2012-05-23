@@ -1,0 +1,21 @@
+{
+	"title":"If tag following by an else with a condition",
+	"output":[
+		"<div>",
+		"\t",
+		"\t\tAnd show also this...",
+		"\t",
+		"</div>"
+	],
+	"input":[
+		"<div>",
+		"\t{#if not(isTrue) }",
+		"\t\tDont show this...",
+		"\t{/}{#else not(not(isFalse)) }",
+		"\t\tAnd not this either...",
+		"\t{/}{#else}",
+		"\t\tAnd show also this...",
+		"\t{/}",
+		"</div>"
+	]
+}

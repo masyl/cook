@@ -1,0 +1,16 @@
+<div>
+\t{#apply lowercase($body) >> #print joinFullname(firstname, lastname) /}
+</div>
+========================================
+<div>
+\tjohn doe
+</div>
+
+
+{
+"title":"",
+"output":[
+],
+"input":[
+]
+}

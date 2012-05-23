@@ -1,0 +1,21 @@
+{
+	"title":"",
+	"output":[
+		"<div>",
+		"\t",
+		"\t",
+		"\t\tAND SHOW ALSO THIS...",
+		"\t",
+		"</div>"
+	],
+	"input":[
+		"<div>",
+		"\t{#if not(isTrue) >> #apply uppercase($body)}",
+		"\t\tDont show this...",
+		"\t{/}",
+		"\t{#if isTrue >> #apply uppercase($body)}",
+		"\t\tAnd show also this...",
+		"\t{/}",
+		"</div>"
+	]
+}

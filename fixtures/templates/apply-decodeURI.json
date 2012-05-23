@@ -1,0 +1,13 @@
+{
+	"title":"Apply the decodeURI and encodeURI functions consecutivelly",
+	"output":[
+		"<div>",
+		"\t<div>This is <blink>html</blink>!</div>",
+		"</div>"
+	],
+	"input":[
+		"<div>",
+		"\t{#apply $decodeURI($encodeURI($body)) >> #print html /}",
+		"</div>"
+	]
+}

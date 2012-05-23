@@ -1,0 +1,9 @@
+{
+	"title":"Apply the decodeURI helper function (compact syntax)",
+	"output":[
+		"<div><div>This is <blink>html</blink>!</div></div>"
+	],
+	"input":[
+		"{#div >> $decodeURI >> $encodeURI >> html /}"
+	]
+}

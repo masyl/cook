@@ -1,0 +1,13 @@
+{
+	"title":"Apply the encodeURI helper function",
+	"output":[
+		"<div>",
+		"\t%3Cdiv%3EThis%20is%20%3Cblink%3Ehtml%3C/blink%3E!%3C/div%3E",
+		"</div>"
+	],
+	"input":[
+		"<div>",
+		"\t{#apply $encodeURI($body) >> #print html /}",
+		"</div>"
+	]
+}

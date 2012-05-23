@@ -28,9 +28,7 @@
     "node": ">= v0.6.0"
   },
   "dependencies": {
-    "funex": "~0.1.0",
-    "yaml": "~0.2.3",
-    "js-yaml": "~0.3.7"
+    "funex": "~0.1.0"
   },
   "devDependencies": {
     "mocha": "1.x",

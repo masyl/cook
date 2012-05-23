@@ -1,0 +1,26 @@
+{#partial 'emailLink', 'label', 'email' }<li><a href="mailto:{#print email /}">{#print label /}</a></li>{/}
+<ul>
+\t{#each friends, 'friend'}
+\t\t{#render 'emailLink', friend.name, friend.email /}
+\t{/}
+</ul>
+========================================
+
+<ul>
+\t
+\t\t<li><a href="mailto:tom@gmail.com">Tom Thomson</a></li>
+\t
+\t\t<li><a href="mailto:jackjackson@gmail.com">Jack Jackson</a></li>
+\t
+\t\t<li><a href="mailto:bigwill69@gmail.com">Will Williamson</a></li>
+\t
+</ul>
+
+
+{
+"title":"",
+"output":[
+],
+"input":[
+]
+}

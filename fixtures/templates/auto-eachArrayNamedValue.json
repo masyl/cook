@@ -1,0 +1,13 @@
+Note that whe the each tag is implied as an automatic, you still need to put
+the comma before the second argument
+========================================
+{#div >> #ul >> keywords, 'keyword' >> #li >> keyword /}
+========================================
+<div><ul><li>hoopla</li><li>thingamabob</li><li>whoopy</li><li>dingus</li><li>wooompff</li><li>tagada!</li></ul></div>
+{
+"title":"",
+"output":[
+],
+"input":[
+]
+}

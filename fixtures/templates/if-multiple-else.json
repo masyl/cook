@@ -1,0 +1,21 @@
+{
+	"title":"If tag with multiple else tag following.",
+	"input":[
+		"<div>",
+		"\t{#if not(isTrue) }",
+		"\t\t\tDont show this...",
+		"\t\t{/}{#else}",
+		"\t\t\tAnd show this...",
+		"\t{/}{#else}",
+		"\t\\ttBut not this one ...",
+		"\t{/}",
+		"</div>"
+	],
+	"output":[
+		"<div>",
+		"\t",
+		"\t\t\tAnd show this...",
+		"\t",
+		"</div>"
+	]
+}

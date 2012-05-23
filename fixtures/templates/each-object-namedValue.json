@@ -1,0 +1,19 @@
+<div>
+\t<ul>
+\t\tt{#each dog, 'attribute'}<li>{#print $key /}:{#print attribute /}</li>{/}
+\t</ul>
+</div>
+========================================
+<div>
+\t<ul>
+\t\t<li>weight:10</li><li>legs:4</li><li>color:blue</li><li>name:spot</li>
+\t</ul>
+</div>
+
+{
+"title":"",
+"output":[
+],
+"input":[
+]
+}

@@ -1,0 +1,6 @@
+{#with colors}
+\t{#print colors.label /}{#print red /}, {#print white /}, {#print blue /}
+{/}
+========================================
+
+	Colors: #FF0000, #000000, #0000FF

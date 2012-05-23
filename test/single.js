@@ -65,20 +65,26 @@ var fixtureData = {
  * @param name
  */
 function cookTestFile(name) {
-	var test,
-		file = './fixtures/templates/' + name + '.yaml';
+	var file = './fixtures/templates/' + name + '.json';
 	fs.readFile(file, function (err, data) {
-		test = require('js-yaml').load(data.toString());
-		var result = cook(test.input)(fixtureData);
+		try {
+			var test = JSON.parse(data);
+		} catch (e) {
+			console.error("Failed on : ", name);
+			throw e;	
+		}
+		var input = test.input.join("\n");
+		var output = test.output.join("\n");
+		var result = cook(input)(fixtureData);
 		console.log("Test: ", test.title);
 		try {
-			assert.equal(result, test.output);
+			assert.equal(result, output);
 		} catch (err) {
-			console.log("RESULT:=======================================================================");
+			console.log("RESULT:===============================================");
 			console.log(result);
-			console.log("EXPECTED:=======================================================================");
-			console.log(test.output);
-			console.log("ERROR:=======================================================================");
+			console.log("EXPECTED:=============================================");
+			console.log(output);
+			console.log("ERROR:================================================");
 			console.log(err);
 		}
 	});
@@ -89,7 +95,6 @@ console.time("tests");
 
 cookTestFile("if");
 cookTestFile("if-else");
-/*
 cookTestFile("if-multiple-else");
 cookTestFile("if-else-if");
 cookTestFile("if-filtered");
@@ -99,13 +104,12 @@ cookTestFile("apply-encodeURIComponent");
 cookTestFile("apply-encodeURIComponent-compact");
 cookTestFile("apply-usingSingleFunction");
 cookTestFile("apply-usingSingleFunction-compact");
-cookTestFile("apply-withoutChaining");
-cookTestFile("apply-withoutChaining-compact");
 cookTestFile("apply-encodeURI");
 cookTestFile("apply-encodeURI-compact");
 cookTestFile("apply-decodeURI");
 cookTestFile("apply-decodeURI-compact");
-cookTestFile("chaining-forward");
+/*
+ cookTestFile("chaining-forward");
 cookTestFile("print");
 cookTestFile("print-compact");
 cookTestFile("print-withoutTag");
