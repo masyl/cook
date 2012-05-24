@@ -2,14 +2,10 @@
 	"title":"",
 	"output":[
 		"",
-		"<ul>",
-		"\t<li><a href='mailto:tom@gmail.com'>Tom Thomson</a></li><li><a href='mailto:jackjackson@gmail.com'>Jack Jackson</a></li><li><a href='mailto:bigwill69@gmail.com'>Will Williamson</a></li>",
-		"</ul>"
+		"<ul><li><a href='mailto:tom@gmail.com'>Tom Thomson</a></li><li><a href='mailto:jackjackson@gmail.com'>Jack Jackson</a></li><li><a href='mailto:bigwill69@gmail.com'>Will Williamson</a></li></ul>"
 	],
 	"input":[
 		"{#partial 'emailLink', 'label', 'email' }<li><a href='mailto:{#print email /}'>{#print label /}</a></li>{/}",
-		"<ul>",
-		"\t{#each friends >> #emailLink $value.name, $value.email /}",
-		"</ul>"
+		"<ul>{#each friends >> #emailLink $value.name, $value.email /}</ul>"
 	]
 }

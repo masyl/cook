@@ -105,7 +105,7 @@ function cookTestFile(name) {
 }
 
 console.time("tests");
-
+/*
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -162,5 +162,7 @@ cookTestFile("auto-printDate");
 cookTestFile("auto-printObjectToString");
 cookTestFile("auto-ifBoolean");
 cookTestFile("attr-onElem");
+*/
+cookTestFile("partials-attrs");
 
 console.timeEnd("tests");

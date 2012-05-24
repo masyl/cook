@@ -10,25 +10,26 @@
 - Test for multi-level "each" loops
 
 ## Backlog
+- Each on object should behave like a "with"
 - Passing attributes to a patial using the attr tag
 - Passing variables to partials for template renderin:
-	{$partial 'i18n', 'label'} {label /} {i18n}
-	{$partial 'person'}
-		{if name >> li >> div}
-			{if email}
-				<a href="mailto:{print email /}"> {label /} </a>
+	{#partial 'i18n', 'label'} {label /} {i18n}
+	{#partial 'person'}
+		{#if name >> #li >> #div}
+			{#if email}
+				<a href="mailto:{#print email /}"> {label /} </a>
 			{/}
-			{else >> span >> label /}
-			{if bio >> div >> bio /}
-			{else >> div >> $i18n 'No bio available' /}
+			{#else >> #span >> label /}
+			{#if bio >> #div >> bio /}
+			{#else >> #div >> #i18n 'No bio available' /}
 		{/}
 	{/}
-	{$ul >> friends, 'friend' >> $person}
-		{$set 'name', friend.name /}
-		{$set 'email', friend.email /}
-		{$set 'bio'}
-			{$p >> $print friend.bioIntro /}
-			{$p >> $print friend.bioDetails /}
+	{#ul >> friends, 'friend' >> $person}
+		{#attr 'name', friend.name /}
+		{#attr 'email', friend.email /}
+		{#attr 'bio'}
+			{#p >> #print friend.bioIntro /}
+			{#p >> #print friend.bioDetails /}
 		{/}
 	{/}
 - "eval" and eval() for evaluating funex expressions on the fly (inline or from vars)
