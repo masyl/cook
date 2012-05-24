@@ -1,16 +1,13 @@
-<div>
-\t{#print username /}
-</div>
-========================================
-<div>
-\tjohndoe@acme.com
-</div>
-
-
 {
-"title":"",
-"output":[
-],
-"input":[
-]
+	"title":"",
+	"output":[
+		"<div>",
+		"\tjohndoe@acme.com",
+		"</div>"
+	],
+	"input":[
+		"<div>",
+		"\t{#print username /}",
+		"</div>"
+	]
 }

@@ -1,12 +1,9 @@
-{#div >> #ul >> #each dog >> #li}{$key /}:{$value /}{/}
-========================================
-<div><ul><li>weight:10</li><li>legs:4</li><li>color:blue</li><li>name:spot</li></ul></div>
-
-
 {
-"title":"",
-"output":[
-],
-"input":[
-]
+	"title":"",
+	"output":[
+		"<div><ul><li>weight:10</li><li>legs:4</li><li>color:blue</li><li>name:spot</li></ul></div>"
+	],
+	"input":[
+		"{#div >> #ul >> #each dog >> #li}{$key /}:{$value /}{/}"
+	]
 }

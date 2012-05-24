@@ -1,15 +1,13 @@
-<div>
-\t{ username /}
-</div>
-========================================
-<div>
-\tjohndoe@acme.com
-</div>
-
 {
-"title":"",
-"output":[
-],
-"input":[
-]
+	"title":"",
+	"output":[
+		"<div>",
+		"\tjohndoe@acme.com",
+		"</div>"
+	],
+	"input":[
+		"<div>",
+		"\t{ username /}",
+		"</div>"
+	]
 }

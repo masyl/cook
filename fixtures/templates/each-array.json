@@ -1,19 +1,17 @@
-<div>
-\t<ul>
-\t\t{#each keywords}<li>{#print $value /}</li>{/}
-\t</ul>
-</div>
-========================================
-<div>
-\t<ul>
-\t\t<li>hoopla</li><li>thingamabob</li><li>whoopy</li><li>dingus</li><li>wooompff</li><li>tagada!</li>
-\t</ul>
-</div>
-
 {
-"title":"",
-"output":[
-],
-"input":[
-]
+	"title":"",
+	"output":[
+		"<div>",
+		"\t<ul>",
+		"\t\t<li>hoopla</li><li>thingamabob</li><li>whoopy</li><li>dingus</li><li>wooompff</li><li>tagada!</li>",
+		"\t</ul>",
+		"</div>"
+	],
+	"input":[
+		"<div>",
+		"\t<ul>",
+		"\t\t{#each keywords}<li>{#print $value /}</li>{/}",
+		"\t</ul>",
+		"</div>"
+	]
 }

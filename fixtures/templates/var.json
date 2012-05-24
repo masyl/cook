@@ -1,12 +1,19 @@
-{#var 'blockVar' }lorem ipsum block!{/}
-{#var 'inlineVar', 'lorem ipsum inline!' /}
-{#print blockVar /}
-{#print inlineVar /}
-{#var 'blockVar' }Var defined too late!{/}
-{#var 'inlineVar', 'Var defined too late!' /}
-========================================
-
-
-lorem ipsum block!
-lorem ipsum inline!
-
+{
+	"title":"",
+	"output":[
+		"",
+		"",
+		"lorem ipsum block!",
+		"lorem ipsum inline!",
+		"",
+		""
+	],
+	"input":[
+		"{#var 'blockVar' }lorem ipsum block!{/}",
+		"{#var 'inlineVar', 'lorem ipsum inline!' /}",
+		"{#print blockVar /}",
+		"{#print inlineVar /}",
+		"{#var 'blockVar' }Var defined too late!{/}",
+		"{#var 'inlineVar', 'Var defined too late!' /}"
+	]
+}

@@ -1,11 +1,9 @@
-{#div >> #ul >> keywords >> #li >> $value /}
-========================================
-<div><ul><li>hoopla</li><li>thingamabob</li><li>whoopy</li><li>dingus</li><li>wooompff</li><li>tagada!</li></ul></div>
-
 {
-"title":"",
-"output":[
-],
-"input":[
-]
+	"title":"",
+	"output":[
+		"<div><ul><li>hoopla</li><li>thingamabob</li><li>whoopy</li><li>dingus</li><li>wooompff</li><li>tagada!</li></ul></div>"
+	],
+	"input":[
+		"{#div >> #ul >> keywords >> #li >> $value /}"
+	]
 }

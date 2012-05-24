@@ -1,31 +1,29 @@
-{#partial 'attribute', 'key', 'value'}
-	{#li}{#span key /}:{#span value /}{/}
-{/}
-{#div}
-	<ul>
-		{#each dog}{#attribute $key, $value /}{/}
-	</ul>
-{/}
-========================================
-
-<div>
-	<ul>
-		
-	<li><span>weight</span>:<span>10</span></li>
-
-	<li><span>legs</span>:<span>4</span></li>
-
-	<li><span>color</span>:<span>blue</span></li>
-
-	<li><span>name</span>:<span>spot</span></li>
-
-	</ul>
-</div>
-
 {
-"title":"",
-"output":[
-],
-"input":[
-]
+	"title":"",
+	"output":[
+		"",
+		"<div>",
+		"\t<ul>",
+		"\t\t",
+		"\t<li><span>weight</span>:<span>10</span></li>",
+		"",
+		"\t<li><span>legs</span>:<span>4</span></li>",
+		"",
+		"\t<li><span>color</span>:<span>blue</span></li>",
+		"",
+		"\t<li><span>name</span>:<span>spot</span></li>",
+		"",
+		"\t</ul>",
+		"</div>"
+	],
+	"input":[
+		"{#partial 'attribute', 'key', 'value'}",
+		"\t{#li}{#span key /}:{#span value /}{/}",
+		"{/}",
+		"{#div}",
+		"\t<ul>",
+		"\t\t{#each dog}{#attribute $key, $value /}{/}",
+		"\t</ul>",
+		"{/}"
+	]
 }

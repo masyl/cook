@@ -1,13 +1,11 @@
-{#partial 'emailLink', 'label', 'email' >> #li }<a href="mailto:{email /}">{label /}</a>{/}
-{#ul >> friends, 'friend' >> #emailLink friend.name, friend.email /}
-========================================
-
-<ul><li><a href="mailto:tom@gmail.com">Tom Thomson</a></li><li><a href="mailto:jackjackson@gmail.com">Jack Jackson</a></li><li><a href="mailto:bigwill69@gmail.com">Will Williamson</a></li></ul>
-
 {
-"title":"",
-"output":[
-],
-"input":[
-]
+	"title":"",
+	"output":[
+		"",
+		"<ul><li><a href='mailto:tom@gmail.com'>Tom Thomson</a></li><li><a href='mailto:jackjackson@gmail.com'>Jack Jackson</a></li><li><a href='mailto:bigwill69@gmail.com'>Will Williamson</a></li></ul>"
+	],
+	"input":[
+		"{#partial 'emailLink', 'label', 'email' >> #li }<a href='mailto:{email /}'>{label /}</a>{/}",
+		"{#ul >> friends, 'friend' >> #emailLink friend.name, friend.email /}"
+	]
 }

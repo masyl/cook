@@ -1,15 +1,13 @@
-{#apply $log >> #with colors}
-\t{#print colors.label /}{#print red /}, {#print white /}, {#print blue /}
-{/}
-========================================
-
-\tColors: #FF0000, #000000, #0000FF
-
-
 {
-"title":"",
-"output":[
-],
-"input":[
-]
+	"title":"",
+	"output":[
+		"",
+		"\tColors: #FF0000, #000000, #0000FF",
+		""
+	],
+	"input":[
+		"{#apply $log >> #with colors}",
+		"\t{#print colors.label /}{#print red /}, {#print white /}, {#print blue /}",
+		"{/}"
+	]
 }

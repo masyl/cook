@@ -80,7 +80,7 @@ function cookTestFile(name) {
 		var input = test.input.join("\n");
 		var output = test.output.join("\n");
 		var result = cook(input)(fixtureData);
-		console.log("Test: ", test.title);
+		console.log("Test: ", test.title || "{" + name + "}");
 		try {
 			assert.equal(result, output);
 		} catch (err) {
@@ -118,7 +118,6 @@ cookTestFile("chaining-forward");
 cookTestFile("comment-poundSign");
 cookTestFile("comment-poundSignBlock");
 cookTestFile("comment-poundSignOnOpenTag");
-/*
 cookTestFile("print");
 cookTestFile("print-compact");
 cookTestFile("print-withoutTag");
@@ -144,7 +143,6 @@ cookTestFile("whitespace-remove");
 cookTestFile("whitespace-remove-compact");
 cookTestFile("defaultTag");
 cookTestFile("defaultTag-withPartials");
-*/
 cookTestFile("auto-htmlTag");
 //cookTestFile("auto-eachArray");
 //cookTestFile("auto-eachArrayNamedValue");

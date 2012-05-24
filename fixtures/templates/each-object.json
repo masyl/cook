@@ -1,19 +1,17 @@
-<div>
-\t<ul>
-\t\t{#each dog}<li>{#print $key /}:{#print $value /}</li>{/}
-\t</ul>
-</div>
-========================================
-<div>
-\t<ul>
-\t\t<li>weight:10</li><li>legs:4</li><li>color:blue</li><li>name:spot</li>
-\t</ul>
-</div>
-
 {
-"title":"",
-"output":[
-],
-"input":[
-]
+	"title":"",
+	"output":[
+		"<div>",
+		"\t<ul>",
+		"\t\t<li>weight:10</li><li>legs:4</li><li>color:blue</li><li>name:spot</li>",
+		"\t</ul>",
+		"</div>"
+	],
+	"input":[
+		"<div>",
+		"\t<ul>",
+		"\t\t{#each dog}<li>{#print $key /}:{#print $value /}</li>{/}",
+		"\t</ul>",
+		"</div>"
+	]
 }
