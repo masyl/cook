@@ -1,0 +1,16 @@
+
+{
+	"title":"Attribut tag on an element",
+	"output":[
+		"<span class='isActive'></span>",
+		"<div id='content1' class='mainContent'></div>",
+		"<ul class='mainContent' id='content1'></ul>",
+		"<em id='content1' class='mainContent'></em>"
+	],
+	"input":[
+		"{#span >> #attr 'class'}isActive{/}",
+		"{#div >> #attr 'class', 'mainContent' >> #attr 'id', 'content1' /}",
+		"{#ul}{#attr 'class', 'mainContent'/}{#attr 'id', 'content1' /}{/}",
+		"{#em}{#attr 'class', 'mainContent'}{#attr 'id', 'content1' /}{/}{/}"
+	]
+}

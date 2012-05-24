@@ -11,10 +11,6 @@
 
 ## Backlog
 
-- HTML Tags with attributes:
-	{$ul $class('someClassName'), $id('25534') /}
-	{$ul $attr('class', 'name'), $attr('id', '253') /}
-
 - Passing variables to partials for template renderin:
 	{$partial 'i18n', 'label'} {label /} {i18n}
 	{$partial 'person'}

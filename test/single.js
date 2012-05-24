@@ -150,9 +150,9 @@ cookTestFile("log");
 cookTestFile("log-compact");
 cookTestFile("whitespace-remove");
 cookTestFile("whitespace-remove-compact");
-cookTestFile("elementTag");
-cookTestFile("elementTag-withPartials");
-cookTestFile("auto-elementTag");
+cookTestFile("elemTag");
+cookTestFile("elemTag-withPartials");
+cookTestFile("auto-elemTag");
 cookTestFile("auto-applyFunction");
 cookTestFile("auto-eachArray");
 cookTestFile("auto-eachArrayNamedValue");
@@ -161,7 +161,7 @@ cookTestFile("auto-printString");
 cookTestFile("auto-printNumber");
 cookTestFile("auto-printDate");
 cookTestFile("auto-printObjectToString");
-
 cookTestFile("auto-ifBoolean");
+cookTestFile("attr-onElem");
 
 console.timeEnd("tests");
