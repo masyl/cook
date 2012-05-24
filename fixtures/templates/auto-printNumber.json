@@ -1,0 +1,9 @@
+{
+	"title":"Auto print tag on Numbers",
+	"output":[
+		"Dalmatian cout: 101"
+	],
+	"input":[
+		"Dalmatian cout: {dalmatians /}"
+	]
+}

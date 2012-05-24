@@ -1,0 +1,9 @@
+{
+	"title":"Auto with tag on objects",
+	"output":[
+		"Colors: #FF0000, #000000, #0000FF"
+	],
+	"input":[
+		"{colors}{label /}{red /}, {white /}, {blue /}{/}"
+	]
+}

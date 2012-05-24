@@ -1,5 +1,6 @@
 {
-	"title":"Note that whe the each tag is implied as an automatic, you still need to put the comma before the second argument",
+	"title":"Auto each tag on array with name value",
+	"notes":"Note that whe the each tag is implied as an automatic, you still need to put the comma before the second argument",
 	"output":[
 		"<div><ul><li>hoopla</li><li>thingamabob</li><li>whoopy</li><li>dingus</li><li>wooompff</li><li>tagada!</li></ul></div>"
 	],

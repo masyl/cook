@@ -1,0 +1,9 @@
+{
+	"title":"Auto print tag on String",
+	"output":[
+		"Lorem: Ipsum"
+	],
+	"input":[
+		"Lorem: {lorem /}"
+	]
+}

@@ -1,5 +1,5 @@
 {
-	"title":"",
+	"title":"Auto each tag on arrays",
 	"output":[
 		"<div><ul><li>hoopla</li><li>thingamabob</li><li>whoopy</li><li>dingus</li><li>wooompff</li><li>tagada!</li></ul></div>"
 	],

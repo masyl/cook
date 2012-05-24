@@ -10,35 +10,10 @@
 - Test for multi-level "each" loops
 
 ## Backlog
-- Try YAML for writing test content
-
-- Default behavior on nameless tags:
-
-	"$each" on arrays:
-		{dogs, 'dog' >> $div >> dog.name /}
-
-	"$with" on objects:
-		{$ul >> dog}
-			name: {$li >> name /}
-			weight: {$li >> weight /}
-		{/}
-
-	"$if" on true, false, null, undefined:
-		{dog.isDead}
-			Dog is dead!
-		{/}
-	
-	"$print" on strings:
-		{dog /}
-	
-	"$filter" on functions: 
-		{$uppercase >> dog.name /}
 
 - HTML Tags with attributes:
 	{$ul $class('someClassName'), $id('25534') /}
 	{$ul $attr('class', 'name'), $attr('id', '253') /}
-
-- Raise error if default tag doesnt start with "$"
 
 - Passing variables to partials for template renderin:
 	{$partial 'i18n', 'label'} {label /} {i18n}

@@ -9,6 +9,7 @@ function darkspaces(str) {
 
 // todo: load fixtures from an external standalone file
 var fixtureData = {
+	year2000: new Date("2000-01-01"),
 	isFalse: false,
 	isTrue: true,
 	username: "johndoe@acme.com",
@@ -61,9 +62,18 @@ var fixtureData = {
 		f: "f6",
 		g: "g7",
 		h: "h8"
-	}
+	},
+	dalmatians: 101,
+	lorem: "Ipsum",
+	isUndefined:  void 0,
+	thingamabob1: new Thingamabob(1)
 };
 
+function Thingamabob (id) {
+	this.toString = function () {
+		return "Thingamabob:" + id;
+	}
+}
 /**
  * Render a template in the "/fixtures/templates" and compare to the expected output
  * @param name
@@ -95,7 +105,6 @@ function cookTestFile(name) {
 }
 
 console.time("tests");
-
 
 cookTestFile("if");
 cookTestFile("if-else");
@@ -141,17 +150,18 @@ cookTestFile("log");
 cookTestFile("log-compact");
 cookTestFile("whitespace-remove");
 cookTestFile("whitespace-remove-compact");
-cookTestFile("defaultTag");
-cookTestFile("defaultTag-withPartials");
-cookTestFile("auto-htmlTag");
-//cookTestFile("auto-eachArray");
-//cookTestFile("auto-eachArrayNamedValue");
-//cookTestFile("auto-withObject");
-//cookTestFile("auto-printObjectToString");
-//cookTestFile("auto-ifBoolean");
-//cookTestFile("auto-applyFunction");
-//cookTestFile("auto-printString");
-//cookTestFile("auto-printNumber");
-//cookTestFile("auto-printDate");
+cookTestFile("elementTag");
+cookTestFile("elementTag-withPartials");
+cookTestFile("auto-elementTag");
+cookTestFile("auto-applyFunction");
+cookTestFile("auto-eachArray");
+cookTestFile("auto-eachArrayNamedValue");
+cookTestFile("auto-withObject");
+cookTestFile("auto-printString");
+cookTestFile("auto-printNumber");
+cookTestFile("auto-printDate");
+cookTestFile("auto-printObjectToString");
+
+cookTestFile("auto-ifBoolean");
 
 console.timeEnd("tests");

@@ -1,0 +1,9 @@
+{
+	"title":"Auto print tag on Dates",
+	"output":[
+		"The future: Fri Dec 31 1999 19:00:00 GMT-0500 (EST)"
+	],
+	"input":[
+		"The future: {year2000 /}"
+	]
+}

@@ -1,0 +1,9 @@
+{
+	"title":"Auto print object to string",
+	"output":[
+		"Thingamabob:1"
+	],
+	"input":[
+		"{thingamabob1 /}"
+	]
+}

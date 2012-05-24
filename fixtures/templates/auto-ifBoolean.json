@@ -1,0 +1,9 @@
+{
+	"title":"Auto if on boolean",
+	"output":[
+		"John"
+	],
+	"input":[
+		"{isTrue >> firstname /}{isFalse >> lastname /}{isUndefined >> 'dont show this either' /}"
+	]
+}
