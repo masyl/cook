@@ -10,7 +10,7 @@
 - Test for multi-level "each" loops
 
 ## Backlog
-
+- Passing attributes to a patial using the attr tag
 - Passing variables to partials for template renderin:
 	{$partial 'i18n', 'label'} {label /} {i18n}
 	{$partial 'person'}
@@ -31,21 +31,19 @@
 			{$p >> $print friend.bioDetails /}
 		{/}
 	{/}
+- "eval" and eval() for evaluating funex expressions on the fly (inline or from vars)
+- Escaping for "{" and "}" 
 - Template inheritance ? Chained render ?
-- Break up library in multiple packages
 - Build for frontend-use (concat, minify)
+- register helpers, tags, filters and etc through a "use" method
 - Api to register filters, and functions in the global scope
 - Test descriptions in the fixture templates
 - Support handlers for catching the render tree
 - Event listeners on lexing, building and rendering
 - Code comments and method signatures
 - Clean all to-do's
-- register helpers, tags, filters and etc through a "use" method
 - The lexer should return tokens as objects instead of arrays for better inspection
-- Escaping for "{" and "}" 
-- "eval" and eval() for evaluating funex expressions on the fly (inline or from vars)
 - Allow running in "bouble braket" mode for outputting json
-- How could filter/call behave like a .map on collections ?
 
 
 ## Error handling

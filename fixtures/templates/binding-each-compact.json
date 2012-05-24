@@ -6,6 +6,6 @@
 	],
 	"input":[
 		"{#partial 'attribute', 'key', 'value' >> #bind key >> #li}{key /}:{#bind 'value' >> #span value /}{/}",
-		"{#bind 'dog' >> #div >> #ul >> #each dog >> #print $attribute($key, $value) /}"
+		"{#bind 'dog' >> #div >> #ul >> #each dog >> #attribute $key, $value /}"
 	]
 }

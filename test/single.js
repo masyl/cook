@@ -90,7 +90,7 @@ function cookTestFile(name) {
 		var input = test.input.join("\n");
 		var output = test.output.join("\n");
 		var result = cook(input)(fixtureData);
-		console.log("Test: ", test.title || "{" + name + "}");
+		console.log("Test: ", test.title + "  {" + name + "}");
 		try {
 			assert.equal(result, output);
 		} catch (err) {
@@ -131,7 +131,6 @@ cookTestFile("print");
 cookTestFile("print-compact");
 cookTestFile("print-withoutTag");
 cookTestFile("print-filtered");
-cookTestFile("partials-useAsFunction");
 cookTestFile("partials-useAsTag");
 cookTestFile("partials-chainedWithEach");
 cookTestFile("partials-renderTag");
