@@ -1,0 +1,11 @@
+{
+	"title":"Auto tag on partials",
+	"output":[
+		"",
+		"<a href='mailto:tom@gmail.com'>Tom Thomson</a><a href='mailto:jackjackson@gmail.com'>Jack Jackson</a><a href='mailto:bigwill69@gmail.com'>Will Williamson</a>"
+	],
+	"input":[
+		"{#partial 'emailLink' >> #a }{#attr 'href'}mailto:{email /}{/}{label /}{/}",
+		"{friends, 'friend' >> #emailLink >> #attr 'label', friend.name >> #attr 'email', friend.email /}"
+	]
+}

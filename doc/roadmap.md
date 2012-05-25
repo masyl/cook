@@ -2,6 +2,8 @@
 
 ## Next up
 
+- Auto tag on Partials
+
 ## Scoping and context
 
 - Multi-scope attribute value resolution using funex
