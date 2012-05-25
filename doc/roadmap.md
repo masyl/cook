@@ -2,8 +2,6 @@
 
 ## Next up
 
-- Auto tag on Partials
-
 ## Scoping and context
 
 - Multi-scope attribute value resolution using funex
@@ -12,7 +10,6 @@
 - Test for multi-level "each" loops
 
 ## Backlog
-- "eval" and eval() for evaluating funex expressions on the fly (inline or from vars)
 - Escaping for "{" and "}" 
 - Template inheritance ? Chained render ?
 - Build for frontend-use (concat, minify)
@@ -26,7 +23,7 @@
 - Clean all to-do's
 - The lexer should return tokens as objects instead of arrays for better inspection
 - Allow running in "bouble braket" mode for outputting json
-
+- Refer to "model" instead of "data" everywhere
 
 ## Error handling
 
@@ -36,19 +33,12 @@
 - Make the error message/output configurable
 - Errors should contain an output of where is has failed exactly
 
+#External addons:
 
-## Advanced features:
-
-- Streamed renderer
-- Streamed builder
-- Streamed lexer
-- Async
+- "eval" and eval() for evaluating funex expressions on the fly (inline or from vars)
 - "json" renderer
 - "dom" renderer
 - "xml" renderer
-- Make sure objects supplied as model are not used "as is", but instead each member is copied.
-- Figure out what to document about immutability vs mutability of model data
-- Refer to "model" instead of "data" everywhere
 - Return complex result & bindings through a callback:
 	ex.:
 	cook(template)(data, function (err, result) {
@@ -58,4 +48,13 @@
 		result.bindings // Contains the list of bindings
 	})
 - Bindings with bind tag and exposed bindings
+
+## Advanced features:
+
+- Streamed renderer
+- Streamed builder
+- Streamed lexer
+- Async
+- Make sure objects supplied as model are not used "as is", but instead each member is copied.
+- Figure out what to document about immutability vs mutability of model data
 
