@@ -32,6 +32,20 @@ var fixtureData = {
 		color: "blue",
 		name: "spot"
 	},
+	cats: [
+		{
+			name: "Mr.Kibs",
+			color: "brown"
+		},
+		{
+			name: "Foofoo",
+			color: "white"
+		},
+		{
+			name: "Stew",
+			color: "caramel"
+		}
+	],
 	friends: [
 		{
 			name: "Tom Thomson",
@@ -164,5 +178,7 @@ cookTestFile("auto-ifBoolean");
 cookTestFile("auto-partials");
 cookTestFile("attr-onElem");
 cookTestFile("attr-onPartials");
+
+cookTestFile("each-valueIsObject");
 
 console.timeEnd("tests");

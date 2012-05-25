@@ -12,33 +12,12 @@
 - Test for multi-level "each" loops
 
 ## Backlog
-- Each on object should behave like a "with"
-- Passing attributes to a patial using the attr tag
-- Passing variables to partials for template renderin:
-	{#partial 'i18n', 'label'} {label /} {i18n}
-	{#partial 'person'}
-		{#if name >> #li >> #div}
-			{#if email}
-				<a href="mailto:{#print email /}"> {label /} </a>
-			{/}
-			{#else >> #span >> label /}
-			{#if bio >> #div >> bio /}
-			{#else >> #div >> #i18n 'No bio available' /}
-		{/}
-	{/}
-	{#ul >> friends, 'friend' >> $person}
-		{#attr 'name', friend.name /}
-		{#attr 'email', friend.email /}
-		{#attr 'bio'}
-			{#p >> #print friend.bioIntro /}
-			{#p >> #print friend.bioDetails /}
-		{/}
-	{/}
 - "eval" and eval() for evaluating funex expressions on the fly (inline or from vars)
 - Escaping for "{" and "}" 
 - Template inheritance ? Chained render ?
 - Build for frontend-use (concat, minify)
-- register helpers, tags, filters and etc through a "use" method
+- register partials, helpers, tags, filters and etc through a "use" method
+- resolver for external partials
 - Api to register filters, and functions in the global scope
 - Test descriptions in the fixture templates
 - Support handlers for catching the render tree

@@ -1,0 +1,9 @@
+{
+	"title":"",
+	"output":[
+		"<ul><li>Mr.Kibs : brown</li><li>Foofoo : white</li><li>Stew : caramel</li></ul>"
+	],
+	"input":[
+		"{#ul >> #each cats >> #li}{name /} : {color /}{/}"
+	]
+}
