@@ -26,6 +26,11 @@
 - Documentation
 - Samples and live tutorial
 - Connectivity with major frameworks: express, flatiron, jquery, etc.
+- Build command with npm
+- Test command with npm and mocha
+- Update Git Page
+- Benchmarking
+- Comparison with other libs
 
 ## Error handling
 
