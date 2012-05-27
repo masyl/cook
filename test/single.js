@@ -109,7 +109,7 @@ function formatErr(err, test) {
 }
 
 tests = [
-	"binding-each"
+	"attr-onPartials"
 ];
 tests = require("../fixtures/tests.js");
 
