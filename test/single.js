@@ -1,106 +1,119 @@
 var assert = require('assert');
 var cook = require('../lib');
 var fs = require('fs');
-
 var fixtureData = require("../fixtures/sample-context.js");
+var tests;
 
 /**
  * Render a template in the "/fixtures/templates" and compare to the expected output
- * @param name
  */
-function cookTestFile(name) {
-	var file = './fixtures/templates/' + name + '.json';
-	fs.readFile(file, function (err, data) {
+function Test(id) {
+	this.id = id;
+	this.input = "";
+	this.output = "";
+	this.title = "";
+	this.result = undefined;
+	this.run = function (callback) {
 		try {
-			var test = JSON.parse(data);
-		} catch (e) {
-			console.error("Failed on : ", name);
-			throw e;	
-		}
-		var input = test.input.join("\n");
-		var output = test.output.join("\n");
-		var result = cook(input)(fixtureData);
-		console.log("Test: ", test.title + "  {" + name + "}");
-		try {
-			assert.equal(result, output);
+			this.result = cook(this.input)(fixtureData.main);
+			assert.equal(this.result, this.output);
+			callback(null, this);
 		} catch (err) {
-			console.log("RESULT:===============================================");
-			console.log(darkspaces(result));
-			console.log("EXPECTED:=============================================");
-			console.log(darkspaces(output));
-			console.log("ERROR:================================================");
-			console.log(err);
+			callback(err, this);
 		}
-	});
+		return this;
+	};
+	this.load = function (callback) {
+		var test = this;
+		var file = './fixtures/templates/' + test.id + '.json';
+		fs.readFile(file, function (err, data) {
+			if (err) callback(err);
+			try {
+				var testData = JSON.parse(data);
+				test.title = testData.title;
+				test.input = testData.input.join("\n");
+				test.output = testData.output.join("\n");
+			} catch (e) {
+				callback(e);
+			}
+			callback(null, test);
+		});
+		return this;
+	}
+
 }
 
-function darkspaces(str) {
-	return str.replace(/\t/g, "\\t",0).replace(/\n/g, "\\n\n",0)
+function load(Ids, callback) {
+	var i;
+	var test;
+	var tests = [];
+	var loadedTests = [];
+	for (i = 0; i < Ids.length; i++) {
+		test = new Test(Ids[i]).load(onLoaded);
+		tests.push(test);
+	}
+	function onLoaded(err, test) {
+		if (err) throw err;
+		loadedTests.push(test);
+		if (loadedTests.length == tests.length) {
+			callback(null, loadedTests);
+		}
+	}
+
+	return tests;
 }
 
+function run(tests) {
+	var i;
+	console.time("tests");
+	var errors = "";
+	var failed = [];
+	console.log = function () {
+	};
+	for (i = 0; i < tests.length; i++) {
+		tests[i].run(function (err, test) {
+			if (err) {
+				process.stdout.write("✗");
+				failed.push(test.id);
+				errors = errors + (formatErr(err, test));
+			} else {
+				process.stdout.write("✓");
+			}
+		});
+	}
+	process.stdout.write("\n");
+	console.timeEnd("tests");
+	if (errors) {
+		process.stdout.write(failed.length + " FAILED TESTS: " + failed.join(", ") + "\n");
+		process.stdout.write(errors);
+	} else {
+		process.stdout.write("SUCCESS!\n");
+	}
+}
 
-console.time("tests");
-cookTestFile("if-filtered");
+function formatErr(err, test) {
+	return "\n===============================================\n" +
+		"ERROR:\n" +
+		err + "\n" +
+		"FAILED: " +
+		test.title + "  {" + test.id + "}\n" +
+		"RESULT:\n" +
+		darkspaces(test.result) + "\n" +
+		"EXPECTED:\n" +
+		darkspaces(test.output) + "\n" +
+		"===============================================\n";
+	function darkspaces(str) {
+		if (str) return str.replace(/\t/g, "\\t", 0).replace(/\n/g, "\\n\n", 0);
+		return "";
+	}
+}
 
-/*
-cookTestFile("if");
-cookTestFile("if-else");
-cookTestFile("if-multiple-else");
-cookTestFile("if-else-if");
-cookTestFile("if-filtered");
-cookTestFile("apply-decodeURIComponent");
-cookTestFile("apply-decodeURIComponent-compact");
-cookTestFile("apply-encodeURIComponent");
-cookTestFile("apply-encodeURIComponent-compact");
-cookTestFile("apply-usingSingleFunction");
-cookTestFile("apply-usingSingleFunction-compact");
-cookTestFile("apply-encodeURI");
-cookTestFile("apply-encodeURI-compact");
-cookTestFile("apply-decodeURI");
-cookTestFile("apply-decodeURI-compact");
-cookTestFile("binding-each");
-cookTestFile("binding-each-compact");
-cookTestFile("chaining-forward");
-cookTestFile("comment-poundSign");
-cookTestFile("comment-poundSignBlock");
-cookTestFile("comment-poundSignOnOpenTag");
-cookTestFile("print");
-cookTestFile("print-compact");
-cookTestFile("print-withoutTag");
-cookTestFile("print-filtered");
-cookTestFile("partials-useAsTag");
-cookTestFile("partials-chainedWithEach");
-cookTestFile("partials-renderTag");
-cookTestFile("partials-compact");
-cookTestFile("each-array");
-cookTestFile("each-array-compact");
-cookTestFile("each-array-namedValue");
-cookTestFile("each-object");
-cookTestFile("each-object-compact");
-cookTestFile("each-object-namedValue");
-cookTestFile("tagless-apply");
-cookTestFile("tagless-apply-compact");
-cookTestFile("var");
-cookTestFile("with");
-cookTestFile("log");
-cookTestFile("log-compact");
-cookTestFile("whitespace-remove");
-cookTestFile("whitespace-remove-compact");
-cookTestFile("elemTag");
-cookTestFile("elemTag-withPartials");
-cookTestFile("auto-elemTag");
-cookTestFile("auto-applyFunction");
-cookTestFile("auto-eachArray");
-cookTestFile("auto-eachArrayNamedValue");
-cookTestFile("auto-withObject");
-cookTestFile("auto-printString");
-cookTestFile("auto-printNumber");
-cookTestFile("auto-printDate");
-cookTestFile("auto-printObjectToString");
-cookTestFile("auto-ifBoolean");
-cookTestFile("auto-partials");
-cookTestFile("attr-onElem");
-cookTestFile("attr-onPartials");
-cookTestFile("each-valueIsObject");
-*/
-console.timeEnd("tests");
+tests = [
+	"if-else"
+];
+tests = require("../fixtures/tests.js");
+
+load(tests, function (err, tests) {
+	run(tests);
+});
+
