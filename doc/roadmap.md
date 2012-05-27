@@ -12,11 +12,12 @@
 ## Backlog
 - Template inheritance ? Chained render ? "Extend" ?
 - Lookup Jinja to see how feature coverage compares
-- Escaping for "{" and "}" 
-- Allow running in "bouble braket" mode for outputting json
+- Escaping for "{" and "}"
+- Allow running in "double braket" mode for less risky escaping
 - register partials, helpers, tags, filters and etc through a "use" method
 - resolver for external partials
 - Refer to "model" instead of "data" everywhere
+- Basic builtin functions to simplify the use of funex syntax
 
 ## Distribution
 - Code comments and method signatures
@@ -48,7 +49,7 @@
 - The lexer should return tokens as objects instead of arrays for better inspection
 
 #External addons:
-
+- i18n functions
 - "eval" and eval() for evaluating funex expressions on the fly (inline or from vars)
 - "json" renderer
 - "dom" renderer

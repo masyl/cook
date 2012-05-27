@@ -119,7 +119,9 @@ function cookTestFile(name) {
 }
 
 console.time("tests");
+cookTestFile("if-filtered");
 
+/*
 cookTestFile("if");
 cookTestFile("if-else");
 cookTestFile("if-multiple-else");
@@ -178,7 +180,6 @@ cookTestFile("auto-ifBoolean");
 cookTestFile("auto-partials");
 cookTestFile("attr-onElem");
 cookTestFile("attr-onPartials");
-
 cookTestFile("each-valueIsObject");
-
+*/
 console.timeEnd("tests");
