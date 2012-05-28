@@ -4,14 +4,9 @@
 
 ## Scoping and context
 
-- Multi-scope attribute value resolution using funex
-- Provide a base context for a whole instance of cook through an attribute like "$global"
-- "$root", "$parent", "$this" or "$global" values for targeting scope levels
 - Test for multi-level "each", partial, with and other tag that create a new closure/scope
 
 ## Backlog
-- Figure out a better way to bubble up "attrs" to relevant tags
-- Figure out a better and more extensible syntax for instructions (such as $removeWhitespaces with the @)
 - In elemTag: Todo: render element body before args are rendered, so that args can process the body
 - Figure out if "bind" should be used inside a tag like "attrs", or wrap a tag from outside
 - Figure out if partials should be specific to the closure they we're created in, like javascript in general
@@ -23,6 +18,12 @@
 - resolver for external partials
 - Refer to "model" instead of "data" everywhere
 - Basic builtin functions to simplify the use of funex syntax
+
+## Optimizations
+- Figure out a better way to bubble up "attrs" to relevant tags
+- Figure out a better and more extensible syntax for instructions (such as $removeWhitespaces with the @)
+- Firgure out a better way to control whitespace (better than $removeWhitespaces on the $root frame)
+
 
 ## Distribution
 - Code comments and method signatures
