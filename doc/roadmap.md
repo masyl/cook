@@ -11,6 +11,7 @@
 
 ## Backlog
 - Figure out a better way to bubble up "attrs" to relevant tags
+- Figure out a better and more extensible syntax for instructions (such as $removeWhitespaces with the @)
 - In elemTag: Todo: render element body before args are rendered, so that args can process the body
 - Figure out if "bind" should be used inside a tag like "attrs", or wrap a tag from outside
 - Figure out if partials should be specific to the closure they we're created in, like javascript in general
