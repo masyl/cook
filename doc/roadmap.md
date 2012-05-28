@@ -9,13 +9,14 @@
 - Test for multi-level "each", partial, with and other tag that create a new closure/scope
 
 ## Backlog
-- [HIGH] Firgure out a better way to control whitespace (better than $removeWhitespaces on the $root frame)
-- [HIGH] Rename the "var" tag to a more generic "set"
-- [HIGH] Enable html escaping by default, with option/tag do disable it
+- [HIGH] Simplification: Try a syntax without the "#" prefix for tags and a "=" prefix for values instead
+- [HIGH] Simplification: Firgure out a better way to control whitespace (better than $removeWhitespaces on the $root frame)
+- [HIGH] Simplification: Rename the "var" tag to a more generic "set"
+- [HIGH] Simplification: Enable html escaping by default, with option/tag do disable it
+- [HIGH] Simplification: Put all "each" vars inside a $loop object for less context polution
 - [HIGH] Default core values in the $root frame (true, false, undefined, null, etc)
 - [HIGH] Test for recursive rendering using partials
 - [HIGH] "void" or "do" tag for evaluating arguments or child tags without rendering them (Ex.: to affect state)
-- [HIGH] Put all "each" vars inside a $loop object for less context polution
 - [MEDIUM] In elemTag: Todo: render element body before args are rendered, so that args can process the body
 - [MEDIUM] Test: Output a template containing {} using a raw tag
 - [MEDIUM] register partials, helpers, tags, filters and etc through a "use" method
