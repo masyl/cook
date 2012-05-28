@@ -9,9 +9,9 @@
 	],
 	"input":[
 		"<div>",
-		"    {#if not(isTrue) }",
+		"    {if not(isTrue) }",
 		"        Dont show this...",
-		"    {/}{#else}",
+		"    {/}{else}",
 		"        And show also this...",
 		"    {/}",
 		"</div>"

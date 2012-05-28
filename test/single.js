@@ -14,8 +14,8 @@ function Test(id) {
 	this.title = "";
 	this.result = undefined;
 	this.run = function (callback) {
+		this.result = cook(this.input)(fixtureData.main);
 		try {
-			this.result = cook(this.input)(fixtureData.main);
 			assert.equal(this.result, this.output);
 			callback(null, this);
 		} catch (err) {
@@ -109,7 +109,7 @@ function formatErr(err, test) {
 }
 
 tests = [
-	"escaping-mustaches"
+	"if-else"
 ];
 tests = require("../fixtures/tests.js");
 

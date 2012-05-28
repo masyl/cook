@@ -8,10 +8,10 @@ module.exports.main = {
 	lastname: "Doe",
 	not: function not(exp) {return !exp;},
 	uppercase: function uppercase(a) {
-		return a.toUpperCase();
+		return (a+"").toUpperCase();
 	},
 	lowercase: function lowercase(a) {
-		return a.toLowerCase();
+		return (a+"").toLowerCase();
 	},
 	joinFullname: function joinFullname(a, b) {
 		return a + " " + b;

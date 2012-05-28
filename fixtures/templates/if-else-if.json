@@ -9,11 +9,11 @@
 	],
 	"input":[
 		"<div>",
-		"\t{#if not(isTrue) }",
+		"\t{if not(isTrue) }",
 		"\t\tDont show this...",
-		"\t{/}{#else not(not(isFalse)) }",
+		"\t{/}{else not(not(isFalse)) }",
 		"\t\tAnd not this either...",
-		"\t{/}{#else}",
+		"\t{/}{else}",
 		"\t\tAnd show also this...",
 		"\t{/}",
 		"</div>"

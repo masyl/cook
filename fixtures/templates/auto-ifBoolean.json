@@ -4,6 +4,6 @@
 		"John"
 	],
 	"input":[
-		"{isTrue >> firstname /}{isFalse >> lastname /}{isUndefined >> 'dont show this either' /}"
+		"{=isTrue >> =firstname /}{=isFalse >> =lastname /}{=isUndefined >> ='dont show this either' /}"
 	]
 }
