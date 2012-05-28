@@ -7,7 +7,7 @@
 	],
 	"input":[
 		"<div>",
-		"\t{#apply $encodeURI >> #print}<div>This is <blink>html</blink>!</div>{/}",
+		"\t{apply $encodeURI >> print}<div>This is <blink>html</blink>!</div>{/}",
 		"</div>"
 	]
 }

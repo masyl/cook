@@ -7,7 +7,7 @@
 	],
 	"input":[
 		"<div>",
-		"\t{ username /}",
+		"\t{=username /}",
 		"</div>"
 	]
 }

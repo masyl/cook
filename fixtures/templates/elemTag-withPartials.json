@@ -17,12 +17,12 @@
 		"</div>"
 	],
 	"input":[
-		"{#partial 'attribute', 'key', 'value'}",
-		"\t{#li}{#span key /}:{#span value /}{/}",
+		"{partial 'attribute', 'key', 'value'}",
+		"\t{li}{span key /}:{span value /}{/}",
 		"{/}",
-		"{#div}",
+		"{div}",
 		"\t<ul>",
-		"\t\t{#each dog}{#attribute $key, $value /}{/}",
+		"\t\t{each dog}{attribute $key, $value /}{/}",
 		"\t</ul>",
 		"{/}"
 	]

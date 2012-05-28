@@ -4,6 +4,6 @@
 		"<div><div>This is <blink>html</blink>!</div></div>"
 	],
 	"input":[
-		"{#div >> $decodeURI >> $encodeURI >> html /}"
+		"{div >> =$decodeURI >> =$encodeURI >> =html /}"
 	]
 }

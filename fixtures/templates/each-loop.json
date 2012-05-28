@@ -25,7 +25,7 @@
 		"\t\t<tr><th>index</th><th>key</th><th>value</th><th>isFirst</th><th>isLast</th><th>isOdd</th><th>length</th></tr>",
 		"\t</thead>",
 		"\t<tbody>",
-		"\t\t{#each loopElements}<tr><td>{#print $index /}</td><td>{#print $key /}</td><td>{#print $value /}</td><td>{#print $isFirst /}</td><td>{#print $isLast /}</td><td>{#print $isOdd /}</td><td>{#print $length /}</td></tr>",
+		"\t\t{each loopElements}<tr><td>{print $index /}</td><td>{print $key /}</td><td>{print $value /}</td><td>{print $isFirst /}</td><td>{print $isLast /}</td><td>{print $isOdd /}</td><td>{print $length /}</td></tr>",
 		"\t\t{/}",
 		"\t</tbody>",
 		"</table>"

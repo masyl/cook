@@ -8,9 +8,9 @@
 		"</div>"
 	],
 	"input":[
-		"{#div}",
-		"\t{#ul}",
-		"\t\t{#each dog}<li>{#print $key /}:{#print $value /}</li>{/}",
+		"{div}",
+		"\t{ul}",
+		"\t\t{each dog}<li>{print $key /}:{print $value /}</li>{/}",
 		"\t{/}",
 		"{/}"
 	]

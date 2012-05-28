@@ -4,6 +4,6 @@
 		"Colors: #FF0000, #000000, #0000FF"
 	],
 	"input":[
-		"{$log >> #with colors}{colors.label /}{red /}, {white /}, {blue /}{/}"
+		"{=$log >> with colors}{=colors.label /}{=red /}, {=white /}, {=blue /}{/}"
 	]
 }

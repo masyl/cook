@@ -4,6 +4,6 @@
 		"Thingamabob:1"
 	],
 	"input":[
-		"{thingamabob1 /}"
+		"{=thingamabob1 /}"
 	]
 }

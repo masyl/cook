@@ -8,9 +8,9 @@
 		"<em id='content1' class='mainContent'></em>"
 	],
 	"input":[
-		"{#span >> #attr 'class'}isActive{/}",
-		"{#div >> #attr 'class', 'mainContent' >> #attr 'id', 'content1' /}",
-		"{#ul}{#attr 'class', 'mainContent'/}{#attr 'id', 'content1' /}{/}",
-		"{#em}{#attr 'class', 'mainContent'}{#attr 'id', 'content1' /}{/}{/}"
+		"{span >> attr 'class'}isActive{/}",
+		"{div >> attr 'class', 'mainContent' >> attr 'id', 'content1' /}",
+		"{ul}{attr 'class', 'mainContent'/}{attr 'id', 'content1' /}{/}",
+		"{em}{attr 'class', 'mainContent'}{attr 'id', 'content1' /}{/}{/}"
 	]
 }

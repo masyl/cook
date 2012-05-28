@@ -7,7 +7,7 @@
 	],
 	"input":[
 		"<div>",
-		"\t{#apply lowercase($body) >> #print joinFullname(firstname, lastname) /}",
+		"\t{apply lowercase($body) >> print joinFullname(firstname, lastname) /}",
 		"</div>"
 	]
 }

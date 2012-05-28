@@ -4,6 +4,6 @@
 		"Colors: #FF0000, #000000, #0000FF"
 	],
 	"input":[
-		"{colors}{label /}{red /}, {white /}, {blue /}{/}"
+		"{=colors}{=label /}{=red /}, {=white /}, {=blue /}{/}"
 	]
 }

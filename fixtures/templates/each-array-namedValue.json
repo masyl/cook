@@ -10,7 +10,7 @@
 	"input":[
 		"<div>",
 		"\t<ul>",
-		"\t\t{#each keywords, 'keyword'}<li>{#print keyword /}</li>{/}",
+		"\t\t{each keywords, 'keyword'}<li>{print keyword /}</li>{/}",
 		"\t</ul>",
 		"</div>"
 	]

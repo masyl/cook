@@ -4,6 +4,6 @@
 		"Lorem: Ipsum"
 	],
 	"input":[
-		"Lorem: {lorem /}"
+		"Lorem: {=lorem /}"
 	]
 }
