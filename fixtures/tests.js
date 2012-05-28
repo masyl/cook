@@ -57,5 +57,6 @@ module.exports = [
 	"auto-partials",
 	"attr-onElem",
 	"attr-onPartials",
-	"each-valueIsObject"
+	"each-valueIsObject",
+	"escaping-mustaches"
 ];

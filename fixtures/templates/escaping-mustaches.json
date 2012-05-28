@@ -1,0 +1,13 @@
+{
+	"title":"",
+	"output":[
+		"<div>",
+		"\t{ johndoe@acme.com }",
+		"</div>"
+	],
+	"input":[
+		"<div>",
+		"\t{ {#print username /} }",
+		"</div>"
+	]
+}

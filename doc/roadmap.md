@@ -2,27 +2,45 @@
 
 ## Next up
 
+- Escaping for "{" and "}"
+
 ## Scoping and context
 
 - Test for multi-level "each", partial, with and other tag that create a new closure/scope
 
 ## Backlog
+- [HIGH] Firgure out a better way to control whitespace (better than $removeWhitespaces on the $root frame)
+- Rename the "var" tag to a more generic "set"
+- Enable html escaping by default, with option/tag do disable it
+- Ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
+- Mechanism for resolving external "partials"
+- Default values (true, false, undefined, null, etc)
+- Mechanism for "importing" the partials and variables inside a partial without rendering it (see jinja import)
 - In elemTag: Todo: render element body before args are rendered, so that args can process the body
 - Figure out if "bind" should be used inside a tag like "attrs", or wrap a tag from outside
 - Figure out if partials should be specific to the closure they we're created in, like javascript in general
 - Template inheritance ? Chained render ? "Extend" ?
+- Test: Output a template containing {} using a raw tag
 - Lookup Jinja to see how feature coverage compares
-- Escaping for "{" and "}"
 - Allow running in "double braket" mode for less risky escaping
 - register partials, helpers, tags, filters and etc through a "use" method
 - resolver for external partials
 - Refer to "model" instead of "data" everywhere
-- Basic builtin functions to simplify the use of funex syntax
+- Basic builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
+- $revindex in the "each" tag closure
+- In the each tag, something similare to the "loop.cycle" of Jinja
+- Test for recursive rendering using partials
+- Match the list of Jinja builtin Filters
+- Match the list of Jinja builtin Tests
+- Match the list of Jinja builtin Global Functions (helpers)
+- "void" or "do" tag for evaluating arguments or child tags without rendering them (Ex.: to affect state)
+- Syntax/tag to "continue" or "break" inside an "each"tag
+- Put all "each" vars inside a $loop object for less context polution
+- Ease of access to the frame of the parent $loop
 
 ## Optimizations
-- Figure out a better way to bubble up "attrs" to relevant tags
-- Figure out a better and more extensible syntax for instructions (such as $removeWhitespaces with the @)
-- Firgure out a better way to control whitespace (better than $removeWhitespaces on the $root frame)
+- [LOW] Figure out a better way to bubble up "attrs" to relevant tags
+- [MEDIUM] Figure out a better and more extensible syntax for instructions (such as $removeWhitespaces with the @)
 
 
 ## Distribution
