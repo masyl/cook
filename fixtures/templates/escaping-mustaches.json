@@ -1,5 +1,5 @@
 {
-	"title":"",
+	"title":"Using double curly brackets for outputing a single raw curly bracket",
 	"output":[
 		"<div>",
 		"\t{ johndoe@acme.com }",
@@ -7,7 +7,7 @@
 	],
 	"input":[
 		"<div>",
-		"\t{ {#print username /} }",
+		"\t{{ {#print username /} }}",
 		"</div>"
 	]
 }

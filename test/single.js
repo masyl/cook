@@ -109,7 +109,7 @@ function formatErr(err, test) {
 }
 
 tests = [
-	"attr-onPartials"
+	"escaping-mustaches"
 ];
 tests = require("../fixtures/tests.js");
 
