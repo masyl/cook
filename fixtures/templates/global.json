@@ -1,0 +1,17 @@
+{
+	"title":"",
+	"output":[
+		"",
+		"",
+		"lorem ipsum block!",
+		"lorem ipsum inline!",
+		"",
+		""
+	],
+	"input":[
+		"{div}{global 'blockVar' }lorem ipsum block!{/}{/}",
+		"{global 'inlineVar', 'lorem ipsum inline!' /}",
+		"{print blockVar /}",
+		"{print inlineVar /}"
+	]
+}
