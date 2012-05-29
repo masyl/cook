@@ -1,0 +1,9 @@
+{
+	"title":"void tag",
+	"output":[
+		"<div></div>"
+	],
+	"input":[
+		"<div>{void username}And nothing to show here!!!{/}</div>"
+	]
+}
