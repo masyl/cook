@@ -3,17 +3,16 @@
 ## Next up
 
 ## Backlog
-
+= [HIGH] Figure out if there is a practical difference between templates and partials, and if there should be a simple "macro" syntax
+- [HIGH] global tag similar to set, but which affect a $globals var on the $root instead of the current frame
+- [HIGH] import tag for importing the partials and globals of another template without rendering it (is it same as void?)
 - [HIGH] Figure out if partials should be specific to the closure they we're created in, like javascript in general
 - [HIGH] Tests for recursive rendering using partials
 - [HIGH] Tests for closures, context and frames
 - [MEDIUM] api: register partials, helpers, tags, filters and etc through a "use" method
 - [MEDIUM] api: resolver for external partials
-- [MEDIUM] Simplification: Firgure out a better way to control whitespace (better than $removeWhitespaces on the $root frame)
-- [MEDIUM] Ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
-- [MEDIUM] Mechanism for resolving external "partials"
-- [MEDIUM] Mechanism for "importing" the partials and variables inside a partial without rendering it (see jinja import)
-- [MEDIUM] Basic builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
+- [MEDIUM] api: ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
+- [MEDIUM] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
 
 Backlog for 1.0
 - [MEDIUM] A "safe" tag for escaping html and attributes against XSS
