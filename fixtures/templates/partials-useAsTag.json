@@ -16,7 +16,7 @@
 		"{partial 'emailLink', 'label', 'email' }<li><a href='mailto:{print email /}'>{print label /}</a></li>{/}",
 		"<ul>",
 		"\t{each friends}",
-		"\t\t{emailLink $value.name, $value.email /}",
+		"\t\t{emailLink $loop.value.name, $loop.value.email /}",
 		"\t{/}",
 		"</ul>"
 	]

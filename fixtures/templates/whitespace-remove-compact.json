@@ -4,6 +4,6 @@
 		"<div><ul><li>Tom Thomson</li><li>Jack Jackson</li><li>Will Williamson</li></ul></div>"
 	],
 	"input":[
-		"{div >> print >> ul >> each friends >> li >> print $value.name /}"
+		"{div >> print >> ul >> each friends >> li >> print $loop.value.name /}"
 	]
 }

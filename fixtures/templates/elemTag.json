@@ -10,7 +10,7 @@
 	"input":[
 		"{div}",
 		"\t{ul}",
-		"\t\t{each dog}<li>{print $key /}:{print $value /}</li>{/}",
+		"\t\t{each dog}<li>{print $loop.key /}:{print $loop.value /}</li>{/}",
 		"\t{/}",
 		"{/}"
 	]

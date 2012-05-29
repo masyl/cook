@@ -10,7 +10,7 @@
 	"input":[
 		"<div>",
 		"\t<ul>",
-		"\t\t{each keywords}<li>{print $value /}</li>{/}",
+		"\t\t{each keywords}<li>{print $loop.value /}</li>{/}",
 		"\t</ul>",
 		"</div>"
 	]

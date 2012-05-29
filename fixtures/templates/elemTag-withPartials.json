@@ -22,7 +22,7 @@
 		"{/}",
 		"{div}",
 		"\t<ul>",
-		"\t\t{each dog}{attribute $key, $value /}{/}",
+		"\t\t{each dog}{attribute $loop.key, $loop.value /}{/}",
 		"\t</ul>",
 		"{/}"
 	]

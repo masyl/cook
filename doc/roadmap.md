@@ -11,7 +11,6 @@
 
 - [HIGH] Simplification: Firgure out a better way to control whitespace (better than $removeWhitespaces on the $root frame)
 - [HIGH] Simplification: Enable html escaping by default, with option/tag do disable it
-- [HIGH] Simplification: Put all "each" vars inside a $loop object for less context polution
 - [HIGH] Default core values in the $root frame (true, false, undefined, null, etc)
 - [HIGH] Test for recursive rendering using partials
 - [HIGH] "void" or "do" tag for evaluating arguments or child tags without rendering them (Ex.: to affect state)
