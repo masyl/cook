@@ -6,6 +6,6 @@
 	],
 	"input":[
 		"{partial 'emailLink' >> a }{attr 'href'}mailto:{=email /}{/}{=label /}{/}",
-		"{=friends, 'friend' >> =emailLink >> attr 'label', friend.name >> attr 'email', friend.email /}"
+		"{=friends, 'friend' >> emailLink >> attr 'label', friend.name >> attr 'email', friend.email /}"
 	]
 }

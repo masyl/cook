@@ -109,7 +109,7 @@ function formatErr(err, test) {
 }
 
 tests = [
-	"if-else"
+	"binding-each"
 ];
 tests = require("../fixtures/tests.js");
 

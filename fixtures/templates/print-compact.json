@@ -4,6 +4,6 @@
 		"<div>johndoe@acme.com</div>"
 	],
 	"input":[
-		"{div >> username /}"
+		"{div >> =username /}"
 	]
 }
