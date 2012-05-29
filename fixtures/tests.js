@@ -29,6 +29,7 @@ module.exports = [
 	"partials-chainedWithEach",
 	"partials-renderTag",
 	"partials-compact",
+	"partials-extend",
 	"each-array",
 	"each-array-compact",
 	"each-array-namedValue",

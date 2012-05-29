@@ -109,7 +109,7 @@ function formatErr(err, test) {
 }
 
 tests = [
-	"raw"
+	"partials-extend"
 ];
 tests = require("../fixtures/tests.js");
 

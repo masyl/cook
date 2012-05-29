@@ -5,7 +5,6 @@
 ## Backlog
 
 - [HIGH] Figure out if partials should be specific to the closure they we're created in, like javascript in general
-- [HIGH] Template inheritance ? Chained render ? "Extend" ?
 - [HIGH] Tests for recursive rendering using partials
 - [HIGH] Tests for closures, context and frames
 - [MEDIUM] api: register partials, helpers, tags, filters and etc through a "use" method
