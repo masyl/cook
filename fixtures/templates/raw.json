@@ -1,0 +1,12 @@
+
+NOT SUPPORTED FOR NOW
+
+{
+	"title":"raw tag",
+	"output":[
+		"lorem {ipsum /} block!"
+	],
+	"input":[
+		"{raw}lorem {ipsum /} block!{/}"
+	]
+}

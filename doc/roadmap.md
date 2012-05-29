@@ -18,6 +18,7 @@
 - [MEDIUM] Basic builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
 
 Backlog for 1.0
+- [MEDIUM] A "safe" tag for escaping html and attributes against XSS
 - [MEDIUM] Match the list of Jinja builtin Filters
 - [MEDIUM] Match the list of Jinja builtin Tests
 - [MEDIUM] Match the list of Jinja builtin Global Functions (helpers)
@@ -25,7 +26,7 @@ Backlog for 1.0
 - [LOW] Allow running in "double braket" mode for less risky escaping
 - [LOW] Figure out a better way to bubble up "attrs" to relevant tags
 - [LOW] Find a faster/better way of escaping curly brackets
-- [LOW] A "safe" tag for escaping html and attributes against XSS
+- [LOW] A "raw" tag for outputing raw and unescaped output including {} brackets
 
 
 ## Distribution
