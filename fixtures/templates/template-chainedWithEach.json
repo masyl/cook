@@ -5,7 +5,7 @@
 		"<ul><li><a href='mailto:tom@gmail.com'>Tom Thomson</a></li><li><a href='mailto:jackjackson@gmail.com'>Jack Jackson</a></li><li><a href='mailto:bigwill69@gmail.com'>Will Williamson</a></li></ul>"
 	],
 	"input":[
-		"{partial 'emailLink', 'label', 'email' >> li }<a href='mailto:{=email /}'>{=label /}</a>{/}",
-		"{ul >> =friends, 'friend' >> emailLink friend.name, friend.email /}"
+		"{template 'emailLink', 'label', 'email' }<li><a href='mailto:{print email /}'>{print label /}</a></li>{/}",
+		"<ul>{each friends >> emailLink $loop.value.name, $loop.value.email /}</ul>"
 	]
 }

@@ -18,7 +18,7 @@
 		"</div>"
 	],
 	"input":[
-		"{partial 'dogAttribute', 'key', 'value'}",
+		"{template 'dogAttribute', 'key', 'value'}",
 		"\t\t{li}{bind key /}{print key /}:{span value}{bind 'value' /}{/}{/}",
 		"{/}",
 		"{div}",

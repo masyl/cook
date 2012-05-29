@@ -1,0 +1,15 @@
+{
+	"title": "Make a template or template extend another template",
+	"output":[
+		"",
+		"",
+		"",
+		"<html><head><style>body {border: 3px solid;}</style><title>Products : potatoes</title></head><body><header><h1>Products : potatoes</h1></header><section class='product'><p>Hey! Please buy potatoes.</p></section></body></html>"
+	],
+	"input":[
+		"{template 'html'}<html><head><style>body {{border: 3px solid;}}</style>{=head/}</head><body>{=body/}</body></html>{/}",
+		"{template 'main' >> render 'html'}{set 'head'}<title>{=title /}</title>{/}{set 'body'}<header>{=header /}</header>{=content /}{/}{/}",
+		"{template 'product' >> render 'main'}{set 'title'}Products : {=title/}{/}{set 'header'}<h1>{=title/}</h1>{/}{set 'content'}<section class='product'>{=content /}</section>{/}{/}",
+		"{render 'product'}{set 'title'}potatoes{/}{set 'content'}<p>Hey! Please buy potatoes.</p>{/}{/}"
+	]
+}

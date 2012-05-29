@@ -2,9 +2,9 @@
 
 ## Next up
 
-## Backlog
-= [HIGH] Figure out if there is a practical difference between templates and partials, and if there should be a simple "macro" syntax
 - [HIGH] global tag similar to set, but which affect a $globals var on the $root instead of the current frame
+
+## Backlog
 - [HIGH] import tag for importing the partials and globals of another template without rendering it (is it same as void?)
 - [HIGH] Figure out if partials should be specific to the closure they we're created in, like javascript in general
 - [HIGH] Tests for recursive rendering using partials

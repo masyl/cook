@@ -13,7 +13,7 @@
 		"</ul>"
 	],
 	"input":[
-		"{partial 'emailLink', 'label', 'email' }<li><a href='mailto:{print email /}'>{print label /}</a></li>{/}",
+		"{template 'emailLink', 'label', 'email' }<li><a href='mailto:{print email /}'>{print label /}</a></li>{/}",
 		"<ul>",
 		"\t{each friends, 'friend'}",
 		"\t\t{render 'emailLink', friend.name, friend.email /}",
