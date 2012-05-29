@@ -9,11 +9,11 @@
 		""
 	],
 	"input":[
-		"{var 'blockVar' }lorem ipsum block!{/}",
-		"{var 'inlineVar', 'lorem ipsum inline!' /}",
+		"{set 'blockVar' }lorem ipsum block!{/}",
+		"{set 'inlineVar', 'lorem ipsum inline!' /}",
 		"{print blockVar /}",
 		"{print inlineVar /}",
-		"{var 'blockVar' }Var defined too late!{/}",
-		"{var 'inlineVar', 'Var defined too late!' /}"
+		"{set 'blockVar' }Var defined too late!{/}",
+		"{set 'inlineVar', 'Var defined too late!' /}"
 	]
 }
