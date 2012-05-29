@@ -6,26 +6,26 @@
 
 - [HIGH] Figure out if partials should be specific to the closure they we're created in, like javascript in general
 - [HIGH] Template inheritance ? Chained render ? "Extend" ?
-- [HIGH] Simplification: Enable html escaping by default, with option/tag do disable it
 - [HIGH] Tests for recursive rendering using partials
 - [HIGH] Tests for closures, context and frames
-- [MEDIUM] In elemTag: Todo: render element body before args are rendered, so that args can process the body
 - [MEDIUM] Test: Output a template containing {} using a raw tag
-- [MEDIUM] register partials, helpers, tags, filters and etc through a "use" method
-- [MEDIUM] resolver for external partials
-- [MEDIUM] Figure out a better and more extensible syntax for instructions (such as $removeWhitespaces with the @)
+- [MEDIUM] api: register partials, helpers, tags, filters and etc through a "use" method
+- [MEDIUM] api: resolver for external partials
 - [MEDIUM] Simplification: Firgure out a better way to control whitespace (better than $removeWhitespaces on the $root frame)
 - [MEDIUM] Ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
 - [MEDIUM] Mechanism for resolving external "partials"
 - [MEDIUM] Mechanism for "importing" the partials and variables inside a partial without rendering it (see jinja import)
 - [MEDIUM] Basic builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
-- [MEDIUM] Syntax/tag to "continue" or "break" inside an "each" tag
+
+Backlog for 1.0
 - [MEDIUM] Match the list of Jinja builtin Filters
 - [MEDIUM] Match the list of Jinja builtin Tests
 - [MEDIUM] Match the list of Jinja builtin Global Functions (helpers)
+- [MEDIUM] Syntax/tag to "continue" or "break" inside an "each" tag
 - [LOW] Allow running in "double braket" mode for less risky escaping
 - [LOW] Figure out a better way to bubble up "attrs" to relevant tags
 - [LOW] Find a faster/better way of escaping curly brackets
+- [LOW] A "safe" tag for escaping html and attributes against XSS
 
 
 ## Distribution

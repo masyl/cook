@@ -7,7 +7,7 @@
 	],
 	"input":[
 		"<div>",
-		"\t{@print}",
+		"\t{trim}",
 		"\t\t<ul>",
 		"\t\t\t{each friends}",
 		"\t\t\t\t<li>{print $loop.value.name /}</li>",
