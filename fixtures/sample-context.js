@@ -6,6 +6,7 @@ module.exports.main = {
 	username: "johndoe@acme.com",
 	firstname: "John",
 	lastname: "Doe",
+	vowels: ["A", "E", "I", "O", "U", "Y"],
 	not: function not(exp) {return !exp;},
 	uppercase: function uppercase(a) {
 		return (a+"").toUpperCase();

@@ -1,0 +1,9 @@
+{
+	"title":"Alternate function on loop object",
+	"output":[
+		"fi:A-fy:E-fo:I-fi:O-fy:U-fo:Y-"
+	],
+	"input":[
+		"{each vowels}{=$loop.alternate('fi', 'fy', 'fo') /}:{=$loop.value /}-{/}"
+	]
+}

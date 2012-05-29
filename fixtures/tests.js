@@ -35,6 +35,9 @@ module.exports = [
 	"each-object",
 	"each-object-compact",
 	"each-object-namedValue",
+	"each-valueIsObject",
+	"each-loop",
+	"each-alternate",
 	"tagless-apply",
 	"tagless-apply-compact",
 	"set",
@@ -59,6 +62,5 @@ module.exports = [
 	"auto-partials",
 	"attr-onElem",
 	"attr-onPartials",
-	"each-valueIsObject",
 	"escaping-mustaches"
 ];

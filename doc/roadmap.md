@@ -2,13 +2,11 @@
 
 ## Next up
 
-
-## Scoping and context
-
-- [HIGH] Default core values in the $root frame (true, false, undefined, null, etc)
-
 ## Backlog
 
+- [HIGH] Figure out if "bind" should be used inside a tag like "attrs", or wrap a tag from outside
+- [HIGH] Figure out if partials should be specific to the closure they we're created in, like javascript in general
+- [HIGH] Template inheritance ? Chained render ? "Extend" ?
 - [HIGH] Simplification: Enable html escaping by default, with option/tag do disable it
 - [HIGH] Tests for recursive rendering using partials
 - [HIGH] Tests for closures, context and frames
@@ -18,18 +16,14 @@
 - [MEDIUM] resolver for external partials
 - [MEDIUM] Figure out a better and more extensible syntax for instructions (such as $removeWhitespaces with the @)
 - [MEDIUM] Simplification: Firgure out a better way to control whitespace (better than $removeWhitespaces on the $root frame)
-- Ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
-- Mechanism for resolving external "partials"
-- Mechanism for "importing" the partials and variables inside a partial without rendering it (see jinja import)
-- Figure out if "bind" should be used inside a tag like "attrs", or wrap a tag from outside
-- Figure out if partials should be specific to the closure they we're created in, like javascript in general
-- Template inheritance ? Chained render ? "Extend" ?
-- Basic builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
-- In the each tag, something similare to the "loop.cycle" of Jinja
-- Syntax/tag to "continue" or "break" inside an "each" tag
-- Match the list of Jinja builtin Filters
-- Match the list of Jinja builtin Tests
-- Match the list of Jinja builtin Global Functions (helpers)
+- [MEDIUM] Ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
+- [MEDIUM] Mechanism for resolving external "partials"
+- [MEDIUM] Mechanism for "importing" the partials and variables inside a partial without rendering it (see jinja import)
+- [MEDIUM] Basic builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
+- [MEDIUM] Syntax/tag to "continue" or "break" inside an "each" tag
+- [MEDIUM] Match the list of Jinja builtin Filters
+- [MEDIUM] Match the list of Jinja builtin Tests
+- [MEDIUM] Match the list of Jinja builtin Global Functions (helpers)
 - [LOW] Allow running in "double braket" mode for less risky escaping
 - [LOW] Figure out a better way to bubble up "attrs" to relevant tags
 - [LOW] Find a faster/better way of escaping curly brackets
