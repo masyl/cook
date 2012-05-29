@@ -8,7 +8,6 @@
 - [HIGH] Template inheritance ? Chained render ? "Extend" ?
 - [HIGH] Tests for recursive rendering using partials
 - [HIGH] Tests for closures, context and frames
-- [MEDIUM] Test: Output a template containing {} using a raw tag
 - [MEDIUM] api: register partials, helpers, tags, filters and etc through a "use" method
 - [MEDIUM] api: resolver for external partials
 - [MEDIUM] Simplification: Firgure out a better way to control whitespace (better than $removeWhitespaces on the $root frame)
