@@ -2,13 +2,13 @@
 
 ## Next up
 
-- Escaping for "{" and "}"
 
 ## Scoping and context
 
 - Test for multi-level "each", partial, with and other tag that create a new closure/scope
 
 ## Backlog
+
 - [HIGH] Simplification: Firgure out a better way to control whitespace (better than $removeWhitespaces on the $root frame)
 - [HIGH] Simplification: Enable html escaping by default, with option/tag do disable it
 - [HIGH] Simplification: Put all "each" vars inside a $loop object for less context polution
