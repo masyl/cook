@@ -2,8 +2,8 @@
 	"title":"Binding on each",
 	"output":[
 		"",
-		"",
 		"<div data-binding='dog'>",
+		"",
 		"\t<ul>",
 		"\t\t",
 		"\t\t<li data-binding='dog::weight'>weight:<span data-binding='dog::weight::value'>10</span></li>",
@@ -18,14 +18,14 @@
 		"</div>"
 	],
 	"input":[
-		"{partial 'attribute', 'key', 'value'}",
-		"\t\t{bind key}{li}{print key /}:{bind 'value'}{span value /}{/}{/}{/}",
+		"{partial 'dogAttribute', 'key', 'value'}",
+		"\t\t{li}{bind key /}{print key /}:{span value}{bind 'value' /}{/}{/}",
 		"{/}",
-		"{bind 'dog'}",
 		"{div}",
+		"{bind 'dog' /}",
 		"\t<ul>",
-		"\t\t{each dog}{attribute $loop.key, $loop.value /}{/}",
+		"\t\t{each dog}{dogAttribute $loop.key, $loop.value /}{/}",
 		"\t</ul>",
-		"{/}{/}"
+		"{/}"
 	]
 }

@@ -4,7 +4,6 @@
 
 ## Backlog
 
-- [HIGH] Figure out if "bind" should be used inside a tag like "attrs", or wrap a tag from outside
 - [HIGH] Figure out if partials should be specific to the closure they we're created in, like javascript in general
 - [HIGH] Template inheritance ? Chained render ? "Extend" ?
 - [HIGH] Simplification: Enable html escaping by default, with option/tag do disable it

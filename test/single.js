@@ -109,7 +109,7 @@ function formatErr(err, test) {
 }
 
 tests = [
-	"partials-chainedWithEach"
+	"binding-each"
 ];
 tests = require("../fixtures/tests.js");
 
