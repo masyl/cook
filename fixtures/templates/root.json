@@ -1,0 +1,19 @@
+{
+	"title":"",
+	"output":[
+		"<div>",
+		"Yes",
+		"",
+		"",
+		"",
+		"</div>"
+	],
+	"input":[
+		"<div>",
+		"{if true}Yes{/}",
+		"{if false}No{/}",
+		"{if undefined}No{/}",
+		"{if null}No{/}",
+		"</div>"
+	]
+}
