@@ -109,7 +109,7 @@ function formatErr(err, test) {
 }
 
 tests = [
-	"template-extend"
+	"template-import"
 ];
 tests = require("../fixtures/tests.js");
 

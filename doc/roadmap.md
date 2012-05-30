@@ -2,8 +2,6 @@
 
 ## Next up
 
-- [HIGH] import tag for importing the partials and globals of another template without rendering it (is it same as void?)
-
 ## Backlog
 - [HIGH] Tests for recursive rendering using partials
 - [HIGH] Tests for closures, context and frames
