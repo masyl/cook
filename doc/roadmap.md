@@ -2,6 +2,8 @@
 
 ## Next up
 
+- Run middlewares at compile time and not render time.
+
 ## Backlog
 - [HIGH] Tests for recursive rendering using partials
 - [HIGH] Tests for closures, context and frames
