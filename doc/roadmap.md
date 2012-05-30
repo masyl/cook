@@ -2,14 +2,18 @@
 
 ## Next up
 
-- Run middlewares at compile time and not render time.
+- $body() function accessible when evaluating arguments
+- tags get pre-evaluated arguments
+- tags as simple functions ?
+- 
 
 ## Backlog
-- [HIGH] Tests for recursive rendering using partials
+- [MEDIUM] Tests for recursive rendering using partials
 - [HIGH] Tests for closures, context and frames
 - [MEDIUM] api: resolver for external partials
 - [MEDIUM] api: ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
 - [MEDIUM] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
+- [LOW] Configurable limit on recursive rendering of templates
 
 Backlog for 1.0
 - [MEDIUM] A "safe" filter for escaping html and attributes against XSS
