@@ -5,13 +5,12 @@
 ## Backlog
 - [HIGH] Tests for recursive rendering using partials
 - [HIGH] Tests for closures, context and frames
-- [MEDIUM] api: register partials, helpers, tags, filters and etc through a "use" method
 - [MEDIUM] api: resolver for external partials
 - [MEDIUM] api: ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
 - [MEDIUM] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
 
 Backlog for 1.0
-- [MEDIUM] A "safe" tag for escaping html and attributes against XSS
+- [MEDIUM] A "safe" filter for escaping html and attributes against XSS
 - [MEDIUM] Match the list of Jinja builtin Filters
 - [MEDIUM] Match the list of Jinja builtin Tests
 - [MEDIUM] Match the list of Jinja builtin Global Functions (helpers)

@@ -1,5 +1,6 @@
 var assert = require('assert');
-var cook = require('../lib');
+var Cook = require('../lib');
+var cook = new Cook();
 var fs = require('fs');
 var fixtureData = require("../fixtures/sample-context.js");
 var tests;
@@ -13,8 +14,10 @@ function Test(id) {
 	this.output = "";
 	this.title = "";
 	this.result = undefined;
+	this.template = null;
 	this.run = function (callback) {
-		this.result = cook(this.input)(fixtureData.main);
+		this.template = cook.compile(this.input);
+		this.result = this.template.render(fixtureData.main);
 		try {
 			assert.equal(this.result, this.output);
 			callback(null, this);
