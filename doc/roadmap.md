@@ -2,10 +2,7 @@
 
 ## Next up
 
-- cache $body() calls and allow forcing re-parse with $body(true)
-- $body() function accessible when evaluating arguments
-- tags get pre-evaluated arguments & tags as simple functions ?
-- 
+- Put the "bind" tag into an non-core middleware
 
 ## Backlog
 - [HIGH] Tests for closures, context and frames
@@ -16,6 +13,7 @@
 - [LOW] Configurable limit on recursive rendering of templates
 
 Backlog for 1.0
+- [MEDIUM] cache $body() calls and allow forcing re-parse with $body(true)
 - [MEDIUM] A "safe" filter for escaping html and attributes against XSS
 - [MEDIUM] Match the list of Jinja builtin Filters
 - [MEDIUM] Match the list of Jinja builtin Tests
@@ -25,6 +23,8 @@ Backlog for 1.0
 - [LOW] Figure out a better way to bubble up "attrs" to relevant tags
 - [LOW] Find a faster/better way of escaping curly brackets
 - [LOW] A "raw" tag for outputing raw and unescaped output including {} brackets
+- [LOW] Remove the need for the "$Array" helper by adding the feature in Funex
+- [LOW] In the bind tag, ability to user the tag body as the key
 
 
 ## Distribution
