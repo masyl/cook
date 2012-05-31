@@ -2,17 +2,14 @@
 
 ## Next up
 
-- Put the "bind" tag into an non-core middleware
-
-## Backlog
+## Backlog for 0.5
 - [HIGH] Tests for closures, context and frames
 - [MEDIUM] Tests for recursive rendering using partials
 - [MEDIUM] api: resolver for external partials
 - [MEDIUM] api: ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
 - [MEDIUM] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
-- [MEDIUM] Title on each test
 
-Backlog for 1.0
+## Backlog
 - [MEDIUM] cache $body() calls and allow forcing re-parse with $body(true)
 - [MEDIUM] A "safe" filter for escaping html and attributes against XSS
 - [MEDIUM] Match the list of Jinja builtin Filters
