@@ -2,11 +2,11 @@ var assert = require('assert');
 var Cook = require('../lib');
 var cook = new Cook();
 var fs = require('fs');
-var fixtureData = require("../fixtures/sample-context.js");
+var fixtureData = require("./sample-context.js");
 var tests;
 
 /**
- * Render a template in the "/fixtures/templates" and compare to the expected output
+ * Render a template in the "./templates" folder and compare to the expected output
  */
 function Test(id) {
 	this.id = id;
@@ -28,7 +28,7 @@ function Test(id) {
 	};
 	this.load = function (callback) {
 		var test = this;
-		var file = './fixtures/templates/' + test.id + '.json';
+		var file = './test/templates/' + test.id + '.json';
 		fs.readFile(file, function (err, data) {
 			if (err) callback(err);
 			try {
@@ -112,9 +112,9 @@ function formatErr(err, test) {
 }
 
 tests = [
-	"template-import"
+	"attr-onElem"
 ];
-tests = require("../fixtures/tests.js");
+tests = require("./tests.js");
 
 load(tests, function (err, tests) {
 	run(tests);

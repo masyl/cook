@@ -21,6 +21,7 @@ module.exports = [
 	"comment-poundSignBlock",
 	"comment-poundSignOnOpenTag",
 	"print",
+	"print-body",
 	"void",
 	"print-compact",
 	"print-withoutTag",

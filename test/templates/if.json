@@ -4,7 +4,7 @@
 		"<div>",
 		"    ",
 		"    ",
-		"        And show also this...",
+		"        But show this...",
 		"    ",
 		"</div>"
 	],
@@ -14,7 +14,7 @@
 		"        Dont show this...",
 		"    {/}",
 		"    {if isTrue }",
-		"        And show also this...",
+		"        But show this...",
 		"    {/}",
 		"</div>"
 	]

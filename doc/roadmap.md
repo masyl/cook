@@ -2,14 +2,14 @@
 
 ## Next up
 
+- cache $body() calls and allow forcing re-parse with $body(true)
 - $body() function accessible when evaluating arguments
-- tags get pre-evaluated arguments
-- tags as simple functions ?
+- tags get pre-evaluated arguments & tags as simple functions ?
 - 
 
 ## Backlog
-- [MEDIUM] Tests for recursive rendering using partials
 - [HIGH] Tests for closures, context and frames
+- [MEDIUM] Tests for recursive rendering using partials
 - [MEDIUM] api: resolver for external partials
 - [MEDIUM] api: ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
 - [MEDIUM] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
