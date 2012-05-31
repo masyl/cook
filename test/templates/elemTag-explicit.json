@@ -1,0 +1,17 @@
+{
+	"title":"",
+	"output":[
+		"<if>",
+		"\t<each>",
+		"\t\tLorem Ipsum!",
+		"\t</each>",
+		"</if>"
+	],
+	"input":[
+		"{elem 'if'}",
+		"\t{elem 'each'}",
+		"\t\tLorem Ipsum!",
+		"\t{/}",
+		"{/}"
+	]
+}

@@ -10,7 +10,7 @@
 - [MEDIUM] api: resolver for external partials
 - [MEDIUM] api: ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
 - [MEDIUM] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
-- [LOW] Configurable limit on recursive rendering of templates
+- [MEDIUM] Title on each test
 
 Backlog for 1.0
 - [MEDIUM] cache $body() calls and allow forcing re-parse with $body(true)
@@ -19,6 +19,7 @@ Backlog for 1.0
 - [MEDIUM] Match the list of Jinja builtin Tests
 - [MEDIUM] Match the list of Jinja builtin Global Functions (helpers)
 - [MEDIUM] Syntax/tag to "continue" or "break" inside an "each" tag
+- [LOW] Configurable limit on recursive rendering of templates
 - [LOW] Allow running in "double braket" mode for less risky escaping
 - [LOW] Figure out a better way to bubble up "attrs" to relevant tags
 - [LOW] Find a faster/better way of escaping curly brackets
