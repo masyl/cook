@@ -2,6 +2,8 @@
 
 ## Next up
 
+- Figure out if set or attr should be used for passig value to rendered template
+
 ## Backlog for 0.5
 - [HIGH] Tests for closures, context and frames
 - [MEDIUM] Tests for recursive rendering using partials

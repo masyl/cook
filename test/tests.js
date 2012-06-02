@@ -31,6 +31,7 @@ module.exports = [
 	"template-renderTag",
 	"template-compact",
 	"template-templateInheritance",
+	"template-templateBody",
 	"template-import",
 	"each-array",
 	"each-array-compact",

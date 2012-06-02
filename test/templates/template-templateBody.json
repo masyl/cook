@@ -1,0 +1,15 @@
+{
+	"title": "Make a template or template extend another template",
+	"output":[
+		"",
+		"",
+		"",
+		"<html><head><title>Lorem Ipsum</title></head><body><header><h1>Lorem Ipsum</h1></header><section><p>Lorem ipsum dolor sit amet!</p></section></body></html>"
+	],
+	"input":[
+		"{template 'html'}<html><head>{=head/}</head><body>{=body/}</body></html>{/}",
+		"{template 'main' >> render 'html'}{set 'head'}<title>{=title /}</title>{/}{set 'body'}<header>{=header /}</header>{=content /}{/}{/}",
+		"{template 'post' >> render 'main'}{set 'title'}{=title/}{/}{set 'header'}<h1>{=title/}</h1>{/}{set 'content'}<section>{= $templateBody /}</section>{/}{/}",
+		"{render 'post'}{set 'title', 'Lorem Ipsum' /}<p>Lorem ipsum dolor sit amet!</p>{/}"
+	]
+}

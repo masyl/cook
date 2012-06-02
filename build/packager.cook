@@ -13,10 +13,7 @@ __require.load({= name /}, module.exports);
 {template 'package', 'externamName', 'internalName'}
 (function (global) {{
 
-[[[
-{= _body /}
-{= content /}
-]]]
+{= $templateBody /}
 
 {include 'ClientRequire.js' /}
 
