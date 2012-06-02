@@ -1,0 +1,23 @@
+{template 'require', 'name', 'path'}
+/*******************************************************************
+ * Loading: {= name /}
+ * Source: {= module /}
+ */
+
+{include path /}
+
+// Loading the previous module into an aliased module
+__require.load({= name /}, module.exports);
+
+{/}
+{template 'package', 'externamName', 'internalName'}
+(function (global) {{
+
+{include 'ClientRequire.js' /}
+
+{= $body /}
+
+global.{= externamName /} = __require("{= internalName /}");
+
+}})(this);
+{/}
