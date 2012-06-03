@@ -1,11 +1,13 @@
-function ClientRequire() {
+function Require(context, global) {
 	var self = this;
 	this.modules = [];
-	function __require(key) {
+	function require(key) {
 		return self.modules[key];
 	}
-	__require.load = function (key, module) {
+	require.import = function (key, module) {
 		self.modules[key] = module;
+		global[key] = module;
 	};
-	return __require;
+	return require;
 }
+

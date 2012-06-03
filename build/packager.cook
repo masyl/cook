@@ -1,24 +1,29 @@
 {template 'require', 'name', 'path'}
-/*******************************************************************
- * Loading: {= name /}
- * Source: {= module /}
- */
-
-{include path /}
-
-// Loading the previous module into an aliased module
-__require.load({= name /}, module.exports);
+	/*******************************************************************
+	 * Loading: {= name /}
+	 * Source: {= module /}
+	 */
+	
+	{include path /}
+	
+	// Loading the previous module into an aliased module
+	require.import('{= name /}', module.exports);
 
 {/}
 {template 'package', 'externamName', 'internalName'}
-(function (global) {{
+	(function (global) {{
+		function Package(global) {{
+			{include 'ClientRequire.js' /}	
 
-{= $templateBody /}
+			var module = {{
+				exports: {{}}
+			}};
+			var require = new Require(this, global);
 
-{include 'ClientRequire.js' /}
 
-
-global.{= externamName /} = __require("{= internalName /}");
-
-}})(this);
+			{= $templateBody /}
+			global.{= externamName /} = require("{= internalName /}");
+		}}
+		var package = new Package(global);
+	}})(this);
 {/}

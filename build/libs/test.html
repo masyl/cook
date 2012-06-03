@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="cook/cook.js"></script>
+		<script id="template-demo1" type="cook">
+			<section>
+				<h1>{ =title /}</h1>
+				<button>{ =button /}</button>
+			</section>
+		</script>
+	</head>
+	<body>
+		<div id="demo1">
+			
+		</div>
+		<script>
+			var cook = new Cook();
+			var source = document.getElementById("template-demo1").innerText;
+			console.log(source);
+			var demo1 = cook.compile(source);
+			var output = demo1.render({
+				title: "Hello world!",
+				button: "GO!"
+			});
+			document.getElementById("demo1").innerHTML = output;
+		</script>
+	</body>
+</html>
