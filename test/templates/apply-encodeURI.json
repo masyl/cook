@@ -7,7 +7,7 @@
 	],
 	"input":[
 		"<div>",
-		"\t{apply $encodeURI($body()) >> print html /}",
+		"\t{print $encodeURI($body()) >> print html /}",
 		"</div>"
 	]
 }

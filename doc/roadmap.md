@@ -2,12 +2,14 @@
 
 ## Next up
 
-- Figure out if set or attr should be used for passig value to rendered template
+- Should we rename "print" to "write" ?
+- Figure out if set or attr should be used for passing value to rendered template
+- Split library into even more .js classes
+- configurable helper for failed templates
 
 ## Backlog for 0.5
 - [HIGH] Tests for closures, context and frames
 - [MEDIUM] Tests for recursive rendering using partials
-- [MEDIUM] api: resolver for external partials
 - [MEDIUM] api: ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
 - [MEDIUM] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
 
