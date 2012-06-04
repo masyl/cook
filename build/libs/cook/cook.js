@@ -416,13 +416,16 @@ module.exports = function (template) {
 	 * @param value
 	 * @return {String}
 	 */
-	tags["print"] = function printTag(stack, closure, value) {
-		if (value !== undefined) {
-			return value;
-		} else {
+	tags["print"] = function applyTag(stack, closure, value) {
+		if (value === undefined) {
 			return closure.$body();
+		} else if (typeof value === "function") {
+			return value(closure.$body());
+		} else {
+			return value;
 		}
 	};
+
 
 	tags["trim"] = function trimTag(stack, closure) {
 		var $root = stack[0];
@@ -439,17 +442,6 @@ module.exports = function (template) {
 	tags["void"] = function voidTag(stack, closure) {
 		if (this.tags) {
 			closure.$body();
-		}
-	};
-
-	// todo: Can this behavior be merged with "print" if print would handle a function as a value ?
-	tags["apply"] = function applyTag(stack, closure, fn) {
-		if (fn !== undefined) {
-			if (typeof fn === "function") {
-				return fn(closure.$body());
-			} else {
-				return fn;
-			}
 		}
 	};
 
@@ -680,12 +672,10 @@ module.exports = function (template) {
 				} else {
 					return tags["print"].apply(this, arguments);
 				}
-			} else if (type == "number" || type == "string") {
+			} else if (type == "number" || type == "string" || type == "function") {
 				return tags["print"].apply(this, arguments);
 			} else if (type == "boolean" || type == "undefined") {
 				return tags["if"].apply(this, arguments);
-			} else if (type == "function") {
-				return tags["apply"].apply(this, arguments);
 			} else {
 				return tags["elem"].apply(this, arguments);
 			}
@@ -711,9 +701,9 @@ module.exports = function (template) {
  * @param tokens
  * @return {Tag}
  */
-var funex = global["funex"] || require("funex");
+var Tag = global["tag"] || require("./tag");
 
-function build(_tokens, tags) {
+module.exports = function build(_tokens, tags) {
 	var tokens = _tokens.slice(0);
 	var root;
 	// todo: refactor: bring back the stack in normal order
@@ -803,105 +793,6 @@ function build(_tokens, tags) {
 		tag.compile();
 	}
 	return root;
-}
-
-/**
- * A tag object!
- * @param name
- * @param argString
- * @constructor
- */
-//todo: move the Tag class in a separate package
-function Tag(name, argString, tags) {
-	var autoTagName;
-	this.tags = [];
-	this.tags.render = renderTags;
-	this.isRaw = false;
-	this.isCommented = false;
-	this.name = name;
-	this.argString = argString;
-	this.autoIsTag = false;
-	this.handler = tags[this.name];
-	// If no tag handler is found, fallback to the auto tag
-	if (!this.handler) {
-		this.handler = tags["auto"];
-		if (this.name[0] !== "=") {
-			this.autoIsTag = true;
-			autoTagName = "'" + this.name + "'";
-			this.argString = (this.argString) ? autoTagName + ", " + this.argString : autoTagName;
-		}
-	}
-
-	this.args = function args() {
-		return void 0
-	};
-
-	this.compile = function compile() {
-		if (this.isRaw) {
-			this.args = function raw() {
-				return [this.argString];
-			}
-		} else {
-			if (this.argString.trim() !== "") {
-				this.args = funex("$Array(" + this.argString + ")");
-			} else {
-				this.args = function () {
-					return []
-				};
-			}
-		}
-
-		return this;
-	};
-
-	this.render = function (_stack, parentClosure) {
-		var tag = this;
-		// Clone the parent context and add a new frame to it
-		var stack = _stack.slice(0);
-		var $root = stack[0];
-		var output = "";
-		var args = [];
-		// Create a new frame with the default attributes
-		var closure = {
-			$parent:parentClosure,
-			$root:$root,
-			$model:$root.$model,
-			$body:$body
-		};
-
-		// todo: cache output or memoize this function
-		function $body() {
-			var output = tag.tags.render(stack, closure);
-			if (stack[0].$removeWhitespaces) output = output.trim();
-			return output;
-		}
-
-		// Add a new frame to the context
-		stack.push(closure);
-		// Render the tag if it hasnt been commented out
-		if (!this.isCommented) {
-			args = this.args(stack);
-			args.unshift(closure);
-			args.unshift(stack);
-			output = this.handler.apply(this, args);
-			if (stack[0].$removeWhitespaces) output = output.trim();
-			if (output === undefined) output = "";
-		}
-		return output;
-	};
-
-	function renderTags(context, frame) {
-		var str = "";
-		for (var i = this.length - 1; i >= 0; i--) {
-			str = str + this[i].render(context, frame);
-		}
-		return str;
-	}
-}
-
-module.exports = {
-	Tag:Tag,
-	build:build
 };
 
 	
@@ -1001,88 +892,129 @@ module.exports = function lexer(template, options) {
 
 	
 	/*******************************************************************
-	 * Loading: cook
+	 * Loading: tag
 	 * Source: 
 	 */
 	
-	"use strict";
-var pathModule = require("path");
-var fs = require("fs");
-
-var internals = global["funex"] || require("./middlewares/internals");
-var helpers = global["helpers"] || require("./middlewares/helpers");
-var tags = global["tags"] || require("./middlewares/tags");
-var lexer = global["lexer"] || require("./lexer");
-var builder = global["builder"] || require("./builder");
+	
+var funex = global["funex"] || require("funex");
 
 /**
- * The main class of the Cook api
+ * A tag object!
+ * @param name
+ * @param argString
  * @constructor
  */
-function Cook(options) {
-	// Keep a self reference to the instance
-	var cook = this;
+	//todo: move the Tag class in a separate package
+module.exports = function Tag(name, argString, tags) {
+	var autoTagName;
+	this.tags = [];
+	this.tags.render = renderTags;
+	this.isRaw = false;
+	this.isCommented = false;
+	this.name = name;
+	this.argString = argString;
+	this.autoIsTag = false;
+	this.handler = tags[this.name];
+	// If no tag handler is found, fallback to the auto tag
+	if (!this.handler) {
+		this.handler = tags["auto"];
+		if (this.name[0] !== "=") {
+			this.autoIsTag = true;
+			autoTagName = "'" + this.name + "'";
+			this.argString = (this.argString) ? autoTagName + ", " + this.argString : autoTagName;
+		}
+	}
 
-	this.options = options || {
-		rootPath: ""
+	this.args = function args() {
+		return void 0
 	};
 
-	this.resolve = function (id) {
-		return "./" + id + ".cook";
+	this.compile = function compile() {
+		if (this.isRaw) {
+			this.args = function raw() {
+				return [this.argString];
+			}
+		} else {
+			if (this.argString.trim() !== "") {
+				this.args = funex("$Array(" + this.argString + ")");
+			} else {
+				this.args = function () {
+					return []
+				};
+			}
+		}
+
+		return this;
 	};
 
-	this.load = function (_path) {
+	this.render = function (_stack, parentClosure) {
+		var tag = this;
+		// Clone the parent context and add a new frame to it
+		var stack = _stack.slice(0);
+		var $root = stack[0];
+		var output = "";
+		var args = [];
+		// Create a new frame with the default attributes
+		var closure = {
+			$parent:parentClosure,
+			$root:$root,
+			$model:$root.$model,
+			$body:$body
+		};
+
+		// todo: cache output or memoize this function
+		function $body() {
+			var output = tag.tags.render(stack, closure);
+			if (stack[0].$removeWhitespaces) output = output.trim();
+			return output;
+		}
+
+		// Add a new frame to the context
+		stack.push(closure);
+		// Render the tag if it hasnt been commented out
+		if (!this.isCommented) {
+			args = this.args(stack);
+			args.unshift(closure);
+			args.unshift(stack);
+			output = this.handler.apply(this, args);
+			if (stack[0].$removeWhitespaces) output = output.trim();
+			if (output === undefined) output = "";
+		}
+		return output;
+	};
+
+	function renderTags(context, frame) {
 		var str = "";
-		if (pathModule && pathModule) {
-			var path = pathModule.resolve(this.options.rootPath, _path);
-			var buffer = fs.readFileSync(path);
-			if (buffer) str = buffer.toString();
+		for (var i = this.length - 1; i >= 0; i--) {
+			str = str + this[i].render(context, frame);
 		}
 		return str;
-	};
-
-	this.get = function (name/*, callback*/) {
-		var path = this.resolve(name);
-		var source = this.load(path);
-		return cook.compile(source);
-	};
-
-	// Compile-time middleware
-	this.middlewares = new Middlewares(this);
-
-	/**
-	 * Compile a string template into an executable function
-	 * @param source
-	 * @return {*}
-	 */
-	this.compile = function compile(source) {
-		// Create a new template instance with the 
-		var template = new Template(cook);
-
-		// Run all the compile-time middlewares
-		this.middlewares.run(template);
-
-		// Compile the template
-		template.compile(source);
-
-		// Add core render-time middlewares
-		template
-			.use(internals)
-			.use(helpers);
-
-		return template;
-	};
-
-	// Add core compile-time middlewares
-	this.use(tags);
-
+	}
 }
+
+
+	
+	// Loading the previous module into an aliased module
+	require.import('tag', module.exports);
+
+
+	
+	/*******************************************************************
+	 * Loading: template
+	 * Source: 
+	 */
+	
+	var Middlewares = global["middlewares"] || require("./middlewares");
+var Context = global["context"] || require("./context");
+var lexer = global["lexer"] || require("./lexer");
+var builder = global["builder"] || require("./builder");
 
 /**
  * The template class used to compile source and render models
  * @constructor
  */
-function Template(cook) {
+module.exports = function Template(cook) {
 	var template = this;
 
 	// The tags available at render-time
@@ -1119,7 +1051,7 @@ function Template(cook) {
 		var tokens = lexer(source, lexerOptions);
 		template.source.tokens = tokens;
 		// Build the syntax token into an Abstract Syntax Tree
-		var rootTag = builder.build(tokens, this.tags);
+		var rootTag = builder(tokens, this.tags);
 		template.source.rootTag = rootTag;
 		// Connect the template handler to the render of the root tag
 		template.handler = function (context) {
@@ -1148,13 +1080,25 @@ function Template(cook) {
 
 }
 
+	
+	// Loading the previous module into an aliased module
+	require.import('template', module.exports);
+
+
+	
+	/*******************************************************************
+	 * Loading: context
+	 * Source: 
+	 */
+	
+	
 /**
  * The object wrapper around the memory stack used when rendering templates and evaluating expressions
  * A new context is created whenever a template is rendered
  * @param model
  * @constructor
  */
-function Context(model) {
+module.exports = function Context(model) {
 	// The stack of closures used to evaluate variables and expressions
 	this.stack = [];
 	// The bottom most closure of the stack
@@ -1167,43 +1111,20 @@ function Context(model) {
 	this.model.$root = this.root;
 	this.root.$globals = this.globals;
 	this.root.$model = this.model;
-}
+};
 
-/**
- * Class for adding middlewares to an object
- * @param host
- * @constructor
- */
-function Middlewares(host) {
-	var self = this;
+	
+	// Loading the previous module into an aliased module
+	require.import('context', module.exports);
 
-	// Collection of middlewares
-	this.items = [];
 
-	/**
-	 * Utility function for adding middlewares to an object
-	 * @param middleware
+	
+	/*******************************************************************
+	 * Loading: cook
+	 * Source: 
 	 */
-	this.use = function use(middleware) {
-		this.items.push(middleware);
-		return this;
-	};
-
-	this.run = function apply(target) {
-		// Apply the render-time middlewares
-		for (var i = 0; i < this.items.length; i++) {
-			this.items[i](target);
-		}
-		return this;
-	};
-
-	// Add the .use() shorthand for adding middlewares
-	host.use = function (middlewares) {
-		return self.use(middlewares);
-	}
-
-}
-
+	
+	var Cook = global["cook"] || require("./cook");
 module.exports = Cook;
 
 	

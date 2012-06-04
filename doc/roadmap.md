@@ -2,9 +2,8 @@
 
 ## Next up
 
-- Should we rename "print" to "write" ?
+- Rename "print" to "write" ?
 - Figure out if set or attr should be used for passing value to rendered template
-- Split library into even more .js classes
 - configurable helper for failed templates
 
 ## Backlog for 0.5
