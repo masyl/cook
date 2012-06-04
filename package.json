@@ -1,7 +1,7 @@
 {
   "name": "cook",
   "description": "Tasty templating for server and browser",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "homepage": "https://github.com/masyl/cook",
   "keywords": [
     "cook",
