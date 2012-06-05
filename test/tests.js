@@ -33,6 +33,7 @@ module.exports = [
 	"template-templateInheritance",
 	"template-templateBody",
 	"template-import",
+	"template-recursive",
 	"each-array",
 	"each-array-compact",
 	"each-array-namedValue",

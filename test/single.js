@@ -112,7 +112,7 @@ function formatErr(err, test) {
 }
 
 tests = [
-	"attr-onElem"
+	"template-recursive"
 ];
 tests = require("./tests.js");
 

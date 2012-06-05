@@ -72,7 +72,26 @@ module.exports.main = {
 	dalmatians: 101,
 	lorem: "Ipsum",
 	isUndefined:  void 0,
-	thingamabob1: new Thingamabob(1)
+	thingamabob1: new Thingamabob(1),
+	query: {
+		name: {
+			first: {
+				$isNotEmpty: true,
+				$isAlpha: true
+			},
+			last: {
+				$isNotEmpty: true,
+				$isAlpha: true
+			}
+		},
+		age: {
+			$equals: 13,
+			$isNotEmpty: true
+		}
+	},
+	isObject: function (value) {
+		return (typeof value === "object")
+	}
 };
 
 

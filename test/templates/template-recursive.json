@@ -1,0 +1,15 @@
+{
+	"title":"",
+	"output":[
+		"{{{$isNotEmpty:true},$isAlpha:true}},{$isNotEmpty:true},$isAlpha:true}}},{$equals:13},$isNotEmpty:true}}"
+	],
+	"input":[
+		"{trim}",
+		"{template 'obj', 'obj'}{{{each obj}",
+		"{if isObject($loop.value) >> obj $loop.value /}{else}{value $loop.key, $loop.value /}{/}",
+		"}}{if not($loop.isLast) >> = ','/}{/}{/}",
+		"{template 'value', 'key', 'value' }{=key/}:{write value/}{/}",
+		"{obj query /}",
+		"{/}"
+	]
+}

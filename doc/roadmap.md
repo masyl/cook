@@ -2,13 +2,10 @@
 
 ## Next up
 
-- Rename "print" to "write" ?
 - Figure out if set or attr should be used for passing value to rendered template
-- configurable helper for failed tag
 
 ## Backlog for 0.5
 - [HIGH] Tests for closures, context and frames
-- [MEDIUM] Tests for recursive rendering using partials
 - [MEDIUM] api: ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
 - [MEDIUM] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
 
@@ -25,13 +22,13 @@
 - [LOW] Find a faster/better way of escaping curly brackets
 - [LOW] A "raw" tag for outputing raw and unescaped output including {} brackets
 - [LOW] Remove the need for the "$Array" helper by adding the feature in Funex
-- [LOW] In the bind tag, ability to user the tag body as the key
-
+- [LOW] Option to let tags throw exceptions
 
 ## Distribution
+- Test runner for clients version on all browsers
+- Travis CI Integration
 - Code comments and method signatures
 - Clean all to-do's
-- Build for frontend-use (concat, minify)
 - Relevant title on all tests
 - Documentation
 - Samples and live tutorial
