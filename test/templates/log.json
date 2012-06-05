@@ -6,8 +6,8 @@
 		""
 	],
 	"input":[
-		"{print $log >> with colors}",
-		"\t{print colors.label /}{print red /}, {print white /}, {print blue /}",
+		"{write $log >> with colors}",
+		"\t{write colors.label /}{write red /}, {write white /}, {write blue /}",
 		"{/}"
 	]
 }

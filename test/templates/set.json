@@ -11,8 +11,8 @@
 	"input":[
 		"{set 'blockVar' }lorem ipsum block!{/}",
 		"{set 'inlineVar', 'lorem ipsum inline!' /}",
-		"{print blockVar /}",
-		"{print inlineVar /}",
+		"{write blockVar /}",
+		"{write inlineVar /}",
 		"{set 'blockVar' }Var defined too late!{/}",
 		"{set 'inlineVar', 'Var defined too late!' /}"
 	]

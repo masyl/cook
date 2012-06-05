@@ -10,10 +10,10 @@
 	],
 	"input":[
 		"<div>",
-		"\t{if not(isTrue) >> print uppercase($body())}",
+		"\t{if not(isTrue) >> write uppercase($body())}",
 		"\t\tDont show this...",
 		"\t{/}",
-		"\t{if isTrue >> print uppercase($body())}",
+		"\t{if isTrue >> write uppercase($body())}",
 		"\t\tAnd show also this...",
 		"\t{/}",
 		"</div>"

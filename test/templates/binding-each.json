@@ -19,7 +19,7 @@
 	],
 	"input":[
 		"{template 'dogAttribute', 'key', 'value'}",
-		"\t\t{li}{bind key /}{print key /}:{span value}{bind 'value' /}{/}{/}",
+		"\t\t{li}{bind key /}{write key /}:{span value}{bind 'value' /}{/}{/}",
 		"{/}",
 		"{div}",
 		"{bind 'dog' /}",

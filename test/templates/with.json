@@ -7,7 +7,7 @@
 	],
 	"input":[
 		"{with colors}",
-		"\t{print colors.label /}{print red /}, {print white /}, {print blue /}",
+		"\t{write colors.label /}{write red /}, {write white /}, {write blue /}",
 		"{/}"
 	]
 }

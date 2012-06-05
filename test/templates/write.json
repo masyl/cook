@@ -7,7 +7,7 @@
 	],
 	"input":[
 		"<div>",
-		"\t{print username /}",
+		"\t{write username /}",
 		"</div>"
 	]
 }

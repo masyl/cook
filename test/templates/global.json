@@ -11,7 +11,7 @@
 	"input":[
 		"{div}{global 'blockVar' }lorem ipsum block!{/}{/}",
 		"{global 'inlineVar', 'lorem ipsum inline!' /}",
-		"{print blockVar /}",
-		"{print inlineVar /}"
+		"{write blockVar /}",
+		"{write inlineVar /}"
 	]
 }

@@ -10,7 +10,7 @@
 		"\t{trim}",
 		"\t\t<ul>",
 		"\t\t\t{each friends}",
-		"\t\t\t\t<li>{print $loop.value.name /}</li>",
+		"\t\t\t\t<li>{write $loop.value.name /}</li>",
 		"\t\t\t{/}",
 		"\t\t</ul>",
 		"\t{/}",

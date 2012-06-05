@@ -7,7 +7,7 @@
 	],
 	"input":[
 		"<div>",
-		"\t{print}johndoe@acme.com{/}",
+		"\t{write}johndoe@acme.com{/}",
 		"</div>"
 	]
 }
