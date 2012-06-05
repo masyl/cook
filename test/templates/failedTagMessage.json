@@ -1,0 +1,13 @@
+{
+	"title":"",
+	"output":[
+		"<div>",
+		"\t[[ Error rendering tag -- print --  nothingHere.badValue  -- Cannot read property 'badValue' of undefined : $Array( nothingHere.badValue]]",
+		"</div>"
+	],
+	"input":[
+		"<div>",
+		"\t{print nothingHere.badValue /}",
+		"</div>"
+	]
+}

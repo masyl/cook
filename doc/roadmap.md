@@ -4,7 +4,7 @@
 
 - Rename "print" to "write" ?
 - Figure out if set or attr should be used for passing value to rendered template
-- configurable helper for failed templates
+- configurable helper for failed tag
 
 ## Backlog for 0.5
 - [HIGH] Tests for closures, context and frames

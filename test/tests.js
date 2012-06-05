@@ -67,5 +67,6 @@ module.exports = [
 	"auto-template",
 	"attr-onElem",
 	"attr-onTemplate",
-	"escaping-mustaches"
+	"escaping-mustaches",
+	"failedTagMessage"
 ];
