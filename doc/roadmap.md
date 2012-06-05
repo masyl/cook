@@ -2,13 +2,11 @@
 
 ## Next up
 
-- Figure out if set or attr should be used for passing value to rendered template
-
 ## Backlog for 0.5
-- [MEDIUM] api: ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
 - [MEDIUM] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
 
 ## Backlog
+- [MEDIUM] api: ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
 - [MEDIUM] cache $body() calls and allow forcing re-parse with $body(true)
 - [MEDIUM] A "safe" filter for escaping html and attributes against XSS
 - [MEDIUM] Match the list of Jinja builtin Filters
@@ -16,10 +14,9 @@
 - [MEDIUM] Match the list of Jinja builtin Global Functions (helpers)
 - [MEDIUM] Syntax/tag to "continue" or "break" inside an "each" tag
 - [LOW] Configurable limit on recursive rendering of templates
-- [LOW] Allow running in "double braket" mode for less risky escaping
 - [LOW] Figure out a better way to bubble up "attrs" to relevant tags
-- [LOW] Find a faster/better way of escaping curly brackets
-- [LOW] A "raw" tag for outputing raw and unescaped output including {} brackets
+- [LOW] Use tripple brackets "{{{ lorem ipsum }}}" for output "raw" content
+- [LOW] Use quadruple brackets "{{{{ {{div /}} }}}}" for switching between a "single bracket" mode to a"double bracket" mode
 - [LOW] Remove the need for the "$Array" helper by adding the feature in Funex
 - [LOW] Option to let tags throw exceptions
 

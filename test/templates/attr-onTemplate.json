@@ -6,6 +6,6 @@
 	],
 	"input":[
 		"{template 'emailLink' >> li >> a }{attr 'href'}mailto:{=email /}{/}{=label /}{/}",
-		"{ul >> =friends, 'friend' >> emailLink >> attr 'label', friend.name >> attr 'email', friend.email /}"
+		"{ul >> =friends, 'friend' >> emailLink}{set 'label', friend.name /}{set 'email', friend.email /}{/}"
 	]
 }
