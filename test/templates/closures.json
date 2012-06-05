@@ -1,0 +1,17 @@
+{
+	"title": "Closure behavior: setting a variable inside a closure does not affect the parent closure",
+	"output":[
+		"<div><ul><li><span>li</span>li</li>ul</ul>div</div>"
+	],
+	"input":[
+		"{trim}",
+		"{div}{set 'tagName', 'div'/}",
+		"{ul}{set 'tagName', 'ul'/}",
+		"{li}{set 'tagName', 'li'/}",
+		"{span >> = tagName /}",
+		"{=tagName /}{/}",
+		"{=tagName /}{/}",
+		"{=tagName /}{/}",
+		"{=tagName /}{/}"
+	]
+}

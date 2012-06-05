@@ -69,5 +69,6 @@ module.exports = [
 	"root",
 	"log-compact",
 	"escaping-mustaches",
-	"failedTagMessage"
+	"failedTagMessage",
+	"closures"
 ];

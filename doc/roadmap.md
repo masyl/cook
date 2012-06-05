@@ -5,7 +5,6 @@
 - Figure out if set or attr should be used for passing value to rendered template
 
 ## Backlog for 0.5
-- [HIGH] Tests for closures, context and frames
 - [MEDIUM] api: ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
 - [MEDIUM] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
 
