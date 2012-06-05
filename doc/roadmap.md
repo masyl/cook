@@ -2,23 +2,22 @@
 
 ## Next up
 
-## Backlog for 0.5
-- [MEDIUM] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
-
 ## Backlog
-- [MEDIUM] api: ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
-- [MEDIUM] cache $body() calls and allow forcing re-parse with $body(true)
-- [MEDIUM] A "safe" filter for escaping html and attributes against XSS
-- [MEDIUM] Match the list of Jinja builtin Filters
-- [MEDIUM] Match the list of Jinja builtin Tests
-- [MEDIUM] Match the list of Jinja builtin Global Functions (helpers)
+- [HIGH] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
+- [HIGH] A "safe" filter for escaping html and attributes against XSS
+- [HIGH] Match the list of Jinja builtin Filters
+- [HIGH] Match the list of Jinja builtin Tests
+- [HIGH] Match the list of Jinja builtin Global Functions (helpers)
+- [MEDIUM] Use tripple brackets "{{{ lorem ipsum }}}" for output "raw" content
+- [MEDIUM] Async rendering and compiling (to allow the .load handler to use .readFile() instead of .readFileSync())
+- [MEDIUM] Make sure objects supplied as model are not used "as is", but instead each member is copied.
+- [MEDIUM] Figure out how to make the user model immutable unless function calls or special helpers are called. The set tag should never apply itself to the model or one of it member.
 - [MEDIUM] Syntax/tag to "continue" or "break" inside an "each" tag
 - [LOW] Configurable limit on recursive rendering of templates
 - [LOW] Figure out a better way to bubble up "attrs" to relevant tags
-- [LOW] Use tripple brackets "{{{ lorem ipsum }}}" for output "raw" content
 - [LOW] Use quadruple brackets "{{{{ {{div /}} }}}}" for switching between a "single bracket" mode to a"double bracket" mode
 - [LOW] Remove the need for the "$Array" helper by adding the feature in Funex
-- [LOW] Option to let tags throw exceptions
+- [LOW] cache $body() calls and allow forcing re-parse with $body(true)
 
 ## Distribution
 - Test runner for clients version on all browsers
@@ -37,6 +36,7 @@
 
 ## Error handling
 
+- [MEDIUM] api: ability to control wether errors are : thrown, returned via callback and/or printed out in the output.
 - Better error when miss-using double quotes in funex (will be common mistake)
 - handle funex compilation errors
 - When a tag fails to render, only this tag should be blank or contain an error message (try/catch)
@@ -71,7 +71,4 @@
 - Streamed renderer
 - Streamed builder
 - Streamed lexer
-- Async
-- Make sure objects supplied as model are not used "as is", but instead each member is copied.
-- Figure out what to document about immutability vs mutability of model data
 
