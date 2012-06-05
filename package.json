@@ -1,7 +1,7 @@
 {
   "name": "cook",
   "description": "Tasty templating for server and browser",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "homepage": "https://github.com/masyl/cook",
   "keywords": [
     "cook",
@@ -16,7 +16,7 @@
     "url": "git://github.com/masyl/Cook.git"
   },
   "author": "Mathieu Sylvain <mathieu@ti-coco.com> (https://github.com/masyl)",
-  "main": "lib/cook.js",
+  "main": "lib",
   "directories": {
     "lib": "lib",
     "test": "test"
