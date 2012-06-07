@@ -7,7 +7,7 @@
 	],
 	"input":[
 		"<div>",
-		"\t{!",
+		"\t{#",
 		"\tThis is some text in a content block!",
 		"\t/}",
 		"</div>"

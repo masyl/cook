@@ -2,6 +2,10 @@
 
 ## Next up
 
+- Generate documentation also in Markdown
+- Generate a TOC for documentation for HTML
+- Generate a TOC for documentation for GitHub Markdow
+
 ## Backlog
 - [HIGH] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)
 - [HIGH] A "safe" filter for escaping html and attributes against XSS
