@@ -1,12 +1,15 @@
 var fs = require("fs");
 var Cook = require("../lib");
-var path;
-
 var cook = new Cook();
 cook.options.rootPath = __dirname;
-var output = cook.get("documentation").render({});
 
-path = __dirname + "/documentation.html";
-fs.writeFileSync(path, output, "utf-8");
+function renderToFile(template, path) {
+	var output = cook.get(template).render({});
+	fs.writeFileSync(path, output, "utf-8");
+	console.log("Generated '" + template + "'  to : " + path);
+}
 
-console.log("Generated html documentation : " + path);
+renderToFile("doc-html", __dirname + "/documentation.html");
+renderToFile("doc-html", __dirname + "/../../index.html");
+renderToFile("doc-markdown", __dirname + "/documentation.md");
+renderToFile("doc-markdown", __dirname + "/../../README.md");

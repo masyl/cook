@@ -1,0 +1,26 @@
+{template 'body' >> = $templateBody /}
+{template 'content' }{= $templateBody /}{/}
+{template 'p'}{=$unindent}{=$templateBody/}{/}{/}
+{template 'ul'}{=$unindent}{=$templateBody /}{/}{/}
+{template 'li' }{notrim >> =$unindent}- {=$templateBody/}{/}{/}
+{template 'em' }*{= $templateBody /}*{/}
+{template 'br' }  {/}
+{template 'strong' }**{= $templateBody /}**{/}
+{template 'introduction' >> =$unindent >> =$templateBody /}
+{ template 'heading', 'level' }
+{trim >> =$unindent }
+	{if $equals(level, 2)}
+		## { =$templateBody /}
+	{/if}
+	{else}
+		# { =$templateBody /}
+	{/else}
+{/}
+{/}
+{template 'section' }{= $templateBody /}- - -{/}
+{template 'a', 'href'}[{= $templateBody /}]({=href/}){/}
+{template 'anchor', 'id'}<a name="{=id/}">{= $templateBody /}</a>{/}
+{template 'code-inline'}`{ =$escapeHTML >> =$templateBody /}`{/}
+{template 'code-block'}
+{ =$indent($body(), 4) >> =$escapeHTML >> =$templateBody /}
+{/}

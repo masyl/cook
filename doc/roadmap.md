@@ -5,6 +5,8 @@
 - Generate documentation also in Markdown
 - Generate a TOC for documentation for HTML
 - Generate a TOC for documentation for GitHub Markdow
+- Instead of having "trim" to toggle, there should be separate "trim" and "notrim" tag
+- Faster "$unindent" helper
 
 ## Backlog
 - [HIGH] helpers: builtin functions to simplify the use of funex syntax (comparisons, math, string operations, collections, yelders)

@@ -1,0 +1,50 @@
+{template 'body'}
+	<html>
+		<head>
+			<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
+			<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
+			<link rel="stylesheet" href="documentation.css" />
+		</head>
+		<body>
+			{= $templateBody /}
+		</body>
+	</html>
+{/template}
+{template 'content'}
+	<div>
+		{= $templateBody /}
+	</div>
+{/template}
+{ template 'heading', 'level' }
+	<h{ =$or(level, 1) /}>
+		{ =$templateBody /}
+	</h{ =$or(level, 1) /}>
+{/}
+{template 'section'}
+	<div>
+		{= $templateBody /}
+	</div>
+	<hr />
+{/template}
+{template 'a', 'href'}
+	<a href="{=href/}">
+		{= $templateBody /}
+	</a>
+{/template}
+{template 'anchor', 'id'}
+	<a id="{=id/}" />
+{/template}
+{template 'code-inline'}
+	{trim}
+		<em class="code">
+			{ =$escapeHTML >> =$templateBody /}
+		</em>
+	{/trim}
+{/template}
+{template 'code-block'}
+	{trim}
+		<pre class="code">
+			{ =$escapeHTML >> =$templateBody /}
+		</pre>
+	{/trim}
+{/template}

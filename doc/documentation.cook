@@ -1,216 +1,223 @@
-{import 'doc-html' /}
-{body}
 
-	{section}
-		{heading}The Cook Templating Language{/}
-		{introduction }
-			{em}Cook{/em} is a very flexible templating language built for rendering web content.
-		{/}
+{section}
+	{heading}The Cook Templating Language{/}
+	{introduction }
+		{em}Cook{/em} is a very flexible templating language built for rendering web content.
 	{/}
+	{p}
+		{strong}Author:{/strong} Mathieu Sylvain{br/}
+		{strong}License:{/strong} Public Domain
+	{/p}
+{/}
 
-	{section}
-        {heading 2}Documentation in progress{/}
-        {content}
-            {p}
-                The documentation is still a work in progress.
-            {/p}
-            {heading 4}Completed{/}
-            {ul}
-                {li}{a '#TheTagSyntax'}The Tag Syntax{/a}{/li}
-            {/ul}
-            {heading 4}Still Missing...{/}
-            {ul}
-                {li}Funex Expressions Syntax{/li}
-                {li}Summary of attributes and features of Cook{/li}
-                {li}API Usage and Options{/li}
-                {li}Extending Cook with middleware{/li}
-                {li}Definition and signature of each Tags{/li}
-                {li}Advanced templating: inheritance, recursivity{/li}
-                {li}Function helpers{/li}
-                {li}Global values{/li}
-                {li}The Stack and Closures{/li}
-                {li}Description of the main classes and how the lexer, builder is build{/li}
-                {li}Unit tests{/li}
-                {li}Build process (building cook with cook!){/li}
-            {/ul}
-        {/content}
-    {/}
+{section}
+	{heading 2}Documentation in progress{/}
+	{content}
+		{p}
+			The documentation is still a work in progress.
+		{/p}
+		{heading 4}Completed{/}
+		{ul}
+			{li}{a '#TheTagSyntax'}The Tag Syntax{/a}{/li}
+		{/ul}
+		{heading 4}Still Missing...{/}
+		{ul}
+			{li}Funex Expressions Syntax{/li}
+			{li}Summary of attributes and features of Cook{/li}
+			{li}API Usage and Options{/li}
+			{li}Extending Cook with middleware{/li}
+			{li}Definition and signature of each Tags{/li}
+			{li}Advanced templating: inheritance, recursivity{/li}
+			{li}Function helpers{/li}
+			{li}Global values{/li}
+			{li}The Stack and Closures{/li}
+			{li}Description of the main classes and how the lexer, builder is build{/li}
+			{li}Unit tests{/li}
+			{li}Build process (building cook with cook!){/li}
+		{/ul}
+	{/content}
+{/}
 
-	{anchor 'TheTagSyntax'/}
-	{heading}Tag Based Syntax{/}
+{anchor 'TheTagSyntax'/}
+{heading}Tag Based Syntax{/}
 
-	{section}
-		{heading 2}The Syntax{/}
-		{content}
-			{p}
-				The core syntax of {em}Cook{/em} is very simple. Templates are built by adding tags to some existing text.
-				This text can be html, xml, css or any other text based document.
-			{/p}
-			{p}
-				Tags are composed of:
-			{/p}
-			{ul}
-				{li}An opening curly bracket{/li}
-				{li}A tag name{/li}
-				{li}A series of comma separated expressions{/li}
-				{li}Either a closing or self closing slash and brackets{/li}
-			{/ul}
-			{p}
-				Here is an example of a self closing tag:
-			{/p}
-			{code-block}
+{section}
+	{heading 2}The Syntax{/}
+	{content}
+		{p}
+			The core syntax of {em}Cook{/em} is very simple. Templates
+			are built by adding tags to some existing text.
+			This text can be html, xml, css or any other text
+			based document.
+		{/p}
+		{p}
+			Tags are composed of:
+		{/p}
+		{ul}
+			{li}An opening curly bracket{/li}
+			{li}A tag name{/li}
+			{li}A series of comma separated expressions{/li}
+			{li}Either a closing or self closing slash and brackets{/li}
+		{/ul}
+		{p}
+			Here is an example of a self closing tag:
+		{/p}
+		{code-block}
 Hi {{write name /}}, and welcome!
-			{/code-block}
-			{p}
-				And here is an example of a tag which contains an html link:
-			{/p}
-			{code-block}
+		{/code-block}
+		{p}
+			And here is an example of a tag which contains an html link:
+		{/p}
+		{code-block}
 {{if user.isAdmin}}
     <a href="/admin">Admin Panel</a>
 {{/if}}
-			{/code-block}
-		{/content}
-	{/}
+		{/code-block}
+	{/content}
+{/}
 
-	{section}
-		{heading 2}Closing Tags{/}
-		{content}
-			{p}
-				In {em}Cook{/em} closing tags don't need to mention the tag names. It simply closes the current tag.
-			{/p}
-			{p}
-				For example, this tag is valid:
-			{/p}
-			{code-block}
+{section}
+	{heading 2}Closing Tags{/}
+	{content}
+		{p}
+			In {em}Cook{/em} closing tags don't need to mention the
+			tag names. It simply closes the current tag.
+		{/p}
+		{p}
+			For example, this tag is valid:
+		{/p}
+		{code-block}
 {{if true}}It' true!{{/}}
-			{/code-block}
-			{p}
-				Actually, what you write inside a closing tag will never be parsed. If your aim is to provide
-				easier to read code, you can put a relevant tag name, but note that if you put a wrong tag name it might
-				break at syntax validation.
-			{/p}
-		{/content}
-	{/}
+		{/code-block}
+		{p}
+			Actually, what you write inside a closing tag will
+			never be parsed. If your aim is to provide
+			easier to read code, you can put a relevant tag name,
+			but note that if you put a wrong tag name it might
+			break at syntax validation.
+		{/p}
+	{/content}
+{/}
 
-	{section}
-		{heading 2}Tag Arguments{/}
-		{content}
-			{p}
-				Following the tags name, you can specify a list of comma separated arguments. These arguments can be
-				simple variable names or more complex functional expressions. The syntax and library used to evaluate these
-				expressions is called "Funex".
-			{/p}
-			{p}
-				Funex expressions might look like Javascript, which makes the syntax simply to remember, but it is
-				much more limited. Funex is
-				limited to expressing basic data types, accessing deep objects and doing function calls. If does not
-				support logical operators, statements or complex types like arrays and literal object notation.
-			{/p}
-			{p}
-				Read the section below for a more detailed description of the Funex syntax.
-			{/p}
-			{p}
-				What each tag argument means depends on each tag. An in some cases, such as when defining custom templates,
-				you can define what these argument do yourself.
-			{/p}
-			{p}
-				Here is an example of a {code-inline}set{/code-inline} tag with it's two arguments tht are used as a key and value pair:
-			{/p}
-			{code-block}
+{section}
+	{heading 2}Tag Arguments{/}
+	{content}
+		{p}
+			Following the tags name, you can specify a list of comma separated arguments. These arguments can be
+			simple variable names or more complex functional expressions. The syntax and library used to evaluate these
+			expressions is called "Funex".
+		{/p}
+		{p}
+			Funex expressions might look like Javascript, which makes the syntax simply to remember, but it is
+			much more limited. Funex is
+			limited to expressing basic data types, accessing deep objects and doing function calls. If does not
+			support logical operators, statements or complex types like arrays and literal object notation.
+		{/p}
+		{p}
+			Read the section below for a more detailed description of the Funex syntax.
+		{/p}
+		{p}
+			What each tag argument means depends on each tag. An in some cases, such as when defining custom templates,
+			you can define what these argument do yourself.
+		{/p}
+		{p}
+			Here is an example of a {code-inline}set{/code-inline} tag with it's two arguments tht are used as a key and value pair:
+		{/p}
+		{code-block}
 {{set 'name', 'John Doe' /}}
-			{/code-block}
-			{p}
-				And here is an example of a {code-inline}set{/code-inline} tag with a more complex funex expression as argument:
-			{/p}
-			{code-block}
+		{/code-block}
+		{p}
+			And here is an example of a {code-inline}set{/code-inline} tag with a more complex funex expression as argument:
+		{/p}
+		{code-block}
 {{set 'name', $uppercase(datasource.sessions["current"].currentUser().name) /}}
-			{/code-block}
-			{p}
-				As you can see, it looks very much like Javascript, but it only does function calls and still contains
-				no actual statements or operators.
-			{/p}
-		{/content}
-	{/}
+		{/code-block}
+		{p}
+			As you can see, it looks very much like Javascript, but it only does function calls and still contains
+			no actual statements or operators.
+		{/p}
+	{/content}
+{/}
 
-	{section}
-		{heading 2}Tag Body{/}
-		{content}
-			{p}
-				Like with most tag based languages, a tag can contain more tags. But wether a tag's body is parsed
-				and how it is parsed depends on each tag. Behaviors can vary greatly.
-			{/p}
-			{p}
-				An {code-inline}if{/code-inline} tag will only parse it's content if it get a true statement,
-				a {code-inline}write{/code-inline} tag filter it body if given a function as a first argument, a {code-inline}void{/code-inline} tag will parse but not
-				write the output and a {code-inline}raw{/code-inline} tag will simply output it's content without parsing it.			
-			{/p}
-			{p}
-				You can obtain and use a tags body with the {code-inline}$body(){/code-inline} function when writing Funex expressions.
-				This allows you to do some very fancy reuse scenarios.
-			{/p}
-			{p}
-				Here is an example:
-			{/p}
-			{code-block}
+{section}
+	{heading 2}Tag Body{/}
+	{content}
+		{p}
+			Like with most tag based languages, a tag can contain more tags. But wether a tag's body is parsed
+			and how it is parsed depends on each tag. Behaviors can vary greatly.
+		{/p}
+		{p}
+			An {code-inline}if{/code-inline} tag will only parse it's content if it get a true statement,
+			a {code-inline}write{/code-inline} tag filter it body if given a function as a first argument, a {code-inline}void{/code-inline} tag will parse but not
+			write the output and a {code-inline}raw{/code-inline} tag will simply output it's content without parsing it.			
+		{/p}
+		{p}
+			You can obtain and use a tags body with the {code-inline}$body(){/code-inline} function when writing Funex expressions.
+			This allows you to do some very fancy reuse scenarios.
+		{/p}
+		{p}
+			Here is an example:
+		{/p}
+		{code-block}
 {{set 'authKey', $GenerateHash($lowercase($trim($body())))}}
     {{write appSecret /}}-{{write userSecret /}}
 {{/}}
-			{/code-block}
-			{p}
-				Note that using the {code-inline}$body(){/code-inline} function multiple time will actually parse the template and all contained
-				expressions multiple times.
-			{/p}
-		{/content}
-	{/}
+		{/code-block}
+		{p}
+			Note that using the {code-inline}$body(){/code-inline} function multiple time will actually parse the template and all contained
+			expressions multiple times.
+		{/p}
+	{/content}
+{/}
 
 
-	{section}
-		{heading 2}Escaping curly brackets{/}
-		{content}
-			{p}
-				Typically, when your template is parsed, ALL curly brackets are parsed and used to
-				 figure out where tags start and end. This means that rendering things like JSON or
-				 similar text that relies on the same curly brackets will confuse the Cook parser.
-			{/p}
-			{p}
-				To solve this, you must escape the curly brackets you want to ouput by writting two
-				consecutive brackets for every bracket your want to output.
-			{/p}
-			{p}
-				For example:
-			{/p}
-			{code-block}
+{section}
+	{heading 2}Escaping curly brackets{/}
+	{content}
+		{p}
+			Typically, when your template is parsed, ALL curly brackets are parsed and used to
+			 figure out where tags start and end. This means that rendering things like JSON or
+			 similar text that relies on the same curly brackets will confuse the Cook parser.
+		{/p}
+		{p}
+			To solve this, you must escape the curly brackets you want to ouput by writting two
+			consecutive brackets for every bracket your want to output.
+		{/p}
+		{p}
+			For example:
+		{/p}
+		{code-block}
 <script> user = {{{{name: "{{write user.name/}}"}}}}</script>
-			{/code-block}
-			{p}
-				Which would output something like this this:
-			{/p}
-			{code-block}
+		{/code-block}
+		{p}
+			Which would output something like this this:
+		{/p}
+		{code-block}
 <script> user = {{name: "John Doe" }}</script>
-			{/code-block}
-			{p}
-				Note that upcoming versions of {em}Cook{/em} will support simpler ways to output whole blocks of languages
-				that relies heavily on curly brackets such as json.
-			{/p}
-		{/content}
-	{/}
+		{/code-block}
+		{p}
+			Note that upcoming versions of {em}Cook{/em} will support simpler ways to output whole blocks of languages
+			that relies heavily on curly brackets such as json.
+		{/p}
+	{/content}
+{/}
 
-	{section}
-		{heading 2}Chaining Tags{/}
-		{content}
-			{p}
-				One very nifty feature of {em}Cook{/em} is that you can chain tags to make you syntax more compact.
-			{/p}
-			{p}
-				For example, this code:
-			{/p}
-			{code-block}
+{section}
+	{heading 2}Chaining Tags{/}
+	{content}
+		{p}
+			One very nifty feature of {em}Cook{/em} is that you can chain tags to make you syntax more compact.
+		{/p}
+		{p}
+			For example, this code:
+		{/p}
+		{code-block}
 {{if user.isLoggedIn >> elem div >> elem a >> write $uppercase >> write user.name /}}
-			{/code-block}
-			{p}
-				Outputs pretty much the same thing as this code:
-			{/p}
-			{code-block}
+		{/code-block}
+		{p}
+			Outputs pretty much the same thing as this code:
+		{/p}
+		{code-block}
 {{if user.isLoggedIn}}
     <div>
         <a>
@@ -220,112 +227,112 @@ Hi {{write name /}}, and welcome!
         </a>
     </div>
 {{/if}}
-			{/code-block}
-			{p}
-				Note that the last element in the tag chain will receive the tags content. In this example, the tag body
-				will be parsed as belonging to the {code-inline}write $uppercase{/code-inline} tag:
-			{/p}
-			{code-block}
+		{/code-block}
+		{p}
+			Note that the last element in the tag chain will receive the tags content. In this example, the tag body
+			will be parsed as belonging to the {code-inline}write $uppercase{/code-inline} tag:
+		{/p}
+		{code-block}
 {{if user.isLoggedIn >> elem div >> elem a >> write $uppercase}}
     Hi {{write user.name /}}, and welcome!
 {{/}}
-			{/code-block}
-			{p}
-				When chaining tags, it makes your code more compact, which is itself a matter of
-				preference. Some prefer readability, some prefer getting less lines of code. No matter
-				which style you adopt, it will not affect the rendering performance.
-			{/p}
-		{/}
+		{/code-block}
+		{p}
+			When chaining tags, it makes your code more compact, which is itself a matter of
+			preference. Some prefer readability, some prefer getting less lines of code. No matter
+			which style you adopt, it will not affect the rendering performance.
+		{/p}
 	{/}
+{/}
 
-	{section}
-        {heading 2}The "elem" Tag and Unknown Tag Fallback{/}
-        {content}
-			{p}
-	            Whenever the {em}Cook{/em} parser finds an unknown tag, it will not raise any error, but instead it will
-	            generate an element with the same name.
-			{/p}
-			{p}
-	            For example, this template:
-			{/p}
-			{code-block}
+{section}
+	{heading 2}The "elem" Tag and Unknown Tag Fallback{/}
+	{content}
+		{p}
+			Whenever the {em}Cook{/em} parser finds an unknown tag, it will not raise any error, but instead it will
+			generate an element with the same name.
+		{/p}
+		{p}
+			For example, this template:
+		{/p}
+		{code-block}
 {{div}}
     {{span}}
         Lorem Ipsum!
     {{/}}
 {{/}}
-			{/code-block}
-			{p}
-	            Would output this:
-			{/p}
-			{code-block}
+		{/code-block}
+		{p}
+			Would output this:
+		{/p}
+		{code-block}
 <div>
     <span>
         Lorem Ipsum!
     </span>
 </div>
-			{/code-block}
-			{p}
-				This approach has two advantages. First it prevents templates to crash when some typos or unforseen
-				conditions occure, and secondly it allows you to generate most html syntax with some of the advantages of
-				the {em}Cook{/em} syntax.
-			{/p}
-			{p}
-				For example, this would still output valid html:
-			{/p}
-			{code-block}
+		{/code-block}
+		{p}
+			This approach has two advantages. First it prevents templates to crash when some typos or unforseen
+			conditions occure, and secondly it allows you to generate most html syntax with some of the advantages of
+			the {em}Cook{/em} syntax.
+		{/p}
+		{p}
+			For example, this would still output valid html:
+		{/p}
+		{code-block}
 {{section >> ul >> li >> span >> strong >> write user.name /}}
-			{/code-block}
-        {/content}
-    {/}
-    
-	{section}
-        {heading 2}Automatic Tags Deduction{/}
-        {content}
-			{p}
-	            Instead of specifying a tag name for every tag, you can use the equal sign {code-inline}={/code-inline} as a way
-	            of asking {em}Cook{/em} to guess what to do according to what the first argument is.
-			{/p}
-			{p}
-	            The simplest example of this is to write values without using the {code-inline}write{/code-inline} tag. Like so:
-			{/p}
-			{code-block}
+		{/code-block}
+    {/content}
+{/}
+
+{section}
+	{heading 2}Automatic Tags Deduction{/}
+	{content}
+		{p}
+			Instead of specifying a tag name for every tag, you can use the equal sign {code-inline}={/code-inline} as a way
+			of asking {em}Cook{/em} to guess what to do according to what the first argument is.
+		{/p}
+		{p}
+			The simplest example of this is to write values without using the {code-inline}write{/code-inline} tag. Like so:
+		{/p}
+		{code-block}
 {{=user.fullName/}}
-			{/code-block}
-			{p}
-				But it also works for values other than strings. Here is how each value types will be "guessed":
-			{/p}
-			{ul}
-				{li}Boolean : will behave like a {code-inline}if{/code-inline} tag{/li}
-				{li}Number, String : will behave like a {code-inline}write{/code-inline} tag{/li}
-				{li}Array : will behave like a {code-inline}each{/code-inline} tag{/li}
-				{li}Literal Object : will behave like a {code-inline}with{/code-inline} tag{/li}
-				{li}Boolean : will behave like a {code-inline}if{/code-inline} tag{/li}
-			{/ul}
-			{p}
-				Anything else (such as prototyped objects) will be coerced into a string out handler with the
-				{code-inline}write{/code-inline} tag. This also implies that objects would be converted with their default or custom
-				{code-inline}.toString(){/code-inline} function.
-			{/p}
-			{p}
-				For example, if you wish to output an html list of the credentials of a user if they are a member.
-			{/p}
-			{p}
-				You can write it like this:
-			{/p}
-			{code-block}
+		{/code-block}
+		{p}
+			But it also works for values other than strings. Here is how each value types will be "guessed":
+		{/p}
+		{ul}
+			{li}Boolean : will behave like a {code-inline}if{/code-inline} tag{/li}
+			{li}Number, String : will behave like a {code-inline}write{/code-inline} tag{/li}
+			{li}Array : will behave like a {code-inline}each{/code-inline} tag{/li}
+			{li}Literal Object : will behave like a {code-inline}with{/code-inline} tag{/li}
+			{li}Boolean : will behave like a {code-inline}if{/code-inline} tag{/li}
+		{/ul}
+		{p}
+			Anything else (such as prototyped objects) will be coerced into a string out handler with the
+			{code-inline}write{/code-inline} tag. This also implies that objects would be converted with their default or custom
+			{code-inline}.toString(){/code-inline} function.
+		{/p}
+		{p}
+			For example, if you wish to output an html list of the credentials of a user if they are a member.
+		{/p}
+		{p}
+			You can write it like this:
+		{/p}
+		{code-block}
 {{ =isMember >> ul >> =credentials >> li >> =$loop.value.label /}}
-			{/code-block}
-			{p}
-				Instead of:
-			{/p}
-			{code-block}
+		{/code-block}
+		{p}
+			Instead of:
+		{/p}
+		{code-block}
 {{if isMember >> elem ul >> each credentials >> elem li >> write $loop.value.label /}}
-			{/code-block}
-			{p}
-				Which is already a compact equivalent of this:
-			{/p}
-			{code-block}
+		{/code-block}
+		{p}
+			Which is already a compact equivalent of this:
+		{/p}
+		{code-block}
 {{if isMember}}
     <ul>
         {{each credentials}}
@@ -335,53 +342,52 @@ Hi {{write name /}}, and welcome!
         {{/each}}
     </ul>
 {{/if}}
-			{/code-block}
-        {/content}
-    {/}
+		{/code-block}
+	{/content}
+{/}
 
-	{section}
-        {heading 2}Commenting Out Tags{/}
-        {content}
-            {p}
-	            You can use the poung sign {code-inline}#{/code-inline} to comment out a tag. This allows you to comment out both a tag and
-	            its body.
-            {/p}
-            {p}
-	            You can use it to leave comment in your code:
-            {/p}
-            {code-block}
+{section}
+	{heading 2}Commenting Out Tags{/}
+	{content}
+		{p}
+			You can use the poung sign {code-inline}#{/code-inline} to comment out a tag. This allows you to comment out both a tag and
+			its body.
+		{/p}
+		{p}
+			You can use it to leave comment in your code:
+		{/p}
+		{code-block}
 {{#
     Some notes that will not be parsed!
 /}}
-            {/code-block}
-            {p}
-				Or to hide portions of your code during development:
-            {/p}
-            {code-block}
+		{/code-block}
+		{p}
+			Or to hide portions of your code during development:
+		{/p}
+		{code-block}
 {{#write 'Lorem ipsum dolor sit amet' /}}
-            {/code-block}
-            {p}
-				Or on a tag with a body:
-            {/p}
-            {code-block}
+		{/code-block}
+		{p}
+			Or on a tag with a body:
+		{/p}
+		{code-block}
 {{#if user.isMember}}
     {{=user.fullName/}}
 {{/}}
-            {/code-block}
-            {p}
-				Note that commenting out a tag does not only prevent it from outputing anything,
-				it also prevent its arguments from being evaluated and even from being parsed at all during
-				compilation.
-            {/p}
-        {/content}
-    {/}
-
-	{section}
-        {heading 2}Finer Points of Syntax{/}
-        {content}
-            Todo: Describe where whitespace is tolerated, the possible site effect of named closing tags when chaining, etc.
-        {/content}
-    {/}
-
-
+		{/code-block}
+		{p}
+			Note that commenting out a tag does not only prevent it from outputing anything,
+			it also prevent its arguments from being evaluated and even from being parsed at all during
+			compilation.
+		{/p}
+	{/content}
 {/}
+
+{section}
+	{heading 2}Finer Points of Syntax{/}
+	{content}
+		Todo: Describe where whitespace is tolerated, the possible site effect of named closing tags when chaining, etc.
+	{/content}
+{/}
+
+

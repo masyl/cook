@@ -1,0 +1,615 @@
+
+
+	<html>
+		<head>
+			<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
+			<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700,400' rel='stylesheet' type='text/css'>
+			<link rel="stylesheet" href="documentation.css" />
+		</head>
+		<body>
+			
+	
+
+	<div>
+		
+	
+	<h1>
+		The Cook Templating Language
+	</h1>
+
+	<introduction>
+		<em>Cook</em> is a very flexible templating language built for rendering web content.
+	</introduction>
+	<p>
+		<strong>Author:</strong> Mathieu Sylvain<br></br>
+		<strong>License:</strong> Public Domain
+	</p>
+
+	</div>
+	<hr />
+
+
+
+	<div>
+		
+	
+	<h2>
+		Documentation in progress
+	</h2>
+
+	
+	<div>
+		
+		<p>
+			The documentation is still a work in progress.
+		</p>
+		
+	<h4>
+		Completed
+	</h4>
+
+		<ul>
+			<li>
+	<a href="#TheTagSyntax">
+		The Tag Syntax
+	</a>
+</li>
+		</ul>
+		
+	<h4>
+		Still Missing...
+	</h4>
+
+		<ul>
+			<li>Funex Expressions Syntax</li>
+			<li>Summary of attributes and features of Cook</li>
+			<li>API Usage and Options</li>
+			<li>Extending Cook with middleware</li>
+			<li>Definition and signature of each Tags</li>
+			<li>Advanced templating: inheritance, recursivity</li>
+			<li>Function helpers</li>
+			<li>Global values</li>
+			<li>The Stack and Closures</li>
+			<li>Description of the main classes and how the lexer, builder is build</li>
+			<li>Unit tests</li>
+			<li>Build process (building cook with cook!)</li>
+		</ul>
+	
+	</div>
+
+
+	</div>
+	<hr />
+
+
+
+	<a id="TheTagSyntax" />
+
+
+	<h1>
+		Tag Based Syntax
+	</h1>
+
+
+
+	<div>
+		
+	
+	<h2>
+		The Syntax
+	</h2>
+
+	
+	<div>
+		
+		<p>
+			The core syntax of <em>Cook</em> is very simple. Templates
+			are built by adding tags to some existing text.
+			This text can be html, xml, css or any other text
+			based document.
+		</p>
+		<p>
+			Tags are composed of:
+		</p>
+		<ul>
+			<li>An opening curly bracket</li>
+			<li>A tag name</li>
+			<li>A series of comma separated expressions</li>
+			<li>Either a closing or self closing slash and brackets</li>
+		</ul>
+		<p>
+			Here is an example of a self closing tag:
+		</p>
+		
+	<pre class="code">Hi {write name /}, and welcome!</pre>
+
+		<p>
+			And here is an example of a tag which contains an html link:
+		</p>
+		
+	<pre class="code">{if user.isAdmin}
+    &lt;a href="/admin"&gt;Admin Panel&lt;/a&gt;
+{/if}</pre>
+
+	
+	</div>
+
+
+	</div>
+	<hr />
+
+
+
+	<div>
+		
+	
+	<h2>
+		Closing Tags
+	</h2>
+
+	
+	<div>
+		
+		<p>
+			In <em>Cook</em> closing tags don't need to mention the
+			tag names. It simply closes the current tag.
+		</p>
+		<p>
+			For example, this tag is valid:
+		</p>
+		
+	<pre class="code">{if true}It' true!{/}</pre>
+
+		<p>
+			Actually, what you write inside a closing tag will
+			never be parsed. If your aim is to provide
+			easier to read code, you can put a relevant tag name,
+			but note that if you put a wrong tag name it might
+			break at syntax validation.
+		</p>
+	
+	</div>
+
+
+	</div>
+	<hr />
+
+
+
+	<div>
+		
+	
+	<h2>
+		Tag Arguments
+	</h2>
+
+	
+	<div>
+		
+		<p>
+			Following the tags name, you can specify a list of comma separated arguments. These arguments can be
+			simple variable names or more complex functional expressions. The syntax and library used to evaluate these
+			expressions is called "Funex".
+		</p>
+		<p>
+			Funex expressions might look like Javascript, which makes the syntax simply to remember, but it is
+			much more limited. Funex is
+			limited to expressing basic data types, accessing deep objects and doing function calls. If does not
+			support logical operators, statements or complex types like arrays and literal object notation.
+		</p>
+		<p>
+			Read the section below for a more detailed description of the Funex syntax.
+		</p>
+		<p>
+			What each tag argument means depends on each tag. An in some cases, such as when defining custom templates,
+			you can define what these argument do yourself.
+		</p>
+		<p>
+			Here is an example of a 
+	<em class="code">set</em>
+ tag with it's two arguments tht are used as a key and value pair:
+		</p>
+		
+	<pre class="code">{set 'name', 'John Doe' /}</pre>
+
+		<p>
+			And here is an example of a 
+	<em class="code">set</em>
+ tag with a more complex funex expression as argument:
+		</p>
+		
+	<pre class="code">{set 'name', $uppercase(datasource.sessions["current"].currentUser().name) /}</pre>
+
+		<p>
+			As you can see, it looks very much like Javascript, but it only does function calls and still contains
+			no actual statements or operators.
+		</p>
+	
+	</div>
+
+
+	</div>
+	<hr />
+
+
+
+	<div>
+		
+	
+	<h2>
+		Tag Body
+	</h2>
+
+	
+	<div>
+		
+		<p>
+			Like with most tag based languages, a tag can contain more tags. But wether a tag's body is parsed
+			and how it is parsed depends on each tag. Behaviors can vary greatly.
+		</p>
+		<p>
+			An 
+	<em class="code">if</em>
+ tag will only parse it's content if it get a true statement,
+			a 
+	<em class="code">write</em>
+ tag filter it body if given a function as a first argument, a 
+	<em class="code">void</em>
+ tag will parse but not
+			write the output and a 
+	<em class="code">raw</em>
+ tag will simply output it's content without parsing it.			
+		</p>
+		<p>
+			You can obtain and use a tags body with the 
+	<em class="code">$body()</em>
+ function when writing Funex expressions.
+			This allows you to do some very fancy reuse scenarios.
+		</p>
+		<p>
+			Here is an example:
+		</p>
+		
+	<pre class="code">{set 'authKey', $GenerateHash($lowercase($trim($body())))}
+    {write appSecret /}-{write userSecret /}
+{/}</pre>
+
+		<p>
+			Note that using the 
+	<em class="code">$body()</em>
+ function multiple time will actually parse the template and all contained
+			expressions multiple times.
+		</p>
+	
+	</div>
+
+
+	</div>
+	<hr />
+
+
+
+
+	<div>
+		
+	
+	<h2>
+		Escaping curly brackets
+	</h2>
+
+	
+	<div>
+		
+		<p>
+			Typically, when your template is parsed, ALL curly brackets are parsed and used to
+			 figure out where tags start and end. This means that rendering things like JSON or
+			 similar text that relies on the same curly brackets will confuse the Cook parser.
+		</p>
+		<p>
+			To solve this, you must escape the curly brackets you want to ouput by writting two
+			consecutive brackets for every bracket your want to output.
+		</p>
+		<p>
+			For example:
+		</p>
+		
+	<pre class="code">&lt;script&gt; user = {{name: "{write user.name/}"}}&lt;/script&gt;</pre>
+
+		<p>
+			Which would output something like this this:
+		</p>
+		
+	<pre class="code">&lt;script&gt; user = {name: "John Doe" }&lt;/script&gt;</pre>
+
+		<p>
+			Note that upcoming versions of <em>Cook</em> will support simpler ways to output whole blocks of languages
+			that relies heavily on curly brackets such as json.
+		</p>
+	
+	</div>
+
+
+	</div>
+	<hr />
+
+
+
+	<div>
+		
+	
+	<h2>
+		Chaining Tags
+	</h2>
+
+	
+	<div>
+		
+		<p>
+			One very nifty feature of <em>Cook</em> is that you can chain tags to make you syntax more compact.
+		</p>
+		<p>
+			For example, this code:
+		</p>
+		
+	<pre class="code">{if user.isLoggedIn &gt;&gt; elem div &gt;&gt; elem a &gt;&gt; write $uppercase &gt;&gt; write user.name /}</pre>
+
+		<p>
+			Outputs pretty much the same thing as this code:
+		</p>
+		
+	<pre class="code">{if user.isLoggedIn}
+    &lt;div&gt;
+        &lt;a&gt;
+            {write $uppercase}
+                {write user.name /}
+            {/write}
+        &lt;/a&gt;
+    &lt;/div&gt;
+{/if}</pre>
+
+		<p>
+			Note that the last element in the tag chain will receive the tags content. In this example, the tag body
+			will be parsed as belonging to the 
+	<em class="code">write $uppercase</em>
+ tag:
+		</p>
+		
+	<pre class="code">{if user.isLoggedIn &gt;&gt; elem div &gt;&gt; elem a &gt;&gt; write $uppercase}
+    Hi {write user.name /}, and welcome!
+{/}</pre>
+
+		<p>
+			When chaining tags, it makes your code more compact, which is itself a matter of
+			preference. Some prefer readability, some prefer getting less lines of code. No matter
+			which style you adopt, it will not affect the rendering performance.
+		</p>
+	
+	</div>
+
+
+	</div>
+	<hr />
+
+
+
+	<div>
+		
+	
+	<h2>
+		The "elem" Tag and Unknown Tag Fallback
+	</h2>
+
+	
+	<div>
+		
+		<p>
+			Whenever the <em>Cook</em> parser finds an unknown tag, it will not raise any error, but instead it will
+			generate an element with the same name.
+		</p>
+		<p>
+			For example, this template:
+		</p>
+		
+	<pre class="code">{div}
+    {span}
+        Lorem Ipsum!
+    {/}
+{/}</pre>
+
+		<p>
+			Would output this:
+		</p>
+		
+	<pre class="code">&lt;div&gt;
+    &lt;span&gt;
+        Lorem Ipsum!
+    &lt;/span&gt;
+&lt;/div&gt;</pre>
+
+		<p>
+			This approach has two advantages. First it prevents templates to crash when some typos or unforseen
+			conditions occure, and secondly it allows you to generate most html syntax with some of the advantages of
+			the <em>Cook</em> syntax.
+		</p>
+		<p>
+			For example, this would still output valid html:
+		</p>
+		
+	<pre class="code">{section &gt;&gt; ul &gt;&gt; li &gt;&gt; span &gt;&gt; strong &gt;&gt; write user.name /}</pre>
+
+    
+	</div>
+
+
+	</div>
+	<hr />
+
+
+
+	<div>
+		
+	
+	<h2>
+		Automatic Tags Deduction
+	</h2>
+
+	
+	<div>
+		
+		<p>
+			Instead of specifying a tag name for every tag, you can use the equal sign 
+	<em class="code">=</em>
+ as a way
+			of asking <em>Cook</em> to guess what to do according to what the first argument is.
+		</p>
+		<p>
+			The simplest example of this is to write values without using the 
+	<em class="code">write</em>
+ tag. Like so:
+		</p>
+		
+	<pre class="code">{=user.fullName/}</pre>
+
+		<p>
+			But it also works for values other than strings. Here is how each value types will be "guessed":
+		</p>
+		<ul>
+			<li>Boolean : will behave like a 
+	<em class="code">if</em>
+ tag</li>
+			<li>Number, String : will behave like a 
+	<em class="code">write</em>
+ tag</li>
+			<li>Array : will behave like a 
+	<em class="code">each</em>
+ tag</li>
+			<li>Literal Object : will behave like a 
+	<em class="code">with</em>
+ tag</li>
+			<li>Boolean : will behave like a 
+	<em class="code">if</em>
+ tag</li>
+		</ul>
+		<p>
+			Anything else (such as prototyped objects) will be coerced into a string out handler with the
+			
+	<em class="code">write</em>
+ tag. This also implies that objects would be converted with their default or custom
+			
+	<em class="code">.toString()</em>
+ function.
+		</p>
+		<p>
+			For example, if you wish to output an html list of the credentials of a user if they are a member.
+		</p>
+		<p>
+			You can write it like this:
+		</p>
+		
+	<pre class="code">{ =isMember &gt;&gt; ul &gt;&gt; =credentials &gt;&gt; li &gt;&gt; =$loop.value.label /}</pre>
+
+		<p>
+			Instead of:
+		</p>
+		
+	<pre class="code">{if isMember &gt;&gt; elem ul &gt;&gt; each credentials &gt;&gt; elem li &gt;&gt; write $loop.value.label /}</pre>
+
+		<p>
+			Which is already a compact equivalent of this:
+		</p>
+		
+	<pre class="code">{if isMember}
+    &lt;ul&gt;
+        {each credentials}
+            &lt;li&gt;
+                {write $loop.value.label /}
+            &lt;/li&gt;
+        {/each}
+    &lt;/ul&gt;
+{/if}</pre>
+
+	
+	</div>
+
+
+	</div>
+	<hr />
+
+
+
+	<div>
+		
+	
+	<h2>
+		Commenting Out Tags
+	</h2>
+
+	
+	<div>
+		
+		<p>
+			You can use the poung sign 
+	<em class="code">#</em>
+ to comment out a tag. This allows you to comment out both a tag and
+			its body.
+		</p>
+		<p>
+			You can use it to leave comment in your code:
+		</p>
+		
+	<pre class="code">{#
+    Some notes that will not be parsed!
+/}</pre>
+
+		<p>
+			Or to hide portions of your code during development:
+		</p>
+		
+	<pre class="code">{#write 'Lorem ipsum dolor sit amet' /}</pre>
+
+		<p>
+			Or on a tag with a body:
+		</p>
+		
+	<pre class="code">{#if user.isMember}
+    {=user.fullName/}
+{/}</pre>
+
+		<p>
+			Note that commenting out a tag does not only prevent it from outputing anything,
+			it also prevent its arguments from being evaluated and even from being parsed at all during
+			compilation.
+		</p>
+	
+	</div>
+
+
+	</div>
+	<hr />
+
+
+
+	<div>
+		
+	
+	<h2>
+		Finer Points of Syntax
+	</h2>
+
+	
+	<div>
+		
+		Todo: Describe where whitespace is tolerated, the possible site effect of named closing tags when chaining, etc.
+	
+	</div>
+
+
+	</div>
+	<hr />
+
+
+
+
+
+		</body>
+	</html>
