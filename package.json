@@ -29,7 +29,8 @@
     "node": ">= v0.6.0"
   },
   "dependencies": {
-    "funex": "~0.1.0"
+    "funex": "~0.1.0",
+    "jsdom": "~0.2.14"
   },
   "devDependencies": {
     "mocha": "1.x",
