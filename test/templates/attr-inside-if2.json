@@ -1,0 +1,13 @@
+{
+	"title":"Defining an attribute inside an if tag",
+	"output":[
+		"<body class='isTrue!' id='12345'></body>"
+	],
+	"input":[
+		"{trim >> body}",
+        "{attr 'class', 'willBeOverwritten!' /}",
+        "{attr 'id', '12345' /}",
+        "{if true >> attr 'class', 'isTrue!' /}",
+        "{/}"
+	]
+}

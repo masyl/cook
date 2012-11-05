@@ -1,0 +1,9 @@
+{
+	"title":"Defining an attribute inside an if tag",
+	"output":[
+		"<body class='isTrue!'></body>"
+	],
+	"input":[
+		"{body >> if true >> attr 'class', 'isTrue!' /}"
+	]
+}

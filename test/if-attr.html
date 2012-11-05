@@ -1,0 +1,18 @@
+{body}
+
+    {if >> attr 'class', 'isAwesomePage' /}
+
+    {if someTrueFunction() >> attr 'class', 'isAwesomePage' /}
+    {else >> attr 'class3', 'isNOOOTAwesomePage' /}
+
+    {if someTrueFunction() >> set 'whatever', 'This is some wathever text...' /}
+
+    {with clients.bob.profile.jobs.job}
+        {if someTrueFunction() >> attr 'class', 'isAwesomePage' /}
+    {/}
+
+    Push to the parent scope these scope properties : attr/set
+
+    When used inside these tags: with/if/else/each
+
+{/body}

@@ -111,10 +111,11 @@ function formatErr(err, test) {
 	}
 }
 
-tests = [
-	"template-recursive"
-];
 tests = require("./tests.js");
+tests = [
+	"attr-inside-if",
+	"attr-inside-if2"
+];
 
 load(tests, function (err, tests) {
 	run(tests);

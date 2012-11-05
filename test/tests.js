@@ -63,6 +63,8 @@ module.exports = [
 	"auto-template",
 	"attr-onElem",
 	"attr-onTemplate",
+	"attr-inside-if",
+	"attr-inside-if2",
 	"set",
 	"with",
 	"log",
