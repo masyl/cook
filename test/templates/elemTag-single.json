@@ -1,0 +1,31 @@
+{
+	"title":"Looking at auto-closing tags",
+	"output":[
+		"<!DOCTYPE />",
+		"<area />",
+		"<base />",
+		"<basefont />",
+		"<br />",
+		"<hr />",
+		"<input />",
+		"<input id='input1' />",
+		"<span></span>",
+		"<span>Bonjour</span>",
+		"<textarea></textarea>",
+		"<img />"
+	],
+	"input":[
+		"{!DOCTYPE /}",
+		"{area /}",
+		"{base /}",
+		"{basefont /}",
+		"{br /}",
+		"{hr /}",
+		"{elem 'input' /}",
+		"{input >> attr 'id','input1' /}",
+		"{elem 'span' /}",
+		"{span}Bonjour{/}",
+		"{elem 'textarea' /}",
+		"{elem 'img' /}"
+	]
+}

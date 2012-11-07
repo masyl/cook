@@ -113,8 +113,7 @@ function formatErr(err, test) {
 
 tests = require("./tests.js");
 tests = [
-	"attr-inside-if",
-	"attr-inside-if2"
+	"elemTag-single"
 ];
 
 load(tests, function (err, tests) {

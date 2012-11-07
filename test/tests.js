@@ -49,6 +49,7 @@ module.exports = [
 	"whitespace-remove-compact",
 	"elemTag",
 	"elemTag-explicit",
+	"elemTag-single",
 	"elemTag-withTemplate",
 	"auto-elemTag",
 	"auto-applyFunction",
